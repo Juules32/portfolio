@@ -1,20 +1,20 @@
 <script lang="ts">
-	import Header from './Header.svelte';
-	import './layout.css';
+    import Header from './Header.svelte';
+    import './layout.css';
 
-	let { children } = $props();
+    let { children } = $props();
 </script>
 
 <div class="app">
-	<Header />
+    <Header />
 
-	<main>
-		{@render children()}
-	</main>
+    <main>
+        {@render children()}
+    </main>
 
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
-	</footer>
+    <footer>
+        <p>
+            visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
+        </p>
+    </footer>
 </div>

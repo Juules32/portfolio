@@ -6,8 +6,6 @@
     import { goto } from '$app/navigation';
     import { resolve } from '$app/paths';
 
-
-
     onMount(() => {
         console.log('hej');
         if (!sessionStorage.getItem('desktopVisited')) {
