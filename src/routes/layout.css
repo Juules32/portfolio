@@ -1,0 +1,17 @@
+@import '@fontsource-variable/cascadia-code/wght.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cascadia Code Variable', sans-serif;
+   	/*image-rendering: pixelated;*/
+    font-weight: 350;
+}
+
+b {
+    font-weight: 700;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
