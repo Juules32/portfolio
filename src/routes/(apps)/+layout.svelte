@@ -35,7 +35,7 @@
         color: white;
         align-items: center;
         height: 24px;
-        padding-left: 10px;
+        padding-left: 12px;
     }
 
     #window-bar-icon {

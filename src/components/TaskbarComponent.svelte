@@ -6,7 +6,7 @@
 
     setInterval(() => {
         now = new Date();
-    }, 10000);
+    }, 1000);
 
     $: timeString = now.toLocaleTimeString([], {
         hour: '2-digit',
