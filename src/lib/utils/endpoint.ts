@@ -1,7 +1,11 @@
 import { page } from '$app/state';
+import { apps } from '$lib/apps';
 
 export function endpointToLabel(endpoint: string): string {
-    // Can add custom labels here if needed...
+    const app = apps.find(app => app.endpoint === endpoint);
+    if (app) {
+        return app.label;
+    }
 
     return endpoint
         .split('/')
@@ -12,14 +16,4 @@ export function endpointToLabel(endpoint: string): string {
 
 export function getEndpoint(): string {
     return page.url.pathname;
-}
-
-export function endpointToIcon(endpoint: string): string | null {
-    console.log(endpoint);
-    switch (endpoint) {
-        case '/projects':
-            return 'directory';
-        default:
-            return null;
-    }
 }

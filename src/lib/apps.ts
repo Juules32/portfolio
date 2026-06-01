@@ -1,16 +1,23 @@
 import aboutIcon from '$lib/assets/icons/directory.png';
 
-export const apps = [
+interface App {
+    id: string;
+    label: string;
+    endpoint: string;
+    icon: string | null;
+}
+
+export const apps: App[] = [
 	{
 		id: 'projects',
 		label: 'Projects',
-		path: '/projects',
+		endpoint: '/projects',
 		icon: null
 	},
 	{
 		id: 'about',
 		label: 'About',
-		path: '/about',
+		endpoint: '/about',
 		icon: aboutIcon
 	}
 ] as const;

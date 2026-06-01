@@ -1,14 +1,22 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
-    import { endpointToLabel, getEndpoint } from "$lib/utils/endpoint";
+    import { getEndpoint } from "$lib/utils/endpoint";
 
     let { app } = $props();
-    let endpoint = $derived(app.path);
+    let endpoint = $derived(app.endpoint);
     let icon = $derived(app.icon);
-    let label = $derived(endpointToLabel(endpoint));
+    let label = $derived(app.label);
+
+    function linkDestination() {
+        if (endpoint === getEndpoint()) {
+            return '/';
+        } else {
+            return endpoint;
+        }
+    }
 </script>
 
-<a href={resolve(endpoint)} id="taskbar-app" class="{endpoint === getEndpoint() ? 'innie' : 'outie'}">
+<a href={resolve(linkDestination())} id="taskbar-app" class="{endpoint === getEndpoint() ? 'innie' : 'outie'}">
     {#if icon}
     <img id="icon" alt="icon" src={icon} />
     {/if}
