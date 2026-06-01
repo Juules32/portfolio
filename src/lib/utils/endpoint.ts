@@ -1,10 +1,14 @@
 import { page } from '$app/state';
-import { apps, unknownApp } from '$lib/apps';
+import { apps, desktopApp, unknownApp } from '$lib/apps';
 
 export function endpointToLabel(endpoint: string): string {
     const app = apps.find(app => app.endpoint === endpoint);
     if (app) {
         return app.label;
+    }
+
+    if (desktopApp.endpoint === endpoint) {
+        return desktopApp.label;
     }
 
     return endpoint

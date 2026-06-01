@@ -10,7 +10,7 @@ interface App {
 }
 
 export const apps: App[] = [
-	{
+    {
 		id: 'projects',
 		label: 'Projects',
 		endpoint: '/projects',
@@ -23,6 +23,13 @@ export const apps: App[] = [
 		icon: directoryIcon
 	}
 ] as const;
+
+export const desktopApp: App = {
+    id: 'desktop',
+    label: 'Desktop',
+    endpoint: '/',
+    icon: errorIcon
+} as const;
 
 export const unknownApp: App = {
     id: 'unknown',
