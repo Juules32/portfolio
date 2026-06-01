@@ -1,11 +1,24 @@
 @import '@fontsource-variable/cascadia-code/wght.css';
 
+@font-face {
+    font-family: 'PX Sans Nouveaux';
+    src: url('/fonts/px_sans_nouveaux.woff2');
+}
+
 * {
     margin: 0;
+    -moz-font-smoothing:antialiased;
+    -webkit-font-smoothing:antialiased;
+    -rendering:optimizeLegibility;
+    -moz-osx-font-smoothing:grayscale;
     padding: 0;
-    font-family: 'Cascadia Code Variable', sans-serif;
+    font-family: 'Arial', sans-serif;
+    /*font-family: 'Cascadia Code Variable', sans-serif;*/
+    /*font-family: 'PX Sans Nouveaux', sans-serif;*/
    	/*image-rendering: pixelated;*/
     font-weight: 350;
+    font-size: 12px;
+    border: none;
 }
 
 b {
@@ -14,4 +27,25 @@ b {
 
 h1, h2, h3, h4 {
     font-weight: 700;
+}
+
+.outie {
+    background: #c0c0c0;
+    box-shadow:
+        inset 2px 2px 0 #ffffff,
+        inset -2px -2px 0 #808080;
+}
+
+.innie {
+    background: #DFDFDF;
+    box-shadow:
+        inset 2px 2px 0 #808080,
+        inset -2px -2px 0 #ffffff;
+}
+
+.bordered {
+    background: #c0c0c0;
+    box-shadow:
+        inset 2px 2px 0 #808080,
+        inset -2px -2px 0 #808080;
 }

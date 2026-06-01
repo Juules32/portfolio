@@ -1,27 +1,17 @@
 <script lang="ts">
-    import { page } from '$app/state';
+    import { endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
 
     let { children } = $props();
 
-    let title = $derived(
-        page.url.pathname
-            .split('/')
-            .pop()!
-            .replace(/-/g, ' ')
-            .replace(/\b\w/g, (c) => c.toUpperCase())
-    );
+    let title = $derived(endpointToLabel(getEndpoint()));
 </script>
 
-<section id="app">
+<section id="app" class="outie">
     <h1>{title}</h1>
     {@render children()}
 </section>
 
 <style>
     #app {
-        background-color: #c0c0c0;
-        box-shadow:
-            inset 10px 10px 0 #ffffff,
-            inset -10px -10px 0 #808080;
     }
 </style>

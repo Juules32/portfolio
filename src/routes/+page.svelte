@@ -1,7 +1,8 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
-    import { resolve, base } from '$app/paths';
+    import { resolve } from '$app/paths';
+    import wallpaper from '$lib/assets/wallpaper.png';
 
     onMount(() => {
         if (!sessionStorage.getItem('desktopVisited')) {
@@ -17,7 +18,7 @@
 </svelte:head>
 
 <section>
-    <img id="wallpaper" alt="Wallpaper" src="{base}/wallpaper.png" />
+    <img id="wallpaper" alt="Wallpaper" src={wallpaper} />
 </section>
 
 <style>

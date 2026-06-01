@@ -1,5 +1,5 @@
 <script lang="ts">
-    import FooterComponent from '$components/FooterComponent.svelte';
+    import TaskbarComponent from '$components/TaskbarComponent.svelte';
     import './layout.css';
 
     let { children } = $props();
@@ -10,5 +10,5 @@
         {@render children()}
     </main>
 
-    <FooterComponent />
+    <TaskbarComponent />
 </div>
