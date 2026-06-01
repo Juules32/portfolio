@@ -1,20 +1,35 @@
 <script lang="ts">
     import TaskbarAppComponent from './TaskbarAppComponent.svelte';
     import { apps } from '$lib/apps';
+
+    let now = new Date();
+
+    setInterval(() => {
+        now = new Date();
+    }, 10000);
+
+    $: timeString = now.toLocaleTimeString([], {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
 </script>
 
 <footer>
     <nav id="taskbar" class="outie">
 
-        {#each apps as app (app.id)}
-            <TaskbarAppComponent app={app} />
-        {/each}
+        <div id="taskbar-apps">
+            {#each apps as app (app.id)}
+                <TaskbarAppComponent app={app} />
+            {/each}
+        </div>
 
 
-        <div class="corner">
-            <a href="https://github.com/sveltejs/kit">
-                <img src="github.svg" alt="GitHub" />
+        <div id="taskbar-corner" class="bordered">
+            <a href="https://github.com/Juules32/portfolio">
+                <img id="github" src="github.svg" alt="GitHub" />
             </a>
+
+            <span class="clock">{timeString}</span>
         </div>
 
     </nav>
@@ -26,11 +41,30 @@
         bottom: 0;
         left: 0;
         right: 0;
-
         height: 40px;
-
         display: flex;
         align-items: center;
+    }
 
+    #taskbar-apps {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-left: 3px;
+    }
+
+    #taskbar-corner {
+        height: 26px;
+        margin-left: auto;
+        margin-right: 3px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    #github {
+        height: 18px;
     }
 </style>

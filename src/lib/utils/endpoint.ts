@@ -1,5 +1,5 @@
 import { page } from '$app/state';
-import { apps } from '$lib/apps';
+import { apps, unknownApp } from '$lib/apps';
 
 export function endpointToLabel(endpoint: string): string {
     const app = apps.find(app => app.endpoint === endpoint);
@@ -16,4 +16,13 @@ export function endpointToLabel(endpoint: string): string {
 
 export function getEndpoint(): string {
     return page.url.pathname;
+}
+
+export function endpointToIcon(endpoint: string): string {
+    const app = apps.find(app => app.endpoint === endpoint);
+    if (app) {
+        return app.icon;
+    }
+
+    return unknownApp.icon;
 }

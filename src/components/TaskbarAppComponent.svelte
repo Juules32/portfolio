@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { resolve } from "$app/paths";
-    import { getEndpoint } from "$lib/utils/endpoint";
+    import { resolve } from '$app/paths';
+    import { getEndpoint } from '$lib/utils/endpoint';
 
     let { app } = $props();
     let endpoint = $derived(app.endpoint);
@@ -16,9 +16,13 @@
     }
 </script>
 
-<a href={resolve(linkDestination())} id="taskbar-app" class="{endpoint === getEndpoint() ? 'innie' : 'outie'}">
+<a
+    href={resolve(linkDestination())}
+    id="taskbar-app"
+    class={endpoint === getEndpoint() ? 'innie' : 'outie'}
+>
     {#if icon}
-    <img id="icon" alt="icon" src={icon} />
+        <img id="icon" alt="icon" src={icon} />
     {/if}
     <p id="taskbar-app-text">
         {label}
@@ -29,8 +33,10 @@
     #taskbar-app {
         color: black;
         text-decoration: none;
-        padding: 0.4rem 0.6rem;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
         text-align: center;
+        height: 26px;
         display: flex;
         align-items: center;
     }
