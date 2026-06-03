@@ -5,11 +5,12 @@
 
     interface Props {
         children: Snippet;
+        classes: string;
         loadTime?: number;
         loadOnceId?: string | null;
     }
 
-    let { children, loadTime = 1000, loadOnceId = null }: Props = $props();
+    let { children, classes = '', loadTime = 1000, loadOnceId = null }: Props = $props();
 
     const BAR_WIDTH = 12;
     const BAR_GAP = 5;
@@ -46,7 +47,7 @@
                     // All bars filled — now reveal the content.
                     clearInterval(interval);
                     if (loadOnceId) sessionSetKey('loaded-' + loadOnceId);
-                    loading = false;
+                    //loading = false;
                 } else {
                     visibleBars += 1;
                 }
@@ -57,12 +58,12 @@
     });
 </script>
 
-<div class="outer" bind:clientWidth={outerWidth}>
+<div class="{classes} outer" bind:clientWidth={outerWidth}>
     {@render children()}
     {#if loading}
         <div class="loader">
             <span class="loader-text">Loading...</span>
-            <div class="loader-bars" style="--bar-width: {BAR_WIDTH}px; --bar-gap: {BAR_GAP}px;">
+            <div class="loader-bars innie" style="--bar-width: {BAR_WIDTH}px; --bar-gap: {BAR_GAP}px;">
                 {#each Array(barCount), i (i)}
                     <div class="loader-bar {i >= visibleBars ? 'hidden' : ''}"></div>
                 {/each}
@@ -81,7 +82,7 @@
     .loader {
         position: absolute;
         inset: 0;
-        background-color: #c0c0c0;
+        background-color: var(--color-bg-grey);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -92,7 +93,7 @@
     .loader-bars {
         display: flex;
         gap: var(--bar-gap);
-        background-color: #808080;
+        background-color: var(--color-bg-dark);
         padding: 2px;
         width: fit-content;
     }
@@ -100,7 +101,7 @@
     .loader-bar {
         height: 20px;
         width: var(--bar-width);
-        background-color: #000080;
+        background-color: var(--color-blue);
     }
 
     .hidden {

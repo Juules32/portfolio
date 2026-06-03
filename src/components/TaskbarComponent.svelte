@@ -14,18 +14,18 @@
     });
 </script>
 
-<nav id="taskbar" class="outie">
+<nav class="taskbar outie">
 
-    <div id="taskbar-apps">
+    <div class="taskbar-apps">
         {#each apps as app (app.id)}
             <TaskbarAppComponent app={app} />
         {/each}
     </div>
 
 
-    <div id="taskbar-corner" class="bordered">
+    <div class="taskbar-corner bordered">
         <a href="https://github.com/Juules32/portfolio">
-            <img id="github" src="github.svg" alt="GitHub" />
+            <img class="github" src="github.svg" alt="GitHub" />
         </a>
 
         <span class="clock">{timeString}</span>
@@ -34,20 +34,20 @@
 </nav>
 
 <style>
-    #taskbar {
+    .taskbar {
         height: 40px;
         display: flex;
         align-items: center;
     }
 
-    #taskbar-apps {
+    .taskbar-apps {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         margin-left: 3px;
     }
 
-    #taskbar-corner {
+    .taskbar-corner {
         height: 26px;
         margin-left: auto;
         margin-right: 3px;
@@ -58,7 +58,7 @@
         padding-right: 3px;
     }
 
-    #github {
+    .github {
         height: 18px;
     }
 </style>

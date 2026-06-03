@@ -7,21 +7,21 @@
     let icon = $derived(endpointToIcon(getEndpoint()));
 </script>
 
-<section id="window" class="window">
-    <div id="window-bar">
+<section class="window app-window">
+    <div class="window-bar">
         {#if icon}
-            <img id="window-bar-icon" alt="icon" src={icon} />
+            <img class="window-bar-icon" alt="icon" src={icon} />
         {/if}
         <h1>{title}</h1>
 
     </div>
-    <div id="window-content" class="innie">
+    <div class="window-content innie">
         {@render children()}
     </div>
 </section>
 
 <style>
-    #window {
+    .window {
         height: 100%;
         padding: 3px;
         display: flex;
@@ -29,20 +29,20 @@
         gap: 5px;
     }
 
-    #window-bar {
+    .window-bar {
         display: flex;
-        background-color: #000080;
+        background-color: var(--color-blue);
         color: white;
         align-items: center;
         height: 24px;
         padding-left: 12px;
     }
 
-    #window-bar-icon {
+    .window-bar-icon {
         padding-right: 5px;
     }
 
-    #window-content {
+    .window-content {
         padding: 10px;
         background-color: white;
         height: 100%;

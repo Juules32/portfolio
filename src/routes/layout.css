@@ -10,6 +10,18 @@
     src: url('/fonts/MS Sans Serif/MS Sans Serif 8pt.ttf');
 }*/
 
+:root {
+    --color-border-grey: #808080;
+    --color-border-white: #ffffff;
+    --color-border-black: #000000;
+    --color-blue: #000080;
+    --color-bg-grey: #c0c0c0;
+    --color-bg-light: #dfdfdf;
+    --color-bg-dark: #9a9a9a;
+    --color-text-light: #ffffff;
+    --color-text-dark: #000000;
+}
+
 * {
     margin: 0;
     -moz-font-smoothing:antialiased;
@@ -24,6 +36,7 @@
    	/*image-rendering: pixelated;*/
     font-weight: 350;
     font-size: 12px;
+    color: var(--color-text-dark);
     border: none;
     box-sizing: border-box;
 }
@@ -37,30 +50,30 @@ h1, h2, h3, h4 {
 }
 
 .outie {
-    background: #c0c0c0;
-    border-left: 2px solid #ffffff;
-    border-top: 2px solid #ffffff;
-    border-bottom: 2px solid #808080;
-    border-right: 2px solid #808080;
+    background: var(--color-bg-grey);
+    border-left: 2px solid var(--color-border-white);
+    border-top: 2px solid var(--color-border-white);
+    border-bottom: 2px solid var(--color-border-grey);
+    border-right: 2px solid var(--color-border-grey);
 }
 
-.window {
-    background: #c0c0c0;
-    border-left: 2px solid #ffffff;
-    border-top: 2px solid #ffffff;
-    border-bottom: 2px solid #000000;
-    border-right: 2px solid #000000;
+.app-window {
+    background: var(--color-bg-grey);
+    border-left: 2px solid var(--color-border-white);
+    border-top: 2px solid var(--color-border-white);
+    border-bottom: 2px solid var(--color-border-black);
+    border-right: 2px solid var(--color-border-black);
 }
 
 .innie {
-    background: #DFDFDF;
-    border-left: 2px solid #808080;
-    border-top: 2px solid #808080;
-    border-bottom: 2px solid #ffffff;
-    border-right: 2px solid #ffffff;
+    background: var(--color-bg-light);
+    border-left: 2px solid var(--color-border-grey);
+    border-top: 2px solid var(--color-border-grey);
+    border-bottom: 2px solid var(--color-border-white);
+    border-right: 2px solid var(--color-border-white);
 }
 
 .bordered {
-    background: #c0c0c0;
-    border: 2px solid #808080;
+    background: var(--color-bg-grey);
+    border: 2px solid var(--color-border-grey);
 }

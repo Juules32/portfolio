@@ -18,20 +18,18 @@
 
 <a
     href={resolve(linkDestination())}
-    id="taskbar-app"
-    class={endpoint === getEndpoint() ? 'innie' : 'outie'}
+    class="taskbar-app {endpoint === getEndpoint() ? 'innie' : 'outie'}"
 >
     {#if icon}
-        <img id="icon" alt="icon" src={icon} />
+        <img class="taskbar-icon" alt="icon" src={icon} />
     {/if}
-    <p id="taskbar-app-text">
+    <p class="taskbar-app-text">
         {label}
     </p>
 </a>
 
 <style>
-    #taskbar-app {
-        color: black;
+    .taskbar-app {
         text-decoration: none;
         padding-left: 0.6rem;
         padding-right: 0.6rem;
@@ -41,12 +39,13 @@
         align-items: center;
     }
 
-    #icon {
+    .taskbar-icon {
         padding-right: 0.3rem;
         height: 16px;
     }
 
-    #taskbar-app-text {
+    .taskbar-app-text {
+        color: var(--color-text-black);
         height: 16px;
         text-align: center;
         display: flex;

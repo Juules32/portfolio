@@ -1,13 +1,13 @@
 <script>
-    import LoadingComponent from "$components/LoadingComponent.svelte";
-
+    import LoadingComponent from '$components/LoadingComponent.svelte';
 </script>
+
 <div class="text-column">
     <h1>About this app</h1>
 
     <p>
-        This <i>is</i> a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-        the <b>following</b> into your command line and following the prompts:
+        This <i>is</i> a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your
+        own by typing the <b>following</b> into your command line and following the prompts:
     </p>
 
     <pre>npx sv create</pre>
@@ -18,9 +18,7 @@
         opening the devtools network panel and reloading.
     </p>
 
-    <div class="innie" style="width: fit-content;">
-        <LoadingComponent loadTime={500}>
+        <LoadingComponent classes="innie" loadTime={500}>
             <div style="background-color: blue; height: 200px; width: 30vw;">Hajej</div>
         </LoadingComponent>
-    </div>
 </div>
