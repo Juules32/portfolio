@@ -1,3 +1,7 @@
+<script>
+    import LoadingComponent from "$components/LoadingComponent.svelte";
+
+</script>
 <div class="text-column">
     <h1>About this app</h1>
 
@@ -13,4 +17,8 @@
         Because of that, we don't need to load any JavaScript. Try viewing the page's source, or
         opening the devtools network panel and reloading.
     </p>
+
+    <LoadingComponent loadOnceId="cool-blue-square">
+        <div style="background-color: blue; height: 200px; width: 30vw;">Hajej</div>
+    </LoadingComponent>
 </div>

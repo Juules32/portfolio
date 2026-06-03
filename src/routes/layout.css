@@ -5,6 +5,11 @@
     src: url('/fonts/px_sans_nouveaux.woff2');
 }
 
+/*@font-face {
+    font-family: 'MS Sans Serif';
+    src: url('/fonts/MS Sans Serif/MS Sans Serif 8pt.ttf');
+}*/
+
 * {
     margin: 0;
     -moz-font-smoothing:antialiased;
@@ -15,6 +20,7 @@
     font-family: 'Arial', sans-serif;
     /*font-family: 'Cascadia Code Variable', sans-serif;*/
     /*font-family: 'PX Sans Nouveaux', sans-serif;*/
+    /*font-family: 'MS Sans Serif', sans-serif;*/
    	/*image-rendering: pixelated;*/
     font-weight: 350;
     font-size: 12px;
