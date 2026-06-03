@@ -1,49 +1,70 @@
 <script lang="ts">
-    let { children, loadTime = 1000, loadOnceId = null } = $props();
+    import { sessionHasKey, sessionSetKey } from '$lib/utils/session';
+    import type { Snippet } from 'svelte';
+    import { untrack } from 'svelte';
+
+    interface Props {
+        children: Snippet;
+        loadTime?: number;
+        loadOnceId?: string | null;
+    }
+
+    let { children, loadTime = 1000, loadOnceId = null }: Props = $props();
 
     const BAR_WIDTH = 12;
     const BAR_GAP = 5;
+    const FILL_RATIO = 0.6;
 
     let outerWidth = $state(0);
     let loading = $state(true);
-    let visibleBars = $state(0);
+    let visibleBars = $state(1);
+    let barCount = $state(0);
 
-    // n bars + (n-1) gaps should fill 60% of the outer width
-    let numBars = $derived(
-        Math.floor((outerWidth * 0.6 + BAR_GAP) / (BAR_WIDTH + BAR_GAP))
-    );
+    const ready = $derived(outerWidth > 0);
 
     $effect(() => {
-        if (loadOnceId && sessionStorage.getItem('loaded-' + loadOnceId)) {
-            loading = false;
-            return;
-        }
+        if (!ready) return;
 
-        if (numBars <= 0) return;
+        // Read everything else untracked so only `ready` is a dependency.
+        let interval: ReturnType<typeof setInterval> | undefined;
 
-        const interval = setInterval(() => {
-            visibleBars += 1;
-            if (visibleBars >= numBars) {
-                clearInterval(interval);
-                if (loadOnceId) {
-                    sessionStorage.setItem('loaded-' + loadOnceId, 'true');
-                }
+        untrack(() => {
+            if (loadOnceId && sessionHasKey('loaded-' + loadOnceId)) {
                 loading = false;
+                return;
             }
-        }, loadTime / numBars);
+
+            // n bars + (n-1) gaps should fill FILL_RATIO of the outer width.
+            const count = Math.floor(
+                (outerWidth * FILL_RATIO + BAR_GAP) / (BAR_WIDTH + BAR_GAP)
+            );
+            if (count <= 0) return;
+            barCount = count;
+
+            interval = setInterval(() => {
+                if (visibleBars >= count) {
+                    // All bars filled — now reveal the content.
+                    clearInterval(interval);
+                    if (loadOnceId) sessionSetKey('loaded-' + loadOnceId);
+                    loading = false;
+                } else {
+                    visibleBars += 1;
+                }
+            }, loadTime / count);
+        });
 
         return () => clearInterval(interval);
     });
 </script>
 
-<div id="outer" class="innie" bind:clientWidth={outerWidth}>
+<div class="outer" bind:clientWidth={outerWidth}>
     {@render children()}
     {#if loading}
-        <div id="loader">
-            <span id="loading-text">Loading...</span>
-            <div id="loading-bar-container">
-                {#each Array(numBars), i (i)}
-                    <div class="loading-bar {i > visibleBars ? 'hidden' : ''}"></div>
+        <div class="loader">
+            <span class="loader-text">Loading...</span>
+            <div class="loader-bars" style="--bar-width: {BAR_WIDTH}px; --bar-gap: {BAR_GAP}px;">
+                {#each Array(barCount), i (i)}
+                    <div class="loader-bar {i >= visibleBars ? 'hidden' : ''}"></div>
                 {/each}
             </div>
         </div>
@@ -51,13 +72,13 @@
 </div>
 
 <style>
-    #outer {
+    .outer {
         position: relative;
         width: fit-content;
         height: fit-content;
     }
 
-    #loader {
+    .loader {
         position: absolute;
         inset: 0;
         background-color: #c0c0c0;
@@ -68,17 +89,17 @@
         gap: 8px;
     }
 
-    #loading-bar-container {
+    .loader-bars {
         display: flex;
-        gap: 5px;
+        gap: var(--bar-gap);
         background-color: #808080;
         padding: 2px;
         width: fit-content;
     }
 
-    .loading-bar {
+    .loader-bar {
         height: 20px;
-        width: 12px;
+        width: var(--bar-width);
         background-color: #000080;
     }
 

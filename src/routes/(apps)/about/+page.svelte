@@ -18,7 +18,9 @@
         opening the devtools network panel and reloading.
     </p>
 
-    <LoadingComponent loadOnceId="cool-blue-square">
-        <div style="background-color: blue; height: 200px; width: 30vw;">Hajej</div>
-    </LoadingComponent>
+    <div class="innie" style="width: fit-content;">
+        <LoadingComponent loadTime={500}>
+            <div style="background-color: blue; height: 200px; width: 30vw;">Hajej</div>
+        </LoadingComponent>
+    </div>
 </div>
