@@ -47,7 +47,7 @@
                     // All bars filled — now reveal the content.
                     clearInterval(interval);
                     if (loadOnceId) sessionSetKey('loaded-' + loadOnceId);
-                    //loading = false;
+                    loading = false;
                 } else {
                     visibleBars += 1;
                 }

@@ -18,8 +18,8 @@
     --color-bg-grey: #c0c0c0;
     --color-bg-light: #dfdfdf;
     --color-bg-dark: #9a9a9a;
-    --color-text-light: #ffffff;
-    --color-text-dark: #000000;
+    --color-text-white: #ffffff;
+    --color-text-black: #000000;
 }
 
 * {
@@ -36,7 +36,7 @@
    	/*image-rendering: pixelated;*/
     font-weight: 350;
     font-size: 12px;
-    color: var(--color-text-dark);
+    color: var(--color-text-black);
     border: none;
     box-sizing: border-box;
 }

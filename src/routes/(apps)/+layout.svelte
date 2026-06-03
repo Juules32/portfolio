@@ -12,8 +12,7 @@
         {#if icon}
             <img class="window-bar-icon" alt="icon" src={icon} />
         {/if}
-        <h1>{title}</h1>
-
+        <h2 class="window-bar-title">{title}</h2>
     </div>
     <div class="window-content innie">
         {@render children()}
@@ -32,7 +31,6 @@
     .window-bar {
         display: flex;
         background-color: var(--color-blue);
-        color: white;
         align-items: center;
         height: 24px;
         padding-left: 12px;
@@ -42,9 +40,13 @@
         padding-right: 5px;
     }
 
+    .window-bar-title {
+        color: var(--color-text-white);
+    }
+
     .window-content {
         padding: 10px;
-        background-color: white;
+        background-color: var(--color-bg-light);
         height: 100%;
     }
 </style>
