@@ -17,7 +17,7 @@
 {/snippet}
 
 {#if app.endpoint}
-    <a class="desktop-app" href={resolve(app.endpoint)}>
+    <a class="desktop-app clickable" href={resolve(app.endpoint)}>
         {@render content()}
     </a>
 {:else}
@@ -29,12 +29,22 @@
 <style>
     .desktop-app {
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
-        max-width: 70px;
+        width: 80px;
+        height: 70px;
         gap: 4px;
+        padding: 6px;
+    }
+
+    .clickable:hover {
+        background-color: var(--color-hover-desktop-app);
+        border: 1px solid var(--color-hover-desktop-app-border);
         padding: 5px;
+    }
+
+    .clickable:active {
+        background-color: var(--color-click-desktop-app);
     }
 
     .desktop-app img {
@@ -44,6 +54,7 @@
 
     .desktop-app span {
         text-align: center;
+        color: var(--color-text-white);
+        text-shadow: 1px 1px 0px black;
     }
-
 </style>

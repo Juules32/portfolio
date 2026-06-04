@@ -2,7 +2,7 @@
     import TaskbarAppComponent from './TaskbarAppComponent.svelte';
     import AudioToggleComponent from './AudioToggleComponent.svelte';
     import { apps } from '$lib/apps';
-    import githubIcon from '$lib/assets/github.svg';
+    import githubIcon from '$lib/assets/icons/github.svg';
 
 
     let now = $state(new Date());

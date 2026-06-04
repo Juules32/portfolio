@@ -1,10 +1,10 @@
 import type { Pathname } from '$app/types';
-import directoryIcon from '$lib/assets/icons/directory.png';
-import errorIcon from '$lib/assets/icons/error.png';
-import openDirectoryIcon from '$lib/assets/icons/open-directory.png';
-import openDirectoryDesktopIcon from '$lib/assets/icons/desktop/open-directory.png';
-import directoryDesktopIcon from '$lib/assets/icons/desktop/directory.png';
-import recycleBinDesktopIcon from '$lib/assets/icons/desktop/recycle-bin.png';
+import directoryIcon from '$lib/assets/icons/16x16/directory.png';
+import errorIcon from '$lib/assets/icons/16x16/error.png';
+import openDirectoryIcon from '$lib/assets/icons/16x16/open-directory.png';
+import openDirectoryDesktopIcon from '$lib/assets/icons/32x32/open-directory.png';
+import directoryDesktopIcon from '$lib/assets/icons/32x32/directory.png';
+import recycleBinDesktopIcon from '$lib/assets/icons/32x32/recycle-bin.png';
 
 
 export interface App {

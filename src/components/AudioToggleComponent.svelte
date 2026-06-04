@@ -1,7 +1,7 @@
 <script lang="ts">
     import bar from '$lib/assets/sound/bar.mp3';
-    import speakerIcon from '$lib/assets/icons/speaker.png';
-    import mutedIcon from '$lib/assets/icons/muted.png';
+    import speakerIcon from '$lib/assets/icons/16x16/speaker.png';
+    import mutedIcon from '$lib/assets/icons/16x16/muted.png';
 
     let muted = $state(true);
     let audio: HTMLAudioElement;

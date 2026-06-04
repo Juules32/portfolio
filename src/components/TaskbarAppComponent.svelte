@@ -51,5 +51,6 @@
         text-align: center;
         display: flex;
         align-items: center;
+        text-shadow: 0px 0px 10px white;
     }
 </style>

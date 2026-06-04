@@ -42,10 +42,12 @@
 <style>
     .desktop-apps {
         display: flex;
-        justify-content: center;
         flex-direction: column;
-        margin: 16px;
-        gap: 20px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        height: 100%;
+        padding: 20px 10px;
+        gap: 10px;
         width: fit-content;
     }
 </style>

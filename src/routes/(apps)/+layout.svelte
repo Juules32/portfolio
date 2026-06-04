@@ -1,7 +1,7 @@
 <script lang="ts">
-    import closeIcon from '$lib/assets/icons/close.png';
-    import minimizeIcon from '$lib/assets/icons/minimize.png';
-    import maximizeIcon from '$lib/assets/icons/maximize.png';
+    import closeIcon from '$lib/assets/icons/12x12/close.png';
+    import minimizeIcon from '$lib/assets/icons/12x12/minimize.png';
+    import maximizeIcon from '$lib/assets/icons/12x12/maximize.png';
 
     import { endpointToIcon, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { goto } from '$app/navigation';
@@ -77,11 +77,14 @@
     .window-content {
         padding: 10px;
         background-color: var(--color-bg-light);
-        height: 100%;
+        flex: 1;
+        min-height: 0;
+        overflow: auto;
     }
 
     .window-content.full-bleed {
         padding: 0;
+        overflow: hidden;
     }
 
     .window-bar-buttons {

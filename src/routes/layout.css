@@ -15,11 +15,15 @@
     --color-border-white: #ffffff;
     --color-border-black: #000000;
     --color-blue: #000080;
+    --color-hover-desktop-app: #00008033;
+    --color-hover-desktop-app-border: #ffffffcc;
+    --color-click-desktop-app: #00008088;
     --color-bg-grey: #c0c0c0;
     --color-bg-light: #dfdfdf;
     --color-bg-dark: #9a9a9a;
     --color-text-white: #ffffff;
     --color-text-black: #000000;
+    --color-wallpaper: #008080;
 }
 
 * {
