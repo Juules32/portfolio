@@ -19,7 +19,7 @@
 
 <a
     href={resolve(linkDestination())}
-    class="taskbar-app pressable {active ? 'innie' : 'outie'}"
+    class="taskbar-app {active ? 'innie' : 'outie'}"
 >
     {#if icon}
         <img class="taskbar-icon" alt="icon" src={icon} />
