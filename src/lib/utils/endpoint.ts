@@ -24,9 +24,5 @@ export function getActiveEndpoint(): string {
 
 export function endpointToIcon(endpoint: string): string {
     const app = apps.find(app => app.endpoint === endpoint);
-    if (app) {
-        return app.icon;
-    }
-
-    return unknownApp.icon;
+    return app?.icon ?? unknownApp.icon!;
 }

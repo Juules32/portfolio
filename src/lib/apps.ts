@@ -1,12 +1,18 @@
+import type { Pathname } from '$app/types';
 import directoryIcon from '$lib/assets/icons/directory.png';
 import errorIcon from '$lib/assets/icons/error.png';
 import openDirectoryIcon from '$lib/assets/icons/open-directory.png';
+import openDirectoryDesktopIcon from '$lib/assets/icons/desktop/open-directory.png';
+import directoryDesktopIcon from '$lib/assets/icons/desktop/directory.png';
+import recycleBinDesktopIcon from '$lib/assets/icons/desktop/recycle-bin.png';
 
-interface App {
+
+export interface App {
     id: string;
     label: string;
-    endpoint: string;
-    icon: string;
+    endpoint?: Pathname;
+    icon?: string;
+    desktopIcon?: string;
 }
 
 export const unknownApp: App = {
@@ -16,23 +22,25 @@ export const unknownApp: App = {
     icon: errorIcon
 } as const;
 
+export const recycleBinApp: App = {
+    id: 'recycleBin',
+    label: 'Recycle Bin',
+    desktopIcon: recycleBinDesktopIcon
+}
+
 export const apps: App[] = [
     {
-		id: 'about-me',
+		id: 'aboutMe',
 		label: 'About Me',
 		endpoint: '/about-me',
-		icon: directoryIcon
+        icon: directoryIcon,
+        desktopIcon: directoryDesktopIcon
 	},
 	{
 		id: 'showcase',
 		label: 'Showcase',
 		endpoint: '/showcase',
-		icon: openDirectoryIcon
+        icon: openDirectoryIcon,
+        desktopIcon: openDirectoryDesktopIcon
     },
-    {
-        id: 'what',
-        label: '???',
-        endpoint: '/what',
-        icon: errorIcon
-    }
 ] as const;

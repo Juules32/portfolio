@@ -2,6 +2,8 @@
     import TaskbarAppComponent from './TaskbarAppComponent.svelte';
     import AudioToggleComponent from './AudioToggleComponent.svelte';
     import { apps } from '$lib/apps';
+    import githubIcon from '$lib/assets/github.svg';
+
 
     let now = $state(new Date());
 
@@ -33,7 +35,7 @@
         <AudioToggleComponent />
 
         <a href="https://github.com/Juules32/portfolio">
-            <img class="github" src="github.svg" alt="GitHub" />
+            <img class="github" src={githubIcon} alt="GitHub" />
         </a>
 
         <span class="clock">{timeString}</span>

@@ -31,7 +31,6 @@
 
 <style>
     .taskbar-app {
-        text-decoration: none;
         padding-left: 0.6rem;
         padding-right: 0.6rem;
         text-align: center;

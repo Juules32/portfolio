@@ -6,6 +6,7 @@
     import { endpointToIcon, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { goto } from '$app/navigation';
     import { resolve } from '$app/paths';
+    import { page } from '$app/state';
     let { children } = $props();
 
     let title = $derived(endpointToLabel(getEndpoint()));
@@ -42,7 +43,7 @@
             </button>
         </div>
     </div>
-    <div class="window-content innie">
+    <div class="window-content innie" class:full-bleed={page.data.fullBleed}>
         {@render children()}
     </div>
 </section>
@@ -77,6 +78,10 @@
         padding: 10px;
         background-color: var(--color-bg-light);
         height: 100%;
+    }
+
+    .window-content.full-bleed {
+        padding: 0;
     }
 
     .window-bar-buttons {
