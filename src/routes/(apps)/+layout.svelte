@@ -4,11 +4,24 @@
     import maximizeIcon from '$lib/assets/icons/maximize.png';
 
     import { endpointToIcon, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
-
+    import { goto } from '$app/navigation';
+    import { resolve } from '$app/paths';
     let { children } = $props();
 
     let title = $derived(endpointToLabel(getEndpoint()));
     let icon = $derived(endpointToIcon(getEndpoint()));
+
+    function close() {
+        goto(resolve('/'));
+    }
+
+    function toggleFullscreen() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+    }
 </script>
 
 <section class="window app-window">
@@ -18,9 +31,15 @@
         {/if}
         <h2 class="window-bar-title">{title}</h2>
         <div class="window-bar-buttons">
-            <img class="window-bar-button outie" alt="minimize" src={minimizeIcon} />
-            <img class="window-bar-button outie" alt="maximize" src={maximizeIcon} />
-            <img class="window-bar-button outie" alt="close" src={closeIcon} />
+            <button class="window-bar-button outie pressable" type="button" aria-label="Minimize" onclick={close}>
+                <img alt="" src={minimizeIcon} />
+            </button>
+            <button class="window-bar-button outie pressable" type="button" aria-label="Maximize" onclick={toggleFullscreen}>
+                <img alt="" src={maximizeIcon} />
+            </button>
+            <button class="window-bar-button outie pressable" type="button" aria-label="Close" onclick={close}>
+                <img alt="" src={closeIcon} />
+            </button>
         </div>
     </div>
     <div class="window-content innie">
@@ -47,6 +66,7 @@
 
     .window-bar-icon {
         padding-right: 5px;
+        image-rendering: pixelated;
     }
 
     .window-bar-title {
@@ -71,6 +91,20 @@
         background-color: var(--color-bg-light);
         height: 16px;
         width: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .window-bar-button img {
+        max-height: 100%;
+        max-width: 100%;
         object-fit: contain;
+        image-rendering: pixelated;
+    }
+
+    .window-bar-button:active img {
+        padding-top: 1px;
+        padding-left: 1px;
     }
 </style>

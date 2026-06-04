@@ -31,5 +31,6 @@
         align-items: center;
         background: none;
         cursor: pointer;
+        image-rendering: pixelated;
     }
 </style>

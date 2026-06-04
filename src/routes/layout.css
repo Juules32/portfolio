@@ -77,3 +77,15 @@ h1, h2, h3, h4 {
     background: var(--color-bg-grey);
     border: 2px solid var(--color-border-grey);
 }
+
+.pressable {
+    cursor: pointer;
+}
+
+.pressable:active {
+    background: var(--color-bg-light);
+    border-left-color: var(--color-border-grey);
+    border-top-color: var(--color-border-grey);
+    border-right-color: var(--color-border-white);
+    border-bottom-color: var(--color-border-white);
+}
