@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Desktop</title>
+</svelte:head>
+
 <script lang="ts">
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
@@ -6,7 +10,7 @@
     onMount(() => {
         if (!sessionStorage.getItem('desktopVisited')) {
             sessionStorage.setItem('desktopVisited', 'true');
-            goto(resolve('/about'));
+            goto(resolve('/about-me'));
         }
     });
 </script>

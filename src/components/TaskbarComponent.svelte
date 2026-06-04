@@ -1,29 +1,37 @@
 <script lang="ts">
     import TaskbarAppComponent from './TaskbarAppComponent.svelte';
+    import AudioToggleComponent from './AudioToggleComponent.svelte';
     import { apps } from '$lib/apps';
 
-    let now = new Date();
+    let now = $state(new Date());
 
-    setInterval(() => {
-        now = new Date();
-    }, 1000);
+    $effect(() => {
+        const interval = setInterval(() => {
+            now = new Date();
+        }, 1000);
 
-    $: timeString = now.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit'
+        return () => clearInterval(interval);
     });
+
+    let timeString = $derived(
+        now.toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit'
+        })
+    );
 </script>
 
 <nav class="taskbar outie">
 
     <div class="taskbar-apps">
         {#each apps as app (app.id)}
-            <TaskbarAppComponent app={app} />
+            <TaskbarAppComponent {app} />
         {/each}
     </div>
 
-
     <div class="taskbar-corner bordered">
+        <AudioToggleComponent />
+
         <a href="https://github.com/Juules32/portfolio">
             <img class="github" src="github.svg" alt="GitHub" />
         </a>
@@ -59,6 +67,7 @@
     }
 
     .github {
-        height: 18px;
+        display: flex;
+        height: 16px;
     }
 </style>

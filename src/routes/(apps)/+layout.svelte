@@ -1,4 +1,8 @@
 <script lang="ts">
+    import closeIcon from '$lib/assets/icons/close.png';
+    import minimizeIcon from '$lib/assets/icons/minimize.png';
+    import maximizeIcon from '$lib/assets/icons/maximize.png';
+
     import { endpointToIcon, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
 
     let { children } = $props();
@@ -13,6 +17,11 @@
             <img class="window-bar-icon" alt="icon" src={icon} />
         {/if}
         <h2 class="window-bar-title">{title}</h2>
+        <div class="window-bar-buttons">
+            <img class="window-bar-button outie" alt="minimize" src={minimizeIcon} />
+            <img class="window-bar-button outie" alt="maximize" src={maximizeIcon} />
+            <img class="window-bar-button outie" alt="close" src={closeIcon} />
+        </div>
     </div>
     <div class="window-content innie">
         {@render children()}
@@ -48,5 +57,20 @@
         padding: 10px;
         background-color: var(--color-bg-light);
         height: 100%;
+    }
+
+    .window-bar-buttons {
+        margin-left: auto;
+        margin-right: 3px;
+        color: var(--color-text-white);
+        display: flex;
+        gap: 3px;
+    }
+
+    .window-bar-button {
+        background-color: var(--color-bg-light);
+        height: 16px;
+        width: 16px;
+        object-fit: contain;
     }
 </style>

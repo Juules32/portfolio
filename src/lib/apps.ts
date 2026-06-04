@@ -9,31 +9,30 @@ interface App {
     icon: string;
 }
 
-export const apps: App[] = [
-    {
-		id: 'projects',
-		label: 'Projects',
-		endpoint: '/projects',
-		icon: openDirectoryIcon
-	},
-	{
-		id: 'about',
-		label: 'About',
-		endpoint: '/about',
-		icon: directoryIcon
-	}
-] as const;
-
-export const desktopApp: App = {
-    id: 'desktop',
-    label: 'Desktop',
-    endpoint: '/',
-    icon: errorIcon
-} as const;
-
 export const unknownApp: App = {
     id: 'unknown',
     label: 'Unknown Endpoint',
     endpoint: '/???',
     icon: errorIcon
 } as const;
+
+export const apps: App[] = [
+    {
+		id: 'about-me',
+		label: 'About Me',
+		endpoint: '/about-me',
+		icon: directoryIcon
+	},
+	{
+		id: 'showcase',
+		label: 'Showcase',
+		endpoint: '/showcase',
+		icon: openDirectoryIcon
+    },
+    {
+        id: 'what',
+        label: '???',
+        endpoint: '/what',
+        icon: errorIcon
+    }
+] as const;

@@ -5,7 +5,6 @@
 
 <svelte:head>
     <title>{page.status}</title>
-    <meta name="description" content="Something went wrong" />
 </svelte:head>
 
 <section>
