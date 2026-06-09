@@ -3,7 +3,7 @@
     import './layout.css';
     import wallpaper from '$lib/assets/wallpapers/snowdrops.jpg';
     import { endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
-    import { desktopApps, recycleBinApp } from '$lib/apps';
+    import { desktopApps } from '$lib/apps';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
 
     let { children } = $props();

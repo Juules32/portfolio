@@ -3,7 +3,9 @@
     import minimizeIcon from '$lib/assets/icons/12x12/minimize.png';
     import maximizeIcon from '$lib/assets/icons/12x12/maximize.png';
 
-    import { endpointToIcon, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
+    import { endpointToApp, endpointToIcon, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
+    import { openTaskbarApp, closeTaskbarApp } from '$lib/taskbar.svelte';
+    import { untrack } from 'svelte';
     import { goto } from '$app/navigation';
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
@@ -12,15 +14,32 @@
     let title = $derived(endpointToLabel(getEndpoint()));
     let icon = $derived(endpointToIcon(getEndpoint()));
 
-    let windowed = $state(false);
+    let windowed = $derived(false);
 
     // Reset to the current route's default whenever we navigate.
     $effect(() => {
-        page.url.pathname;
         windowed = page.data.windowed ?? false;
     });
 
+    // Add the opened app to the taskbar whenever we navigate to it.
+    // Untrack the mutation so the effect depends only on the endpoint, not on
+    // taskbarApps itself (otherwise closing an app re-triggers this and re-adds it).
+    $effect(() => {
+        const app = endpointToApp(getEndpoint());
+        if (app) {
+            untrack(() => openTaskbarApp(app));
+        }
+    });
+
+    function minimize() {
+        goto(resolve('/'));
+    }
+
     function close() {
+        const app = endpointToApp(getEndpoint());
+        if (app) {
+            closeTaskbarApp(app);
+        }
         goto(resolve('/'));
     }
 
@@ -36,7 +55,7 @@
         {/if}
         <h2 class="window-bar-title">{title}</h2>
         <div class="window-bar-buttons">
-            <button class="window-bar-button outie pressable" type="button" aria-label="Minimize" onclick={close}>
+            <button class="window-bar-button outie pressable" type="button" aria-label="Minimize" onclick={minimize}>
                 <img alt="" src={minimizeIcon} />
             </button>
             <button class="window-bar-button outie pressable" type="button" aria-label="Maximize" onclick={toggleWindowed}>
@@ -64,8 +83,9 @@
     }
 
     .window.windowed {
-        margin: 10vh 15vw;
-        height: calc(100% - 20vh);
+        margin: 10vh 20vw;
+        margin-bottom: 30vh;
+        height: calc(100% - 40vh);
     }
 
     .window-bar {

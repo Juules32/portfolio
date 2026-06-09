@@ -1,7 +1,7 @@
 <script lang="ts">
     import TaskbarAppComponent from './TaskbarAppComponent.svelte';
     import AudioToggleComponent from './AudioToggleComponent.svelte';
-    import { taskbarApps } from '$lib/apps';
+    import { taskbarApps } from '$lib/taskbar.svelte';
     import githubIcon from '$lib/assets/icons/github.svg';
 
 

@@ -70,11 +70,6 @@ export const allApps: App[] = [
     wallpapersApp
 ] as const;
 
-export const taskbarApps: App[] = [
-    aboutMeApp,
-    showcaseApp
-] as const;
-
 export const desktopApps: App[] = [
     recycleBinApp,
     aboutMeApp,
