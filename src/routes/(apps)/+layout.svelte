@@ -50,7 +50,9 @@
 
 <style>
     .window {
-        height: 100%;
+        margin: 0px;
+        height: calc(100%);
+        position: relative;
         padding: 3px;
         display: flex;
         flex-direction: column;
