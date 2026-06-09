@@ -6,6 +6,7 @@ declare global {
         // interface Locals {}
         interface PageData {
             fullBleed?: boolean;
+            windowed?: boolean;
         }
         // interface PageState {}
         // interface Platform {}

@@ -1,8 +1,8 @@
 import { page, navigating } from '$app/state';
-import { apps, unknownApp } from '$lib/apps';
+import { allApps, unknownApp } from '$lib/apps';
 
 export function endpointToLabel(endpoint: string): string {
-    const app = apps.find(app => app.endpoint === endpoint);
+    const app = allApps.find(app => app.endpoint === endpoint);
     if (app) {
         return app.label;
     }
@@ -15,6 +15,7 @@ export function endpointToLabel(endpoint: string): string {
 }
 
 export function getEndpoint(): string {
+    console.log(page.url.pathname);
     return page.url.pathname;
 }
 
@@ -23,6 +24,6 @@ export function getActiveEndpoint(): string {
 }
 
 export function endpointToIcon(endpoint: string): string {
-    const app = apps.find(app => app.endpoint === endpoint);
+    const app = allApps.find(app => app.endpoint === endpoint);
     return app?.icon ?? unknownApp.icon!;
 }

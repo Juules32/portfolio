@@ -1,7 +1,7 @@
 <script lang="ts">
     import TaskbarAppComponent from './TaskbarAppComponent.svelte';
     import AudioToggleComponent from './AudioToggleComponent.svelte';
-    import { apps } from '$lib/apps';
+    import { taskbarApps } from '$lib/apps';
     import githubIcon from '$lib/assets/icons/github.svg';
 
 
@@ -26,7 +26,7 @@
 <nav class="taskbar outie">
 
     <div class="taskbar-apps">
-        {#each apps as app (app.id)}
+        {#each taskbarApps as app (app.id)}
             <TaskbarAppComponent {app} />
         {/each}
     </div>

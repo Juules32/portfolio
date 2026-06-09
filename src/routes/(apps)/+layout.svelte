@@ -12,20 +12,24 @@
     let title = $derived(endpointToLabel(getEndpoint()));
     let icon = $derived(endpointToIcon(getEndpoint()));
 
+    let windowed = $state(false);
+
+    // Reset to the current route's default whenever we navigate.
+    $effect(() => {
+        page.url.pathname;
+        windowed = page.data.windowed ?? false;
+    });
+
     function close() {
         goto(resolve('/'));
     }
 
-    function toggleFullscreen() {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            document.documentElement.requestFullscreen();
-        }
+    function toggleWindowed() {
+        windowed = !windowed;
     }
 </script>
 
-<section class="window app-window">
+<section class="window app-window" class:windowed>
     <div class="window-bar">
         {#if icon}
             <img class="window-bar-icon" alt="icon" src={icon} />
@@ -35,7 +39,7 @@
             <button class="window-bar-button outie pressable" type="button" aria-label="Minimize" onclick={close}>
                 <img alt="" src={minimizeIcon} />
             </button>
-            <button class="window-bar-button outie pressable" type="button" aria-label="Maximize" onclick={toggleFullscreen}>
+            <button class="window-bar-button outie pressable" type="button" aria-label="Maximize" onclick={toggleWindowed}>
                 <img alt="" src={maximizeIcon} />
             </button>
             <button class="window-bar-button outie pressable" type="button" aria-label="Close" onclick={close}>
@@ -50,13 +54,18 @@
 
 <style>
     .window {
-        margin: 0px;
-        height: calc(100%);
+        margin: 0;
+        height: 100%;
         position: relative;
         padding: 3px;
         display: flex;
         flex-direction: column;
         gap: 5px;
+    }
+
+    .window.windowed {
+        margin: 10vh 15vw;
+        height: calc(100% - 20vh);
     }
 
     .window-bar {

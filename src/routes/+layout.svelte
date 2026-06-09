@@ -3,7 +3,7 @@
     import './layout.css';
     import wallpaper from '$lib/assets/wallpapers/snowdrops.jpg';
     import { endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
-    import { apps, recycleBinApp } from '$lib/apps';
+    import { desktopApps, recycleBinApp } from '$lib/apps';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
 
     let { children } = $props();
@@ -20,8 +20,7 @@
         <img id="wallpaper" alt="Wallpaper" src={wallpaper} />
 
         <div class="desktop-apps">
-            <DesktopAppComponent app={recycleBinApp} />
-            {#each apps as app (app.id)}
+            {#each desktopApps as app (app.id)}
                 <DesktopAppComponent {app} />
             {/each}
         </div>
