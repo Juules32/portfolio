@@ -82,10 +82,12 @@
         gap: 5px;
     }
 
-    .window.windowed {
-        margin: 10vh 20vw;
-        margin-bottom: 30vh;
-        height: calc(100% - 40vh);
+    @media (min-width: 601px) {
+        .window.windowed {
+            margin: 10vh 20vw;
+            margin-bottom: 30vh;
+            height: calc(100% - 40vh);
+        }
     }
 
     .window-bar {
@@ -103,6 +105,7 @@
 
     .window-bar-title {
         color: var(--color-text-white);
+        text-transform: capitalize;
     }
 
     .window-content {
