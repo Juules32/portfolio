@@ -5,6 +5,17 @@
         <link rel="icon" href="%sveltekit.assets%/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="text-scale" content="scale" />
+        <script>
+            // Apply the saved wallpaper before first paint to avoid a flash.
+            // Mirrors src/lib/wallpaper.svelte.ts (STORAGE_KEY / DEFAULT_WALLPAPER).
+            (function () {
+                try {
+                    var name = localStorage.getItem('wallpaper') || 'snowdrops';
+                    var url = '%sveltekit.assets%/wallpapers/' + name + '.jpg';
+                    document.documentElement.style.setProperty('--wallpaper', "url('" + url + "')");
+                } catch (e) {}
+            })();
+        </script>
         %sveltekit.head%
     </head>
     <body data-sveltekit-preload-data="hover">

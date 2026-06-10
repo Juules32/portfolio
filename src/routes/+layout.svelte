@@ -1,7 +1,6 @@
 <script lang="ts">
     import TaskbarComponent from '$components/TaskbarComponent.svelte';
     import './layout.css';
-    import { wallpaperState } from '$lib/wallpaper.svelte';
     import { endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { desktopApps } from '$lib/apps';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
@@ -17,7 +16,7 @@
 
 <div id="layout">
     <main>
-        <img id="wallpaper" alt="Wallpaper" src={wallpaperState.current} />
+        <div id="wallpaper"></div>
 
         <div class="desktop-apps">
             {#each desktopApps as app (app.id)}
@@ -70,7 +69,9 @@
         position: fixed;
         width: 100vw;
         height: 100vh;
-        object-fit: cover;
+        background-image: var(--wallpaper);
+        background-size: cover;
+        background-position: center;
         z-index: -2;
     }
 </style>

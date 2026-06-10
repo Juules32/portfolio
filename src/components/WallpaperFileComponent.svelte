@@ -9,7 +9,7 @@
     let { wallpaper }: Props = $props();
 </script>
 
-<button class="file clickable" onclick={() => setWallpaper(wallpaper.src)}>
+<button class="file clickable" onclick={() => setWallpaper(wallpaper.name)}>
     <img alt={wallpaper.label} src={cameraIcon} />
     <span>{wallpaper.label}.jpg</span>
 </button>
