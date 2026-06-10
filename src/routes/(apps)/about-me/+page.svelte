@@ -1,5 +1,10 @@
+<script>
+    import { resolve } from "$app/paths";
+
+</script>
 
 <section>
+    <p>There should be a link to <a href={resolve('/showcase')}>Showcase</a></p>
     <h1 class="test">Hey</h1>
     <h1 class="test">Hey</h1>
     <h1 class="test">Hey</h1>

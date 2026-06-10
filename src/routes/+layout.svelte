@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-    <title>Portfolio{label ? " - " + label : ""}</title>
+    <title>Portfolio{label ? ' - ' + label : ''}</title>
     <link rel="icon" href={favicon} />
 </svelte:head>
 

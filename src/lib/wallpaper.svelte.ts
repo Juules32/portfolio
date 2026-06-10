@@ -27,11 +27,19 @@ export function wallpaperUrl(name: string): string {
 
 // The displayed wallpaper is driven entirely by the --wallpaper CSS variable:
 // set before paint by the inline script in app.html (from localStorage), and
-// updated here when the user picks a new one. No Svelte render state is
-// involved, so there's no hydration mismatch and no flash under prerendering.
+// updated here when the user picks a new one.
 export function setWallpaper(name: string) {
     if (browser) {
+        const url = wallpaperUrl(name);
         localStorage.setItem(STORAGE_KEY, name);
-        document.documentElement.style.setProperty('--wallpaper', `url('${wallpaperUrl(name)}')`);
+
+        // Preload the image so the swap happens only once it's decoded
+        const img = new Image();
+        const apply = () => {
+            document.documentElement.style.setProperty('--wallpaper', `url('${url}')`);
+        };
+        img.onload = apply;
+        img.onerror = apply;
+        img.src = url;
     }
 }
