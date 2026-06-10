@@ -10,7 +10,3 @@
         }
     });
 </script>
-
-<svelte:head>
-    <title>Desktop</title>
-</svelte:head>

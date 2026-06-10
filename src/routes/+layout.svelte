@@ -1,17 +1,21 @@
 <script lang="ts">
     import TaskbarComponent from '$components/TaskbarComponent.svelte';
     import './layout.css';
-    import { endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
+    import { endpointToApp, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { desktopApps } from '$lib/apps';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
+    import computerIcon from '$lib/assets/icons/16x16/computer.png';
 
     let { children } = $props();
 
     let label = $derived(endpointToLabel(getEndpoint()));
+
+    let favicon = $derived(endpointToApp(getEndpoint())?.icon ?? computerIcon);
 </script>
 
 <svelte:head>
-    <title>{label}</title>
+    <title>Portfolio{label ? " - " + label : ""}</title>
+    <link rel="icon" href={favicon} />
 </svelte:head>
 
 <div id="layout">
