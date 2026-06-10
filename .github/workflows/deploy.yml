@@ -27,7 +27,9 @@ jobs:
 
       - name: build
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
+          # Set this to '/${{ github.event.repository.name }}'
+          # if deploying to the github pages project URL instead.
+          BASE_PATH: ''
         run: |
           npm run build
 
