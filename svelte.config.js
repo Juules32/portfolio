@@ -8,7 +8,10 @@ const config = {
         }),
         alias: {
             $components: 'src/components'
-        }
+        },
+       	paths: {
+			base: process.env.BASE_PATH
+		}
     }
 };
 
