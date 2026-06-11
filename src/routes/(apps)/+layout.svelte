@@ -66,7 +66,7 @@
             </button>
         </div>
     </div>
-    <div class="window-content innie" class:full-bleed={page.data.fullBleed}>
+    <div class="window-content innie">
         {@render children()}
     </div>
 </section>
@@ -113,11 +113,6 @@
         flex: 1;
         min-height: 0;
         overflow: auto;
-    }
-
-    .window-content.full-bleed {
-        padding: 0;
-        overflow: hidden;
     }
 
     .window-bar-buttons {

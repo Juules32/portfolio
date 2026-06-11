@@ -1,5 +1,5 @@
 import { page, navigating } from '$app/state';
-import { allApps, unknownApp, type App } from '$lib/app';
+import { apps, unknownApp, type App } from '$lib/app';
 
 export function getEndpoint(): string {
     return page.url.pathname;
@@ -10,7 +10,7 @@ export function getActiveEndpoint(): string {
 }
 
 export function endpointToApp(endpoint: string): App | undefined {
-    return allApps.find(app => app.endpoint === endpoint);
+    return apps.find(app => app.endpoint === endpoint);
 }
 
 export function endpointToLabel(endpoint: string): string {

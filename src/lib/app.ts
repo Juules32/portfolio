@@ -23,7 +23,7 @@ export const unknownApp: App = {
     label: 'Unknown Endpoint',
     endpoint: '/???',
     icon: errorIcon
-} as const;
+};
 
 export const recycleBinApp: App = {
     id: 'recycleBin',
@@ -63,12 +63,12 @@ export const wallpapersApp: App = {
     desktopIcon: photoDesktopIcon
 }
 
-export const allApps: App[] = [
+export const apps: App[] = [
     aboutMeApp,
     showcaseApp,
     crabsweeperApp,
     wallpapersApp
-] as const;
+];
 
 export const desktopApps: App[] = [
     recycleBinApp,
@@ -76,4 +76,4 @@ export const desktopApps: App[] = [
     showcaseApp,
     wallpapersApp,
     crabsweeperApp
-] as const;
+];
