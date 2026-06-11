@@ -19,18 +19,16 @@
 
 <a
     href={resolve(linkDestination())}
-    class="taskbar-app {active ? 'innie' : 'outie'}"
+    class={active ? 'innie' : 'outie'}
 >
     {#if icon}
-        <img class="taskbar-icon" alt="icon" src={icon} />
+        <img alt="icon" src={icon} />
     {/if}
-    <p class="taskbar-app-text">
-        {label}
-    </p>
+    <span>{label}</span>
 </a>
 
 <style>
-    .taskbar-app {
+    a {
         padding-left: 0.6rem;
         padding-right: 0.6rem;
         text-align: center;
@@ -39,13 +37,12 @@
         align-items: center;
     }
 
-    .taskbar-icon {
+    img {
         padding-right: 0.3rem;
         height: 16px;
-        image-rendering: pixelated;
     }
 
-    .taskbar-app-text {
+    span {
         color: var(--color-text-black);
         height: 16px;
         text-align: center;

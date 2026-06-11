@@ -1,5 +1,5 @@
 import { page, navigating } from '$app/state';
-import { allApps, unknownApp, type App } from '$lib/apps';
+import { allApps, unknownApp, type App } from '$lib/app';
 
 export function getEndpoint(): string {
     return page.url.pathname;

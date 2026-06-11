@@ -1,7 +1,7 @@
 
 <script lang="ts">
     import { resolve } from '$app/paths';
-    import type { App } from '$lib/apps';
+    import type { App } from '$lib/app';
 
    	interface Props {
 		app: App;
@@ -17,7 +17,7 @@
 {/snippet}
 
 {#if app.endpoint}
-    <a class="desktop-app clickable" href={resolve(app.endpoint)}>
+    <a class="desktop-app" href={resolve(app.endpoint)}>
         {@render content()}
     </a>
 {:else}
@@ -37,19 +37,18 @@
         padding: 6px;
     }
 
-    .clickable:hover {
+    a:hover {
         background-color: var(--color-hover-desktop-app);
         border: 1px solid var(--color-hover-desktop-app-border);
         padding: 5px;
     }
 
-    .clickable:active {
+    a:active {
         background-color: var(--color-click-desktop-app);
     }
 
     .desktop-app img {
         width: 32px;
-        image-rendering: pixelated;
     }
 
     .desktop-app span {

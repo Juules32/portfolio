@@ -9,7 +9,7 @@
     let { wallpaper }: Props = $props();
 </script>
 
-<button class="file clickable" onclick={() => setWallpaper(wallpaper.name)}>
+<button onclick={() => setWallpaper(wallpaper.name)}>
     <img alt={wallpaper.label} src={cameraIcon} />
     <span>{wallpaper.label}.jpg</span>
 </button>
@@ -19,11 +19,7 @@
         text-shadow: 0.5px 0.5px 1px white;
     }
 
-    img {
-        image-rendering: pixelated;
-    }
-    
-    .file {
+    button {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -31,19 +27,16 @@
         height: 80px;
         gap: 4px;
         padding: 6px;
-    }
-
-    .clickable {
         cursor: pointer;
     }
 
-    .clickable:hover {
+    button:hover {
         background-color: var(--color-hover-desktop-app);
         border: 1px solid var(--color-hover-desktop-app-border);
         padding: 5px;
     }
 
-    .clickable:active {
+    button:active {
         background-color: var(--color-click-desktop-app);
     }
 </style>

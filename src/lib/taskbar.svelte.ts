@@ -1,4 +1,4 @@
-import { aboutMeApp, showcaseApp, type App } from './apps';
+import { aboutMeApp, showcaseApp, type App } from '$lib/app';
 
 export const taskbarApps = $state<App[]>([aboutMeApp, showcaseApp]);
 

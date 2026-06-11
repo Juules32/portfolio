@@ -16,7 +16,6 @@
 </script>
 
 <button
-    class="audio-toggle"
     type="button"
     onclick={toggle}
     aria-label={muted ? 'Unmute' : 'Mute'}
@@ -26,11 +25,10 @@
 </button>
 
 <style>
-    .audio-toggle {
+    button {
         display: flex;
         align-items: center;
         background: none;
         cursor: pointer;
-        image-rendering: pixelated;
     }
 </style>

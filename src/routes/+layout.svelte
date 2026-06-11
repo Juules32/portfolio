@@ -2,7 +2,7 @@
     import TaskbarComponent from '$components/TaskbarComponent.svelte';
     import './layout.css';
     import { endpointToApp, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
-    import { desktopApps } from '$lib/apps';
+    import { desktopApps } from '$lib/app';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
     import computerIcon from '$lib/assets/icons/16x16/computer.png';
 
@@ -40,6 +40,7 @@
     .desktop-apps {
         position: absolute;
         height: 100%;
+
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -77,5 +78,6 @@
         background-size: cover;
         background-position: center;
         z-index: -2;
+        image-rendering: auto;
     }
 </style>

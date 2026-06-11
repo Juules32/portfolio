@@ -100,7 +100,6 @@
 
     .window-bar-icon {
         padding-right: 5px;
-        image-rendering: pixelated;
     }
 
     .window-bar-title {
@@ -142,7 +141,6 @@
         max-height: 100%;
         max-width: 100%;
         object-fit: contain;
-        image-rendering: pixelated;
     }
 
     .window-bar-button:active img {

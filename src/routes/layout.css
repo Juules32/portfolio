@@ -37,7 +37,7 @@
     /*font-family: 'Cascadia Code Variable', sans-serif;*/
     /*font-family: 'PX Sans Nouveaux', sans-serif;*/
     /*font-family: 'MS Sans Serif', sans-serif;*/
-   	/*image-rendering: pixelated;*/
+   	image-rendering: pixelated;
     font-weight: 350;
     font-size: 12px;
     color: var(--color-text-black);
