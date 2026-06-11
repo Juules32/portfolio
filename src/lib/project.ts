@@ -26,10 +26,10 @@ const testProject: Project = {
     id: 'test',
     name: 'Test Project',
     banner: cameraIcon,
-    description: 'This is just for testing, so let me put a lot of words here...',
+    description: 'This is just for testing, so let me put a lot of words here... Lorem Ipsum dolor sit amen',
     tags: [svelteTag],
     hasPage: true,
-    demoUrl: 'https://google.com',
+    demoUrl: 'https://portfolio.juules32.com',
 };
 
 export const projects: Project[] = [

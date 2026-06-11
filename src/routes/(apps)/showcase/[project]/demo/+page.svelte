@@ -1,12 +1,15 @@
 <script lang="ts">
-    import { resolve } from '$app/paths';
+    import searchGlobeIcon from '$lib/assets/icons/16x16/search-globe.png';
     import type { PageProps } from './$types';
 
     let { data }: PageProps = $props();
 </script>
 
+<svelte:head>
+    <link rel="icon" href={searchGlobeIcon} />
+</svelte:head>
+
 <section>
-    <a href={resolve('/showcase')}>Go Back</a>
     <iframe class="innie" title="Demo" src={data.project.demoUrl}></iframe>
 </section>
 
@@ -17,11 +20,6 @@
         width: calc(100% + 20px);
         height: calc(100% + 20px);
         margin: -10px;
-    }
-
-    a {
-        height: 20px;
-        width: fit-content;
     }
 
     iframe {
