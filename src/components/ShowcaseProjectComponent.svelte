@@ -1,9 +1,7 @@
 <script lang="ts">
-    import { goto } from "$app/navigation";
     import { resolve } from "$app/paths";
     import type { Project } from "$lib/project";
     import { tags } from "$lib/tag";
-
 
     interface Props {
         project: Project;
@@ -44,10 +42,11 @@
 
     .link-container {
         display: flex;
-        
     }
 
-    .link-container a {}
+    .link-container a {
+        
+    }
 
     section > * {
         width: 320px;

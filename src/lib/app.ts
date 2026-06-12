@@ -66,8 +66,7 @@ export const wallpapersApp: App = {
 export const apps: App[] = [
     aboutMeApp,
     showcaseApp,
-    crabsweeperApp,
-    wallpapersApp
+    wallpapersApp,
 ];
 
 export const desktopApps: App[] = [
@@ -75,5 +74,5 @@ export const desktopApps: App[] = [
     aboutMeApp,
     showcaseApp,
     wallpapersApp,
-    crabsweeperApp
+    crabsweeperApp,
 ];
