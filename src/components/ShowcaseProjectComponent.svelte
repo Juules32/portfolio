@@ -17,7 +17,7 @@
     <span>{project.description}</span>
     <div class="tag-container">
         {#each project.tags as tag (tag.name)}
-            <TagComponent {tag} />
+            <TagComponent {tag} innieIfActive={false} />
         {/each}
     </div>
     <div class="link-container">

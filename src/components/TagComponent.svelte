@@ -5,9 +5,10 @@
     interface Props {
         // Optional to allow "All" tag
         tag?: Tag;
+        innieIfActive?: boolean;
     }
 
-    let { tag }: Props = $props();
+    let { tag, innieIfActive = true }: Props = $props();
 
     let selected = $derived(tag ? tagFilter.active?.name === tag.name : tagFilter.active === null);
 
@@ -22,8 +23,8 @@
 
 <button
     class="tag pressable"
-    class:innie={selected}
-    class:outie={!selected}
+    class:innie={innieIfActive && selected}
+    class:outie={!innieIfActive || !selected}
     style="background-color: {tag ? tag.color : 'var(--color-bg-dark)'};"
     onclick={select}
 >
