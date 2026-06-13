@@ -2,7 +2,6 @@
     import { resolve } from "$app/paths";
     import { page } from "$app/state";
     import errorIcon from '$lib/assets/icons/16x16/error.png';
-    
 </script>
 
 <svelte:head>

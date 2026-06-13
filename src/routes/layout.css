@@ -101,3 +101,23 @@ h1, h2, h3, h4 {
     border-right-color: var(--color-border-white);
     border-bottom-color: var(--color-border-white);
 }
+
+.window-bar-button {
+    background-color: var(--color-bg-light);
+    height: 16px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.window-bar-button img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.window-bar-button:active img {
+    padding-top: 1px;
+    padding-left: 1px;
+}
