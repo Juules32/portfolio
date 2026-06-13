@@ -10,6 +10,7 @@ export interface Project {
     tags: Tag[],
     hasPage: boolean,
     demoUrl?: string,
+    githubUrl?: string,
 };
 
 const crabsweeperProject: Project = {
@@ -30,6 +31,7 @@ const testProject: Project = {
     tags: [svelteTag],
     hasPage: true,
     demoUrl: 'https://portfolio.juules32.com',
+    githubUrl: 'https://github.com/Juules32/portfolio',
 };
 
 export const projects: Project[] = [

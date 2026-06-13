@@ -6,7 +6,6 @@
     import { tags } from "$lib/tag";
     import { tagFilter } from "$lib/tagFilter.svelte";
 
-    // Don't let the filter persist across navigation away from the showcase.
     onDestroy(() => {
         tagFilter.active = null;
     });

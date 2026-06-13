@@ -2,6 +2,7 @@
     import { resolve } from "$app/paths";
     import type { Project } from "$lib/project";
     import TagComponent from "$components/TagComponent.svelte";
+    import githubIcon from "$lib/assets/icons/github.svg";
 
     interface Props {
         project: Project;
@@ -26,6 +27,11 @@
         {#if project.demoUrl}
             <a class="outie" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
         {/if}
+        {#if project.githubUrl}
+            <a class="outie github" href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <img src={githubIcon} alt="GitHub" />
+            </a>
+        {/if}
     </div>
 </section>
 
@@ -42,12 +48,33 @@
 
     .link-container {
         display: flex;
+        gap: 5px;
+    }
+
+    .link-container a {
+        flex: 1;
+        padding: 4px;
+        text-align: center;
+    }
+
+    .link-container .github {
+        flex: 0 0 auto;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .link-container .github img {
+        width: 16px;
+        height: 16px;
     }
 
     .tag-container {
         display: flex;
         gap: 5px;
         flex-wrap: wrap;
+        margin-top: auto;
     }
 
 
