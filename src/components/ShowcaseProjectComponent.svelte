@@ -44,9 +44,7 @@
         display: flex;
     }
 
-    .link-container a {
-        
-    }
+
 
     section > * {
         width: 320px;

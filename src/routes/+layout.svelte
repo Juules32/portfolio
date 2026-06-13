@@ -2,7 +2,7 @@
     import TaskbarComponent from '$components/TaskbarComponent.svelte';
     import './layout.css';
     import { endpointToApp, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
-    import { crabsweeperApp, desktopApps } from '$lib/app';
+    import { desktopApps } from '$lib/app';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
     import computerIcon from '$lib/assets/icons/16x16/computer.png';
 

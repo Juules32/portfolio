@@ -9,12 +9,16 @@ export function getActiveEndpoint(): string {
     return navigating.to?.url.pathname ?? page.url.pathname;
 }
 
+export function endpointStartsWith(endpoint: string, base: string): boolean {
+    return endpoint === base || endpoint.startsWith(base + '/');
+}
+
 export function endpointToApp(endpoint: string): App | undefined {
-    return apps.find(app => app.endpoint === endpoint);
+    return apps.find((app) => app.endpoint !== undefined && endpointStartsWith(endpoint, app.endpoint));
 }
 
 export function endpointToLabel(endpoint: string): string {
-    const app = endpointToApp(endpoint);
+    const app = apps.find((a) => a.endpoint === endpoint);
     if (app) {
         return app.label;
     }

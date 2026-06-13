@@ -1,12 +1,12 @@
 <script lang="ts">
     import { resolve } from '$app/paths';
-    import { getActiveEndpoint, getEndpoint } from '$lib/utils/endpoint';
+    import { endpointStartsWith, getActiveEndpoint, getEndpoint } from '$lib/utils/endpoint';
 
     let { app } = $props();
     let endpoint = $derived(app.endpoint);
     let icon = $derived(app.icon);
     let label = $derived(app.label);
-    let active = $derived(endpoint === getActiveEndpoint());
+    let active = $derived(endpoint !== undefined && endpointStartsWith(getActiveEndpoint(), endpoint));
 
     function linkDestination() {
         if (endpoint === getEndpoint()) {
