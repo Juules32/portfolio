@@ -22,14 +22,14 @@
     </div>
     <div class="link-container">
         {#if project.hasPage}
-            <a class="outie" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Page</a>
+            <a class="outie pressable" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Page</a>
         {/if}
         {#if project.demoUrl}
-            <a class="outie" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
+            <a class="outie pressable" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
         {/if}
         {#if project.githubUrl}
             <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
-            <a class="outie github" href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a class="outie pressable github" href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <img src={githubIcon} alt="GitHub" />
             </a>
         {/if}

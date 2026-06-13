@@ -21,7 +21,7 @@
 </script>
 
 <button
-    class="tag"
+    class="tag pressable"
     class:innie={selected}
     class:outie={!selected}
     style="background-color: {tag ? tag.color : 'var(--color-bg-dark)'};"
@@ -35,7 +35,6 @@
         padding: 2px 6px;
         color: var(--color-text-white);
         text-shadow: 1px 1px 0px black;
-        cursor: pointer;
     }
 </style>
 

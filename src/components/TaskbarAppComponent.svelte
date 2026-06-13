@@ -19,7 +19,9 @@
 
 <a
     href={resolve(linkDestination())}
-    class={active ? 'innie' : 'outie'}
+    class="pressable"
+    class:innie={active}
+    class:outie={!active}
 >
     {#if icon}
         <img alt="icon" src={icon} />
