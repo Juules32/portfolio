@@ -1,7 +1,7 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
     import type { Project } from "$lib/project";
-    import { tags } from "$lib/tag";
+    import TagComponent from "$components/TagComponent.svelte";
 
     interface Props {
         project: Project;
@@ -15,8 +15,8 @@
     <img class="innie" alt="Banner" src={project.banner} />
     <span>{project.description}</span>
     <div class="tag-container">
-        {#each tags as tag (tag.name)}
-            <span style="background-color: {tag.color};">{tag.name}</span>
+        {#each project.tags as tag (tag.name)}
+            <TagComponent {tag} />
         {/each}
     </div>
     <div class="link-container">
@@ -42,6 +42,12 @@
 
     .link-container {
         display: flex;
+    }
+
+    .tag-container {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
     }
 
 
