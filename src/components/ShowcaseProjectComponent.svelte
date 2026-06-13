@@ -13,7 +13,7 @@
 
 <section class="outie">
     <h1>{project.name}</h1>
-    <img class="innie" alt="Banner" src={project.banner} />
+    <img class="innie" alt="Banner" src={project.thumbnail} />
     <span>{project.description}</span>
     <div class="tag-container">
         {#each project.tags as tag (tag.name)}
@@ -54,16 +54,17 @@
 
     .link-container a {
         flex: 1;
-        padding: 4px;
-        text-align: center;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .link-container .github {
         flex: 0 0 auto;
         width: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        /* Keep the github button at the right edge, even when it's the only one. */
+        margin-left: auto;
     }
 
     .link-container .github img {
@@ -92,6 +93,6 @@
     img {
         height: 130px;
         image-rendering: auto;
-        object-fit: contain;
+        object-fit: cover;
     }
 </style>

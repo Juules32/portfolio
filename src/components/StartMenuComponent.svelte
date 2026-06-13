@@ -22,7 +22,7 @@
 <button class="backdrop" type="button" aria-label="Close menu" onclick={close}></button>
 
 <div class="start-menu outie">
-    <div class="banner">
+    <div class="thumbnail">
         <span>Portfolio<b>98</b></span>
     </div>
 
@@ -65,7 +65,7 @@
         min-width: 220px;
     }
 
-    .banner {
+    .thumbnail {
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -74,7 +74,7 @@
         background: linear-gradient(to top, #000080, #1084d0);
     }
 
-    .banner span {
+    .thumbnail span {
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         white-space: nowrap;
@@ -84,7 +84,7 @@
         letter-spacing: 4px;
     }
 
-    .banner b {
+    .thumbnail b {
         color: var(--color-bg-grey);
     }
 

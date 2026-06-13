@@ -9,7 +9,7 @@
 
 {#if shutdown.active}
     <div class="shutdown">
-        <LoadingComponent text="Shutting down..." loadTime={500}>
+        <LoadingComponent text="Shutting down..." loadTime={2500}>
             <button class="safe-screen" type="button" onclick={reboot}>
                 <p>It's now safe to turn off<br>your computer.</p>
                 <p class="hint">(Click anywhere to restart)</p>

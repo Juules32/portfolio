@@ -14,6 +14,11 @@ export const svelteTag: Tag = {
     color: "#ff3e00"
 };
 
+export const frontendTag: Tag = {
+    name: "Frontend",
+    color: "#ff3eDD"
+};
+
 export const wasmTag: Tag = {
     name: "WASM",
     color: "#3178c6"
@@ -23,4 +28,5 @@ export const tags: Tag[] = [
     rustTag,
     svelteTag,
     wasmTag,
+    frontendTag,
 ];

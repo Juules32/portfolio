@@ -5,11 +5,7 @@
 
 <section>
     <p>There should be a link to <a href={resolve('/showcase')}>Showcase</a></p>
-    <h1 class="test">Hey</h1>
-    <h1 class="test">Hey</h1>
-    <h1 class="test">Hey</h1>
-    <h1 class="test">Hey</h1>
-    <h1 class="test">Hey</h1>
+    <img alt="Profile" src="https://avatars.githubusercontent.com/u/56916699" />
     <h1 class="test">Hey</h1>
     <h1 class="test">Hey</h1>
 </section>
