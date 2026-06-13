@@ -28,6 +28,7 @@
             <a class="outie" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
         {/if}
         {#if project.githubUrl}
+            <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
             <a class="outie github" href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <img src={githubIcon} alt="GitHub" />
             </a>
@@ -77,10 +78,8 @@
         margin-top: auto;
     }
 
-
-
-    section > * {
-        width: 320px;
+    section * {
+        width: 260px;
     }
 
     h1 {
@@ -91,8 +90,7 @@
     }
 
     img {
-        width: 320px;
-        height: 140px;
+        height: 130px;
         image-rendering: auto;
         object-fit: contain;
     }

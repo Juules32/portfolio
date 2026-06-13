@@ -1,5 +1,6 @@
 <script lang="ts">
     import TaskbarComponent from '$components/TaskbarComponent.svelte';
+    import ShutDownComponent from '$components/ShutDownComponent.svelte';
     import './layout.css';
     import { endpointToApp, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { desktopApps } from '$lib/app';
@@ -14,7 +15,7 @@
 </script>
 
 <svelte:head>
-    <title>Portfolio{label ? ' - ' + label : ''}</title>
+    <title>Juules32{label ? ' - ' + label : ''}</title>
     <link rel="icon" href={favicon} />
 </svelte:head>
 
@@ -35,6 +36,8 @@
         <TaskbarComponent />
     </footer>
 </div>
+
+<ShutDownComponent />
 
 <style>
     .desktop-apps {

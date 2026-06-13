@@ -5,12 +5,13 @@
 
     interface Props {
         children: Snippet;
-        classes: string;
+        classes?: string;
         loadTime?: number;
         loadOnceId?: string | null;
+        text?: string;
     }
 
-    let { children, classes = '', loadTime = 1000, loadOnceId = null }: Props = $props();
+    let { children, classes = '', loadTime = 1000, loadOnceId = null, text = 'Loading...' }: Props = $props();
 
     const BAR_WIDTH = 12;
     const BAR_GAP = 5;
@@ -62,7 +63,7 @@
     {@render children()}
     {#if loading}
         <div class="loader">
-            <span class="loader-text">Loading...</span>
+            <span class="loader-text">{text}</span>
             <div class="loader-bars innie" style="--bar-width: {BAR_WIDTH}px; --bar-gap: {BAR_GAP}px;">
                 {#each Array(barCount), i (i)}
                     <div class="loader-bar {i >= visibleBars ? 'hidden' : ''}"></div>
@@ -87,7 +88,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 20px;
     }
 
     .loader-bars {
@@ -96,6 +97,10 @@
         background-color: var(--color-bg-dark);
         padding: 2px;
         width: fit-content;
+    }
+
+    .loader-text {
+        font-size: 18px;
     }
 
     .loader-bar {
