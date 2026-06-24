@@ -3,37 +3,57 @@
     import type { Project } from "$lib/project";
     import TagComponent from "$components/TagComponent.svelte";
     import githubIcon from "$lib/assets/icons/github.svg";
+    import itchIcon from "$lib/assets/icons/itch.svg";
+    import rustIcon from "$lib/assets/icons/rust.svg";
 
     interface Props {
         project: Project;
     }
 
     let { project }: Props = $props();
+
+    let hasLinks = $derived(
+        Boolean(project.hasPage || project.demoUrl || project.itchUrl || project.githubUrl)
+    );
 </script>
 
 <section class="outie">
     <h1>{project.name}</h1>
-    <img class="innie" alt="Banner" src={project.thumbnail} />
+    <img class="innie" class:pixelate={project.pixelateThumbnail} alt="Banner" src={project.thumbnail} />
     <span>{project.description}</span>
     <div class="tag-container">
         {#each project.tags as tag (tag.name)}
             <TagComponent {tag} innieIfActive={false} />
         {/each}
     </div>
-    <div class="link-container">
-        {#if project.hasPage}
-            <a class="outie pressable" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Page</a>
-        {/if}
-        {#if project.demoUrl}
-            <a class="outie pressable" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
-        {/if}
-        {#if project.githubUrl}
-            <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
-            <a class="outie pressable github" href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <img src={githubIcon} alt="GitHub" />
-            </a>
-        {/if}
-    </div>
+    {#if hasLinks}
+        <div class="link-container">
+            {#if project.hasPage}
+                <a class="outie pressable" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Page</a>
+            {/if}
+            {#if project.demoUrl}
+                <a class="outie pressable" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
+            {/if}
+            {#if project.itchUrl}
+                <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
+                <a class="outie pressable icon" href={project.itchUrl} target="_blank" rel="noopener noreferrer" aria-label="Itch.io">
+                    <img src={itchIcon} alt="Itch.io" />
+                </a>
+            {/if}
+            {#if project.cratesUrl}
+                <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
+                <a class="outie pressable icon" href={project.cratesUrl} target="_blank" rel="noopener noreferrer" aria-label="Crates">
+                    <img src={rustIcon} alt="Crates" />
+                </a>
+            {/if}
+            {#if project.githubUrl}
+                <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
+                <a class="outie pressable icon" href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <img src={githubIcon} alt="GitHub" />
+                </a>
+            {/if}
+        </div>
+    {/if}
 </section>
 
 <style>
@@ -60,14 +80,14 @@
         justify-content: center;
     }
 
-    .link-container .github {
+    .link-container .icon {
         flex: 0 0 auto;
         width: 32px;
         /* Keep the github button at the right edge, even when it's the only one. */
         margin-left: auto;
     }
 
-    .link-container .github img {
+    .link-container .icon img {
         width: 16px;
         height: 16px;
     }
@@ -94,5 +114,9 @@
         height: 130px;
         image-rendering: auto;
         object-fit: cover;
+    }
+
+    .pixelate {
+        image-rendering: pixelated;
     }
 </style>
