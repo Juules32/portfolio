@@ -23,7 +23,7 @@
     <span>{project.description}</span>
     <div class="tag-container">
         {#each project.tags as tag (tag.name)}
-            <TagComponent {tag} innieIfActive={false} />
+            <TagComponent {tag} />
         {/each}
     </div>
     {#if hasLinks}

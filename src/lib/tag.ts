@@ -11,12 +11,12 @@ export const rustTag: Tag = {
 
 export const cppTag: Tag = {
     name: 'C++',
-    color: '#abcdef',
+    color: '#00599c',
 };
 
 export const multiplayerTag: Tag = {
     name: 'Multiplayer',
-    color: '#abcdef',
+    color: '#e84393',
 };
 
 export const svelteTag: Tag = {
@@ -26,93 +26,123 @@ export const svelteTag: Tag = {
 
 export const pythonTag: Tag = {
     name: "Python",
-    color: "#abcdef"
+    color: "#3776ab"
 };
 
 export const fsTag: Tag = {
     name: "F#",
-    color: "#abcdef"
+    color: "#378bba"
 };
 
 export const fastAPITag: Tag = {
     name: "FastAPI",
-    color: "#abcdef"
+    color: "#009688"
 };
 
-export const frontendTag: Tag = {
-    name: "Frontend",
-    color: "#abcdef"
-};
-
-export const backendTag: Tag = {
-    name: "Backend",
-    color: "#abcdef"
+export const fullstackTag: Tag = {
+    name: "Full-stack",
+    color: "#6c5ce7"
 };
 
 export const wasmTag: Tag = {
     name: "WASM",
-    color: "#3178c6"
+    color: "#654ff0"
 };
 
 export const godotTag: Tag = {
     name: "Godot",
-    color: "#abcdef"
+    color: "#478cbf"
 };
 
 export const machineLearningTag: Tag = {
     name: "Machine Learning",
-    color: "#abcdef"
+    color: "#f39c12"
 };
 
 export const aiTag: Tag = {
     name: "AI",
-    color: "#abcdef"
+    color: "#9b59b6"
+};
+
+export const gameTag: Tag = {
+    name: "Game",
+    color: "#fdcb6e"
 };
 
 export const gameJamTag: Tag = {
     name: "Game Jam",
-    color: "#abcdef"
+    color: "#e74c3c"
 };
 
 export const shadersTag: Tag = {
     name: "Shaders",
-    color: "#abcdef"
+    color: "#16a085"
 };
 
 export const openGLTag: Tag = {
     name: "OpenGL",
-    color: "#abcdef"
+    color: "#5586a4"
 };
 
 export const vueTag: Tag = {
     name: "Vue",
-    color: "#abcdef"
+    color: "#4fc08d"
 };
 
 export const javaTag: Tag = {
     name: "Java",
-    color: "#abcdef"
+    color: "#ed8b00"
 };
 
 export const toolingTag: Tag = {
     name: "Tooling",
-    color: "#abcdef"
+    color: "#7f8c8d"
 };
 
 export const dataParsingTag: Tag = {
     name: "Data Parsing",
-    color: "#abcdef"
+    color: "#27ae60"
 };
 
 export const cliTag: Tag = {
     name: "CLI",
-    color: "#abcdef"
+    color: "#2d2d2d"
+};
+
+export const artTag: Tag = {
+    name: "Art",
+    color: "#ff7675"
 };
 
 // Order matters!
 export const tags: Tag[] = [
+    // Languages
     rustTag,
+    cppTag,
+    pythonTag,
+    fsTag,
+    javaTag,
+
+    // Frameworks & web
     svelteTag,
+    vueTag,
+    fastAPITag,
     wasmTag,
-    frontendTag,
+    fullstackTag,
+
+    // Engines & graphics
+    godotTag,
+    shadersTag,
+    openGLTag,
+
+    // Concepts
+    gameTag,
+    multiplayerTag,
+    gameJamTag,
+    aiTag,
+    machineLearningTag,
+    toolingTag,
+    cliTag,
+    dataParsingTag,
+    artTag,
 ];
