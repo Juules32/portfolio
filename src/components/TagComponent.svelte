@@ -33,7 +33,8 @@
 
 <style>
     .tag {
-        padding: 2px 6px;
+        padding: 0px 6px;
+        height: 24px;
         color: var(--color-text-white);
         text-shadow: 1px 1px 0px black;
     }

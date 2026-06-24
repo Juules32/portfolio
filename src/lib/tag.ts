@@ -24,6 +24,21 @@ export const svelteTag: Tag = {
     color: "#ff3e00"
 };
 
+export const pythonTag: Tag = {
+    name: "Python",
+    color: "#abcdef"
+};
+
+export const fsTag: Tag = {
+    name: "F#",
+    color: "#abcdef"
+};
+
+export const fastAPITag: Tag = {
+    name: "FastAPI",
+    color: "#abcdef"
+};
+
 export const frontendTag: Tag = {
     name: "Frontend",
     color: "#abcdef"
@@ -44,13 +59,53 @@ export const godotTag: Tag = {
     color: "#abcdef"
 };
 
-export const mlTag: Tag = {
-    name: "ML",
+export const machineLearningTag: Tag = {
+    name: "Machine Learning",
     color: "#abcdef"
 };
 
 export const aiTag: Tag = {
     name: "AI",
+    color: "#abcdef"
+};
+
+export const gameJamTag: Tag = {
+    name: "Game Jam",
+    color: "#abcdef"
+};
+
+export const shadersTag: Tag = {
+    name: "Shaders",
+    color: "#abcdef"
+};
+
+export const openGLTag: Tag = {
+    name: "OpenGL",
+    color: "#abcdef"
+};
+
+export const vueTag: Tag = {
+    name: "Vue",
+    color: "#abcdef"
+};
+
+export const javaTag: Tag = {
+    name: "Java",
+    color: "#abcdef"
+};
+
+export const toolingTag: Tag = {
+    name: "Tooling",
+    color: "#abcdef"
+};
+
+export const dataParsingTag: Tag = {
+    name: "Data Parsing",
+    color: "#abcdef"
+};
+
+export const cliTag: Tag = {
+    name: "CLI",
     color: "#abcdef"
 };
 

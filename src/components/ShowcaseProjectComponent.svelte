@@ -29,7 +29,7 @@
     {#if hasLinks}
         <div class="link-container">
             {#if project.hasPage}
-                <a class="outie pressable" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Page</a>
+                <a class="outie pressable" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Description</a>
             {/if}
             {#if project.demoUrl}
                 <a class="outie pressable" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
@@ -74,7 +74,7 @@
 
     .link-container a {
         flex: 1;
-        height: 26px;
+        height: 24px;
         display: flex;
         align-items: center;
         justify-content: center;

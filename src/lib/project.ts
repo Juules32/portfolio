@@ -1,4 +1,4 @@
-import { frontendTag, godotTag, multiplayerTag, rustTag, svelteTag, wasmTag, type Tag } from '$lib/tag'
+import { aiTag, backendTag, cliTag, cppTag, dataParsingTag, fastAPITag, frontendTag, fsTag, gameJamTag, godotTag, javaTag, machineLearningTag, multiplayerTag, openGLTag, pythonTag, rustTag, shadersTag, svelteTag, toolingTag, vueTag, wasmTag, type Tag } from '$lib/tag'
 import asteroidEscortThumbnail from '$lib/assets/thumbnails/asteroid-escort.png'
 import computeShaderGameOfLifeThumbnail from '$lib/assets/thumbnails/compute-shader-game-of-life.png'
 import crabsweeperThumbnail from '$lib/assets/thumbnails/crabsweeper.png'
@@ -33,7 +33,7 @@ const asteroidEscortProject: Project = {
     name: 'Asteroid Escort',
     thumbnail: asteroidEscortThumbnail,
     description: 'Bahn',
-    tags: [multiplayerTag, godotTag],
+    tags: [multiplayerTag, shadersTag, godotTag],
     pixelateThumbnail: true,
     demoUrl: 'https://html-classic.itch.zone/html/15778397/index.html',
     itchUrl: 'https://albidalbi.itch.io/asteroid-escort',
@@ -45,7 +45,7 @@ const computeShaderGameOfLifeProject: Project = {
     name: 'Compute Shader Game of Life',
     thumbnail: computeShaderGameOfLifeThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [shadersTag, openGLTag, cppTag],
     pixelateThumbnail: true,
     hasPage: true,
     githubUrl: 'https://github.com/Juules32/compute-shader-game-of-life',
@@ -56,7 +56,7 @@ const crabsweeperProject: Project = {
     name: 'Crabsweeper',
     thumbnail: crabsweeperThumbnail,
     description: 'Bahn',
-    tags: [rustTag, wasmTag],
+    tags: [toolingTag, rustTag, wasmTag],
     pixelateThumbnail: true,
     demoUrl: 'https://crabsweeper.juules32.com',
     githubUrl: 'https://github.com/Juules32/crabsweeper',
@@ -67,7 +67,7 @@ const fusionForgeProject: Project = {
     name: 'Fusion Forge',
     thumbnail: fusionForgeThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [shadersTag, godotTag],
     pixelateThumbnail: true,
     hasPage: true,
 };
@@ -77,7 +77,7 @@ const impressionAnalysisProject: Project = {
     name: '3Shape Impression Analysis',
     thumbnail: impressionAnalysisThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [aiTag, machineLearningTag, toolingTag, vueTag, fastAPITag, pythonTag],
 };
 
 const juulesPlusPlusProject: Project = {
@@ -85,9 +85,9 @@ const juulesPlusPlusProject: Project = {
     name: 'Juules Plus Plus',
     thumbnail: juulesPlusPlusThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [aiTag, toolingTag, cppTag, wasmTag],
     hasPage: true,
-    demoUrl: 'https://juules32.github.io/juules-plus-plus/',
+    demoUrl: 'https://juules-plus-plus.juules32.com',
     githubUrl: 'https://github.com/Juules32/juules-plus-plus',
 };
 
@@ -96,7 +96,7 @@ const liminalExplorersProject: Project = {
     name: 'Liminal Explorers',
     thumbnail: liminalExplorersThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [multiplayerTag, godotTag],
     pixelateThumbnail: true,
     githubUrl: 'https://github.com/Juules32/liminal-explorers',
 };
@@ -106,7 +106,7 @@ const mapOfDenmarkProject: Project = {
     name: 'Map of Denmark',
     thumbnail: mapOfDenmarkThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [javaTag],
     hasPage: true,
     githubUrl: 'https://github.com/Juules32/map-of-denmark',
 };
@@ -116,9 +116,9 @@ const pokelinkProject: Project = {
     name: 'Pokelink',
     thumbnail: pokelinkThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [frontendTag, backendTag, svelteTag, fastAPITag, pythonTag],
     demoUrl: 'https://pokelink.juules32.com/',
-    githubUrl: 'https://github.com/Juules32/liminal-explorers',
+    githubUrl: 'https://github.com/Juules32/pokelink',
 };
 
 const portfolioProject: Project = {
@@ -126,7 +126,7 @@ const portfolioProject: Project = {
     name: 'Portfolio Website',
     thumbnail: portfolioThumbnail,
     description: 'Bahn',
-    tags: [svelteTag, frontendTag],
+    tags: [frontendTag, svelteTag],
     hasPage: true,
     githubUrl: 'https://github.com/Juules32/portfolio',
 };
@@ -136,7 +136,8 @@ const potatoProteccProject: Project = {
     name: 'Potato Protecc',
     thumbnail: potatoProteccThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [gameJamTag, godotTag],
+    demoUrl: 'https://html-classic.itch.zone/html/13333612/index.html',
     itchUrl: 'https://juules32.itch.io/potato-protecc',
 };
 
@@ -146,7 +147,8 @@ const proceduralDialogueSystemProject: Project = {
     thumbnail: proceduralDialogueSystemThumbnail,
     description: 'Bahn',
     pixelateThumbnail: true,
-    tags: [],
+    tags: [toolingTag, dataParsingTag, godotTag],
+    demoUrl: 'https://dialogue.juules32.com',
 };
 
 const scrabblerProject: Project = {
@@ -154,7 +156,7 @@ const scrabblerProject: Project = {
     name: 'Scrabbler',
     thumbnail: scrabblerThumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [dataParsingTag, toolingTag, cliTag, fsTag],
     pixelateThumbnail: true,
     githubUrl: 'https://github.com/Juules32/scrabbler',
 };
@@ -164,7 +166,7 @@ const sisyphus32Project: Project = {
     name: 'Sisyphus32',
     thumbnail: sisyphus32Thumbnail,
     description: 'Bahn',
-    tags: [],
+    tags: [aiTag, toolingTag, cliTag, rustTag, wasmTag],
     demoUrl: 'https://sisyphus32.juules32.com',
     githubUrl: 'https://github.com/Juules32/sisyphus32',
     cratesUrl: 'https://crates.io/crates/sisyphus32'
