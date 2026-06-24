@@ -7,10 +7,12 @@ export interface Wallpaper {
 }
 
 export const wallpapers: Wallpaper[] = [
+    { name: 'bumblebee', label: 'Bumblebee' },
     { name: 'highway', label: 'Highway' },
     { name: 'mushrooms', label: 'Mushrooms' },
     { name: 'snowdrops', label: 'Snowdrops' },
     { name: 'sunset', label: 'Sunset' },
+    { name: 'swan', label: 'Swan' },
 ];
 
 export const STORAGE_KEY = 'wallpaper';
