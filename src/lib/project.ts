@@ -33,7 +33,7 @@ const asteroidEscortProject: Project = {
     name: 'Asteroid Escort',
     thumbnail: asteroidEscortThumbnail,
     description: 'Bahn',
-    tags: [gameTag, multiplayerTag, shadersTag, artTag, godotTag],
+    tags: [gameTag, multiplayerTag, shadersTag, godotTag],
     pixelateThumbnail: true,
     demoUrl: 'https://html-classic.itch.zone/html/15778397/index.html',
     itchUrl: 'https://albidalbi.itch.io/asteroid-escort',

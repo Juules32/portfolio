@@ -93,10 +93,15 @@
     }
 
     @media (min-width: 601px) {
+        /* Largest 16:9 box that still leaves at least 50px on every side of the
+           available area (the viewport minus the 40px taskbar), centered within
+           it via the absolute + margin:auto trick. */
         .window.windowed {
-            margin: 10vh 20vw;
-            margin-bottom: 30vh;
-            height: calc(100% - 40vh);
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: min(100vw - 200px, (100vh - 140px) * 16 / 9);
+            height: min(100vh - 140px, (100vw - 200px) * 9 / 16);
         }
     }
 
