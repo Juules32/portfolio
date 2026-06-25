@@ -117,6 +117,7 @@ const pokelinkProject: Project = {
     thumbnail: pokelinkThumbnail,
     description: 'Bahn',
     tags: [fullstackTag, svelteTag, fastAPITag, pythonTag],
+    pixelateThumbnail: true,
     demoUrl: 'https://pokelink.juules32.com/',
     githubUrl: 'https://github.com/Juules32/pokelink',
 };
