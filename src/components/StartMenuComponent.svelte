@@ -1,6 +1,6 @@
 <script lang="ts">
     import { resolve } from '$app/paths';
-    import { apps } from '$lib/app';
+    import { startMenuApps } from '$lib/app';
     import { setShutdown } from '$lib/shutdown.svelte';
     import shutdownIcon from '$lib/assets/icons/32x32/shutdown.png';
 
@@ -27,7 +27,7 @@
     </div>
 
     <div class="items">
-        {#each apps as app (app.id)}
+        {#each startMenuApps as app (app.id)}
             {#if app.endpoint}
                 <a class="item" href={resolve(app.endpoint)} onclick={close}>
                     {#if app.desktopIcon}

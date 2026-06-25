@@ -114,35 +114,29 @@ export const artTag: Tag = {
     color: "#ff7675"
 };
 
+export interface TagGroup {
+    name: string,
+    tags: Tag[],
+};
+
 // Order matters!
-export const tags: Tag[] = [
-    // Languages
-    rustTag,
-    cppTag,
-    pythonTag,
-    fsTag,
-    javaTag,
-
-    // Frameworks & web
-    svelteTag,
-    vueTag,
-    fastAPITag,
-    wasmTag,
-    fullstackTag,
-
-    // Engines & graphics
-    godotTag,
-    shadersTag,
-    openGLTag,
-
-    // Concepts
-    gameTag,
-    multiplayerTag,
-    gameJamTag,
-    aiTag,
-    machineLearningTag,
-    toolingTag,
-    cliTag,
-    dataParsingTag,
-    artTag,
+export const tagGroups: TagGroup[] = [
+    {
+        name: "Languages",
+        tags: [rustTag, cppTag, pythonTag, fsTag, javaTag],
+    },
+    {
+        name: "Frameworks & Web",
+        tags: [svelteTag, vueTag, fastAPITag, wasmTag, fullstackTag],
+    },
+    {
+        name: "Engines & Graphics",
+        tags: [godotTag, shadersTag, openGLTag],
+    },
+    {
+        name: "Concepts",
+        tags: [gameTag, multiplayerTag, gameJamTag, aiTag, machineLearningTag, toolingTag, cliTag, dataParsingTag, artTag],
+    },
 ];
+
+export const tags: Tag[] = tagGroups.flatMap((group) => group.tags);

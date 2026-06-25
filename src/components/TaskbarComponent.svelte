@@ -53,7 +53,7 @@
     <div class="taskbar-corner bordered">
         <AudioToggleComponent />
 
-        <a href="https://github.com/Juules32/portfolio">
+        <a href="https://github.com/Juules32">
             <img class="github" src={githubIcon} alt="GitHub" />
         </a>
 

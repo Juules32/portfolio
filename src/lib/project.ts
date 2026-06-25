@@ -85,7 +85,7 @@ const juulesPlusPlusProject: Project = {
     name: 'Juules Plus Plus',
     thumbnail: juulesPlusPlusThumbnail,
     description: 'Bahn',
-    tags: [aiTag, toolingTag, cppTag, wasmTag],
+    tags: [aiTag, toolingTag, cliTag, cppTag, wasmTag],
     hasPage: true,
     demoUrl: 'https://juules-plus-plus.juules32.com',
     githubUrl: 'https://github.com/Juules32/juules-plus-plus',

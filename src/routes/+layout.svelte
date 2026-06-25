@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-    <title>Juules32{label ? ' - ' + label : ''}</title>
+    <title>{label ? label : 'Juules32'}</title>
     <link rel="icon" href={favicon} />
 </svelte:head>
 

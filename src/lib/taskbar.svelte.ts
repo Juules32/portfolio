@@ -1,6 +1,6 @@
-import { aboutMeApp, showcaseApp, type App } from '$lib/app';
+import { initialTaskbarApps, type App } from '$lib/app';
 
-export const taskbarApps = $state<App[]>([aboutMeApp, showcaseApp]);
+export const taskbarApps = $state<App[]>(initialTaskbarApps);
 
 export function openTaskbarApp(app: App) {
     if (!taskbarApps.some((a) => a.id === app.id)) {

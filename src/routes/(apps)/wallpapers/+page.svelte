@@ -4,6 +4,8 @@
 </script>
 
 <section>
+    Mention all photos are my own
+    
     {#each wallpapers as wallpaper (wallpaper)}
         <WallpaperFileComponent {wallpaper} />
     {/each}

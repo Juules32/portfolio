@@ -6,6 +6,10 @@ import openDirectoryDesktopIcon from '$lib/assets/icons/32x32/open-directory.png
 import directoryDesktopIcon from '$lib/assets/icons/32x32/directory.png';
 import recycleBinDesktopIcon from '$lib/assets/icons/32x32/recycle-bin.png';
 import crabsweeperDesktopIcon from '$lib/assets/icons/32x32/crabsweeper.png';
+import cdDesktopIcon from '$lib/assets/icons/32x32/cd.png';
+import cdIcon from '$lib/assets/icons/16x16/cd.png';
+import helpBookDesktopIcon from '$lib/assets/icons/32x32/help-book.png';
+import helpBookIcon from '$lib/assets/icons/16x16/help-book.png';
 import crabsweeperIcon from '$lib/assets/icons/16x16/crabsweeper.png';
 import photoDesktopIcon from '$lib/assets/icons/32x32/photo.png';
 import photoIcon from '$lib/assets/icons/16x16/photo.png';
@@ -16,7 +20,7 @@ export interface App {
     endpoint?: Pathname;
     icon?: string;
     desktopIcon?: string;
-}
+};
 
 export const unknownApp: App = {
     id: 'unknown',
@@ -29,7 +33,7 @@ export const recycleBinApp: App = {
     id: 'recycleBin',
     label: 'Recycle Bin',
     desktopIcon: recycleBinDesktopIcon
-}
+};
 
 export const aboutMeApp: App = {
     id: 'aboutMe',
@@ -61,12 +65,43 @@ export const wallpapersApp: App = {
     endpoint: '/wallpapers',
     icon: photoIcon,
     desktopIcon: photoDesktopIcon
-}
+};
+
+export const musicApp: App = {
+    id: 'music',
+    label: 'My Music',
+    endpoint: '/music',
+    icon: cdIcon,
+    desktopIcon: cdDesktopIcon
+};
+
+export const disclaimerApp: App = {
+    id: 'disclaimer',
+    label: 'Legal Disclaimer',
+    endpoint: '/disclaimer',
+    icon: helpBookIcon,
+    desktopIcon: helpBookDesktopIcon
+};
 
 export const apps: App[] = [
     aboutMeApp,
     showcaseApp,
     wallpapersApp,
+    musicApp,
+    disclaimerApp,
+];
+
+export const startMenuApps: App[] = [
+    aboutMeApp,
+    showcaseApp,
+    wallpapersApp,
+    musicApp,
+    disclaimerApp,
+];
+
+export const initialTaskbarApps: App[] = [
+    aboutMeApp,
+    showcaseApp,
 ];
 
 export const desktopApps: App[] = [
@@ -74,5 +109,6 @@ export const desktopApps: App[] = [
     aboutMeApp,
     showcaseApp,
     wallpapersApp,
+    musicApp,
     crabsweeperApp,
 ];
