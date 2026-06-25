@@ -1,6 +1,6 @@
 <script lang="ts">
     import TaskbarAppComponent from './TaskbarAppComponent.svelte';
-    import AudioToggleComponent from './AudioToggleComponent.svelte';
+    import AudioPlayerComponent from './AudioPlayerComponent.svelte';
     import StartMenuComponent from './StartMenuComponent.svelte';
     import { taskbarApps } from '$lib/taskbar.svelte';
     import githubIcon from '$lib/assets/icons/github.svg';
@@ -50,9 +50,9 @@
         {/each}
     </div>
 
-    <div class="taskbar-corner bordered">
-        <AudioToggleComponent />
+    <AudioPlayerComponent />
 
+    <div class="taskbar-corner bordered">
         <a href="https://github.com/Juules32">
             <img class="github" src={githubIcon} alt="GitHub" />
         </a>
@@ -73,7 +73,7 @@
     .start {
         display: flex;
         align-items: center;
-        margin-left: 3px;
+        margin-left: 5px;
     }
 
     .start-button {
@@ -97,8 +97,8 @@
 
     .taskbar-corner {
         height: 26px;
-        margin-left: auto;
-        margin-right: 3px;
+        margin-left: 6px;
+        margin-right: 6px;
         display: flex;
         align-items: center;
         gap: 3px;

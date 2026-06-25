@@ -24,7 +24,7 @@
         align-items: center;
         flex-direction: column;
         width: 90px;
-        height: 80px;
+        height: 90px;
         gap: 4px;
         padding: 6px;
         cursor: pointer;
