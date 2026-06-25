@@ -97,8 +97,9 @@
             position: absolute;
             inset: 0;
             margin: auto;
-            width: min(100vw - 200px, (100vh - 140px) * 16 / 9);
-            height: min(100vh - 140px, (100vw - 200px) * 9 / 16);
+            width: min(100vw - 200px, (100vh - 140px) * 4 / 3);
+            height: min(100vh - 140px, (100vw - 200px) * 3 / 4);
+            min-width: 550px;
         }
     }
 

@@ -14,9 +14,9 @@ import eternaCity from '$lib/assets/sound/piano-covers/eterna-city.mp3';
 import eternaForest from '$lib/assets/sound/piano-covers/eterna-forest.mp3';
 import herschValentine from '$lib/assets/sound/piano-covers/hersch-valentine.mp3';
 import jumpUpSuperstar from '$lib/assets/sound/piano-covers/jump-up-superstar.mp3';
-import petersonMistyGiants from '$lib/assets/sound/piano-covers/peterson-misty-giants.mp3';
+import petersonGiants from '$lib/assets/sound/piano-covers/peterson-giants.mp3';
 
-// Other Compositions
+// Compositions
 import otherBar from '$lib/assets/sound/other-compositions/bar.mp3';
 import otherForgottenRuin from '$lib/assets/sound/other-compositions/forgotten-ruin.mp3';
 import home from '$lib/assets/sound/other-compositions/home.mp3';
@@ -42,7 +42,7 @@ export interface TrackGroup {
     tracks: Track[];
 }
 
-const homeTrack: Track = { name: 'home', label: 'Home', url: home };
+export const homeTrack: Track = { name: 'home', label: 'Home', url: home };
 
 export const originalPianoCompositions: Track[] = [
     { name: 'adventure-awaits', label: 'Adventure Awaits', url: adventureAwaits },
@@ -61,7 +61,7 @@ export const pianoCovers: Track[] = [
     { name: 'eterna-forest', label: 'Eterna Forest', url: eternaForest },
     { name: 'hersch-valentine', label: 'Hersch Valentine', url: herschValentine },
     { name: 'jump-up-superstar', label: 'Jump up Superstar', url: jumpUpSuperstar },
-    { name: 'peterson-misty-giants', label: 'Peterson Misty Giants', url: petersonMistyGiants },
+    { name: 'peterson-giants', label: 'Peterson Giants', url: petersonGiants },
 ];
 
 export const otherCompositions: Track[] = [
@@ -90,10 +90,25 @@ export const trackGroups: TrackGroup[] = [
 
 export const tracks: Track[] = trackGroups.flatMap((group) => group.tracks);
 
-export const music = $state<{ active: Track | undefined; playing: boolean }>({
-    active: homeTrack,
+export const music = $state<{
+    active: Track | undefined;
+    playing: boolean;
+    repeat: boolean;
+    shuffle: boolean;
+}>({
+    active: undefined,
     playing: false,
+    repeat: false,
+    shuffle: false,
 });
+
+export function toggleRepeat() {
+    music.repeat = !music.repeat;
+}
+
+export function toggleShuffle() {
+    music.shuffle = !music.shuffle;
+}
 
 // Select a track and start playing it, e.g. from the Music app.
 export function setMusic(track: Track) {
@@ -116,9 +131,19 @@ function currentIndex() {
     return tracks.findIndex((track) => track.name === music.active?.name);
 }
 
-// Step to an adjacent track, wrapping around so the playlist loops.
+// Pick a random track other than the current one (when more than one exists).
+function randomTrack(): Track {
+    if (tracks.length <= 1) return tracks[0];
+    let index;
+    do {
+        index = Math.floor(Math.random() * tracks.length);
+    } while (tracks[index].name === music.active?.name);
+    return tracks[index];
+}
+
+// Step to the next track: random when shuffling, otherwise sequential with wrap.
 export function nextTrack() {
-    music.active = tracks[(currentIndex() + 1) % tracks.length];
+    music.active = music.shuffle ? randomTrack() : tracks[(currentIndex() + 1) % tracks.length];
     music.playing = true;
 }
 

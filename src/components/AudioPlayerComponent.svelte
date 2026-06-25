@@ -1,10 +1,8 @@
 <script lang="ts">
-    import { music, play, pause, prevTrack, nextTrack } from '$lib/music.svelte';
+    import { music, play, pause, prevTrack, nextTrack, toggleRepeat, toggleShuffle } from '$lib/music.svelte';
 
     let audio: HTMLAudioElement;
 
-    // This component owns the single <audio> element; it mirrors the store's
-    // playback state onto it and advances the playlist when a track ends.
     $effect(() => {
         if (!audio) return;
         const url = music.active?.url;
@@ -15,43 +13,56 @@
         }
     });
 
-    function stop() {
-        if (audio) {
-            audio.pause();
-            audio.currentTime = 0;
+    function playOrPause() {
+        if (music.playing) {
+            pause();
+        } else {
+            play();
         }
-        pause();
     }
 </script>
 
-<div class="audio-player bordered">
-    <audio bind:this={audio} src={music.active?.url} onended={nextTrack}></audio>
-    <button class="outie pressable" type="button" aria-label="Play" onclick={play}>▶</button>
-    <button class="outie pressable" type="button" aria-label="Pause" onclick={pause}>⏸</button>
-    <button class="outie pressable" type="button" aria-label="Stop" onclick={stop}>⏹</button>
-    <button class="outie pressable" type="button" aria-label="Previous track" onclick={prevTrack}>⏮</button>
-    <button class="outie pressable" type="button" aria-label="Next track" onclick={nextTrack}>⏭</button>
+<div class="audio-player">
+    <audio bind:this={audio} src={music.active?.url} loop={music.repeat} onended={nextTrack}></audio>
+    <button class="pressable" class:innie={music.shuffle} class:outie={!music.shuffle} type="button" aria-label="Shuffle" aria-pressed={music.shuffle} onclick={toggleShuffle}><span class="material-symbols">shuffle</span></button>
+    <button class="outie pressable" type="button" aria-label="Previous track" onclick={prevTrack}><span class="material-symbols">skip_previous</span></button>
+    <button class="outie pressable" type="button" aria-label="Play" onclick={playOrPause}><span class="material-symbols">{music.playing ? 'pause' : 'play_arrow'}</span></button>
+    <button class="outie pressable" type="button" aria-label="Next track" onclick={nextTrack}><span class="material-symbols">skip_next</span></button>
+    <button class="pressable" class:innie={music.repeat} class:outie={!music.repeat} type="button" aria-label="Repeat" aria-pressed={music.repeat} onclick={toggleRepeat}><span class="material-symbols">repeat</span></button>
 </div>
 
 <style>
     .audio-player {
-        /* Push the player (and the taskbar-corner after it) to the right edge. */
         margin-left: auto;
         height: 26px;
         display: flex;
         align-items: center;
-        gap: 3px;
-        padding: 0 3px;
     }
 
     .audio-player button {
-        height: 18px;
-        min-width: 18px;
+        height: 26px;
+        min-width: 26px;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0 2px;
-        font-size: 10px;
         line-height: 1;
+    }
+
+    .material-symbols {
+        font-family: 'Material Symbols Outlined Variable', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        /* Render the icon-name text as a ligature glyph. */
+        font-feature-settings: 'liga';
+        /* FILL 1 = solid icons. */
+        font-variation-settings: 'FILL' 1;
     }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts">
     import FileComponent from '$components/FileComponent.svelte';
-    import { setWallpaper, type Wallpaper } from '$lib/wallpaper.svelte';
+    import { setWallpaper, wallpaperState, type Wallpaper } from '$lib/wallpaper.svelte';
     import cameraIcon from '$lib/assets/icons/48x48/camera.png';
 
     interface Props {
@@ -14,5 +14,6 @@
     icon={cameraIcon}
     alt={wallpaper.label}
     label={`${wallpaper.label}.jpg`}
+    active={wallpaperState.active === wallpaper.name}
     onClick={() => setWallpaper(wallpaper.name)}
 />

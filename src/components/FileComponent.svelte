@@ -3,20 +3,21 @@
         icon: string;
         label: string;
         alt?: string;
+        active?: boolean;
         onClick: () => void;
     }
 
-    let { icon, label, alt, onClick }: Props = $props();
+    let { icon, label, alt, active = false, onClick }: Props = $props();
 </script>
 
-<button onclick={onClick}>
+<button class:active onclick={onClick}>
     <img alt={alt ?? label} src={icon} />
     <span>{label}</span>
 </button>
 
 <style>
     span {
-        text-shadow: 0.5px 0.5px 1px white;
+        text-shadow: 0.5px 0.5px 1px var(--color-text-white);
     }
 
     button {
@@ -36,7 +37,15 @@
         padding: 5px;
     }
 
-    button:active {
+    button:active,
+    button.active {
         background-color: var(--color-click-desktop-app);
     }
+
+    button:active span,
+    button.active span {
+        color: var(--color-text-white);
+        text-shadow: 0.5px 0.5px 1px var(--color-text-black);
+    }
+    
 </style>
