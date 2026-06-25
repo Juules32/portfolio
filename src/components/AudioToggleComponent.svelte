@@ -1,27 +1,27 @@
 <script lang="ts">
-    import bar from '$lib/assets/sound/bar.mp3';
     import speakerIcon from '$lib/assets/icons/16x16/speaker.png';
     import mutedIcon from '$lib/assets/icons/16x16/muted.png';
+    import { music, nextTrack, toggleMuted } from '$lib/music.svelte';
 
-    let muted = $state(true);
     let audio: HTMLAudioElement;
 
-    function toggle() {
-        muted = !muted;
-        audio.muted = muted;
-        if (!muted) {
+    $effect(() => {
+        if (!audio) return;
+        audio.muted = music.muted;
+        const url = music.active?.url;
+        if (url && !music.muted) {
             void audio.play();
         }
-    }
+    });
 </script>
 
 <button
     type="button"
-    onclick={toggle}
-    aria-label={muted ? 'Unmute' : 'Mute'}
+    onclick={toggleMuted}
+    aria-label={music.muted ? 'Unmute' : 'Mute'}
 >
-    <audio bind:this={audio} src={bar} autoplay loop muted></audio>
-    <img class="audio-state" alt="speaker" src={muted ? mutedIcon : speakerIcon} />
+    <audio bind:this={audio} src={music.active?.url} onended={nextTrack}></audio>
+    <img class="audio-state" alt="speaker" src={music.muted ? mutedIcon : speakerIcon} />
 </button>
 
 <style>
