@@ -3,9 +3,8 @@
     import minimizeIcon from '$lib/assets/icons/12x12/minimize.png';
     import maximizeIcon from '$lib/assets/icons/12x12/maximize.png';
     import backIcon from '$lib/assets/icons/12x12/back.png';
-    import { goto } from '$app/navigation';
+    import { goto, afterNavigate } from '$app/navigation';
     import { resolve } from '$app/paths';
-    import { page } from '$app/state';
     import { untrack } from 'svelte';
     import { openTaskbarApp, closeTaskbarApp } from '$lib/taskbar.svelte';
     import { endpointToApp, endpointToIcon, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
@@ -15,14 +14,18 @@
     let title = $derived(endpointToLabel(getEndpoint()));
     let icon = $derived(endpointToIcon(getEndpoint()));
 
-    let windowed = $derived(page.data.windowed ?? false);
+    let windowed = $state(true);
 
-    // Number of real path segments, ignoring layout groups like (apps).
-    // Depth 1 (e.g. /showcase) is a top-level app; anything deeper is a sub-page.
+    let windowContent = $state<HTMLDivElement>();
+
+    afterNavigate(() => {
+        windowContent?.scrollTo(0, 0);
+    });
+
     let isSubPage = $derived(
-        (page.route.id ?? '')
+        getEndpoint()
             .split('/')
-            .filter((segment) => segment && !segment.startsWith('('))
+            .filter((segment) => segment) // Hooray JS for needing to filter to get the length
             .length > 1
     );
 
@@ -46,7 +49,8 @@
     }
 
     function back() {
-        history.back();
+        const [, topSegment] = getEndpoint().split('/');
+        goto(resolve(isSubPage ? `/${topSegment}` : '/'));
     }
 
     function toggleWindowed() {
@@ -76,7 +80,7 @@
             </button>
         </div>
     </div>
-    <div class="window-content innie" class:full-bleed={page.data.fullBleed}>
+    <div class="window-content innie" bind:this={windowContent}>
         {@render children()}
     </div>
 </section>
@@ -97,9 +101,14 @@
             position: absolute;
             inset: 0;
             margin: auto;
-            width: min(100vw - 200px, (100vh - 140px) * 4 / 3);
-            height: min(100vh - 140px, (100vw - 200px) * 3 / 4);
-            min-width: 550px;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .window.windowed .window-content {
+            flex: none;
+            aspect-ratio: 1.774;
+            width: min(100vw - 200px, (100vh - 140px) * 16 / 9);
         }
     }
 
@@ -133,11 +142,6 @@
         overflow: auto;
     }
 
-    .window-content.full-bleed {
-        padding: 0;
-        overflow: hidden;
-    }
-
     .window-bar-buttons {
         margin-left: auto;
         color: var(--color-text-white);
@@ -145,7 +149,6 @@
         gap: 3px;
     }
 
-    
     .window-bar-button {
         background-color: var(--color-bg-light);
         height: 16px;
@@ -154,13 +157,13 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .window-bar-button img {
         max-height: 100%;
         max-width: 100%;
         object-fit: contain;
     }
-    
+
     .window-bar-button:active img {
         padding-top: 1px;
         padding-left: 1px;

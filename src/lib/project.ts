@@ -35,7 +35,7 @@ const asteroidEscortProject: Project = {
     description: 'Bahn',
     tags: [gameTag, multiplayerTag, shadersTag, godotTag],
     pixelateThumbnail: true,
-    demoUrl: 'https://html-classic.itch.zone/html/15778397/index.html',
+    demoUrl: 'https://asteroid-escort.juules32.com',
     itchUrl: 'https://albidalbi.itch.io/asteroid-escort',
     githubUrl: 'https://github.com/HalfdanBrage/asteroid-escort',
 };
@@ -138,7 +138,7 @@ const potatoProteccProject: Project = {
     thumbnail: potatoProteccThumbnail,
     description: 'Bahn',
     tags: [gameTag, gameJamTag, artTag, godotTag],
-    demoUrl: 'https://html-classic.itch.zone/html/13333612/index.html',
+    demoUrl: 'https://potato-protecc.juules32.com/',
     itchUrl: 'https://juules32.itch.io/potato-protecc',
 };
 
