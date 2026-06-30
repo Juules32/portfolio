@@ -40,7 +40,7 @@
     }
 
     img {
-        padding-right: 0.3rem;
+        margin-right: 0.3rem;
         height: 16px;
     }
 

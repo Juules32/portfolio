@@ -91,13 +91,13 @@
         color: var(--color-bg-dark);
     }
 
-    @media (max-width: 600px) {
+    @container app-window (max-width: 600px) {
         .tag-filter {
             display: none;
         }
     }
 
-    @media (max-height: 700px) {
+    @container app-window (max-height: 560px) {
         .tag-filter {
             display: none;
         }

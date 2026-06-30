@@ -140,6 +140,9 @@
         flex: 1;
         min-height: 0;
         overflow: auto;
+        /* Size query container: lets app content respond to the app window's own
+           width/height (e.g. showcase's TagFilter) rather than the viewport. */
+        container: app-window / size;
     }
 
     .window-bar-buttons {
