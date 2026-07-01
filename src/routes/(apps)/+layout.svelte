@@ -67,7 +67,7 @@
         {:else if icon}
             <img class="window-bar-icon" alt="icon" src={icon} />
         {/if}
-        <h2 class="window-bar-title">{title}</h2>
+        <h4 class="window-bar-title">{title}</h4>
         <div class="window-bar-buttons">
             <button class="window-bar-button outie pressable" type="button" aria-label="Minimize" onclick={minimize}>
                 <img alt="" src={minimizeIcon} />
@@ -94,6 +94,14 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
+    }
+
+    .app-window {
+        background: var(--color-bg-grey);
+        border-left: 2px solid var(--color-border-white);
+        border-top: 2px solid var(--color-border-white);
+        border-bottom: 2px solid var(--color-border-black);
+        border-right: 2px solid var(--color-border-black);
     }
 
     @media (min-width: 601px) {

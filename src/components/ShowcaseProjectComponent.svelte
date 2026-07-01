@@ -18,7 +18,7 @@
 </script>
 
 <section class="outie">
-    <h2>{project.name}</h2>
+    <h4>{project.name}</h4>
     <img class="innie" class:pixelate={project.pixelateThumbnail} alt="Banner" src={project.thumbnail} />
     <span>{project.description}</span>
     <div class="tag-container">
@@ -103,7 +103,7 @@
         width: 260px;
     }
 
-    h2 {
+    h4 {
         background-color: var(--color-blue);
         color: var(--color-text-white);
         text-shadow: 1px 1px 0px black;

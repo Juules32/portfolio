@@ -11,6 +11,6 @@
 
 <section>
     <h1>{page.status}</h1>
-    <h2>{page.error?.message}</h2>
+    <h4>{page.error?.message}</h4>
     <a href={resolve('/')}>Go back to the home page</a>
 </section>

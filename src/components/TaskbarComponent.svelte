@@ -70,6 +70,11 @@
         align-items: center;
     }
 
+    .bordered {
+        background: var(--color-bg-grey);
+        border: 2px solid var(--color-border-grey);
+    }
+        
     .start {
         display: flex;
         align-items: center;

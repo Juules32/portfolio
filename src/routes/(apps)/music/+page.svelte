@@ -10,7 +10,7 @@
 
     {#each trackGroups as group (group.name)}
         <div class="group">
-            <h2>{group.name}</h2>
+            <h4>{group.name}</h4>
             <div class="files">
                 {#each group.tracks as track (track.name)}
                     <MusicFileComponent {track} />
@@ -27,7 +27,7 @@
         gap: 16px;
     }
 
-    h2 {
+    h4 {
         margin-bottom: 6px;
     }
 

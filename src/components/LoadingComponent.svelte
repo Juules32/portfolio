@@ -5,13 +5,13 @@
 
     interface Props {
         children: Snippet;
-        classes?: string;
+        fill?: boolean;
         loadTime?: number;
         loadOnceId?: string | null;
         text?: string;
     }
 
-    let { children, classes = '', loadTime = 1000, loadOnceId = null, text = 'Loading...' }: Props = $props();
+    let { children, fill = false, loadTime = 1000, loadOnceId = null, text = 'Loading...' }: Props = $props();
 
     const BAR_WIDTH = 12;
     const BAR_GAP = 5;
@@ -59,7 +59,7 @@
     });
 </script>
 
-<div class="{classes} outer" bind:clientWidth={outerWidth}>
+<div class="outer" class:fill bind:clientWidth={outerWidth}>
     {@render children()}
     {#if loading}
         <div class="loader">
@@ -78,6 +78,11 @@
         position: relative;
         width: fit-content;
         height: fit-content;
+    }
+
+    .outer.fill {
+        width: 100%;
+        height: 100%;
     }
 
     .loader {

@@ -1,16 +1,6 @@
 @import '@fontsource-variable/cascadia-code/wght.css';
 @import '@fontsource-variable/material-symbols-outlined/full.css';
 
-@font-face {
-    font-family: 'PX Sans Nouveaux';
-    src: url('/fonts/px_sans_nouveaux.woff2');
-}
-
-/*@font-face {
-    font-family: 'MS Sans Serif';
-    src: url('/fonts/MS Sans Serif/MS Sans Serif 8pt.ttf');
-}*/
-
 :root {
     --color-border-grey: #808080;
     --color-border-white: #ffffff;
@@ -30,15 +20,13 @@
 
 * {
     margin: 0;
-    -moz-font-smoothing:antialiased;
-    -webkit-font-smoothing:antialiased;
-    -rendering:optimizeLegibility;
-    -moz-osx-font-smoothing:grayscale;
+    /*-moz-font-smoothing:antialiased;*/
+    /*-webkit-font-smoothing:antialiased;*/
+    /*-rendering:optimizeLegibility;*/
+    /*-moz-osx-font-smoothing:grayscale;*/
     padding: 0;
     font-family: 'Arial', sans-serif;
     /*font-family: 'Cascadia Code Variable', sans-serif;*/
-    /*font-family: 'PX Sans Nouveaux', sans-serif;*/
-    /*font-family: 'MS Sans Serif', sans-serif;*/
    	image-rendering: pixelated;
     font-weight: 350;
     font-size: 12px;
@@ -59,20 +47,17 @@ button {
     background-color: transparent;
 }
 
-h1, h2, h3, h4 {
+h1, h4, h4, h4 {
     font-weight: 700;
 }
 
 h1 {
     font-size: 2em;
+    letter-spacing: 0.04em;
+    word-spacing: 0.1em;
 }
 
-/* Beveled surfaces. .outie (raised) and .innie (sunken) differ only in which
-   diagonal pair of edges is light vs grey, so those two colors live in custom
-   properties that a single shared border-color declaration reads. .pressable
-   just swaps the properties on :active, sinking any raised element while held. */
-.outie,
-.innie {
+.outie, .innie {
     border-width: 2px;
     border-style: solid;
     border-color: var(--bevel-tl) var(--bevel-br) var(--bevel-br) var(--bevel-tl);
@@ -88,19 +73,6 @@ h1 {
     --bevel-tl: var(--color-border-grey);
     --bevel-br: var(--color-border-white);
     background: var(--color-bg-light);
-}
-
-.app-window {
-    background: var(--color-bg-grey);
-    border-left: 2px solid var(--color-border-white);
-    border-top: 2px solid var(--color-border-white);
-    border-bottom: 2px solid var(--color-border-black);
-    border-right: 2px solid var(--color-border-black);
-}
-
-.bordered {
-    background: var(--color-bg-grey);
-    border: 2px solid var(--color-border-grey);
 }
 
 .pressable {

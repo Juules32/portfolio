@@ -20,7 +20,7 @@
     </button>
 
     {#each tagGroups as group (group.name)}
-        <h3>{group.name}</h3>
+        <h4>{group.name}</h4>
         {#each group.tags as tag (tag.name)}
             <button
                 class="filter-row"
@@ -49,7 +49,7 @@
         gap: 1px;
     }
 
-    h3 {
+    h4 {
         margin-top: 8px;
         padding: 0 4px;
         color: var(--color-bg-dark);
