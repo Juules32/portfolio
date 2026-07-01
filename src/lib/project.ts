@@ -151,7 +151,7 @@ const scrabblerProject: Project = {
     id: 'scrabbler',
     name: 'Scrabbler',
     thumbnail: scrabblerThumbnail,
-    description: 'Stateless scrabble engine implemented in F#.',
+    description: 'Stateless scrabble engine implemented in F#. Can play against a human or another ai following the same protocol.',
     tags: [dataParsingTag, toolingTag, cliTag, fsTag],
     pixelateThumbnail: true,
     githubUrl: 'https://github.com/Juules32/scrabbler',

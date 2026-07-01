@@ -15,19 +15,31 @@
     let hasLinks = $derived(
         Boolean(project.hasPage || project.demoUrl || project.itchUrl || project.githubUrl)
     );
+
+    // Whether tags should be placed on the same line as buttons
+    let inlineTags = $derived(hasLinks && !project.hasPage && !project.demoUrl);
 </script>
 
-<section class="outie">
-    <h4>{project.name}</h4>
-    <img class="innie" class:pixelate={project.pixelateThumbnail} alt="Banner" src={project.thumbnail} />
-    <span>{project.description}</span>
+{#snippet tagList()}
     <div class="tag-container">
         {#each project.tags as tag (tag.name)}
             <TagComponent {tag} />
         {/each}
     </div>
+{/snippet}
+
+<section class="outie">
+    <h4>{project.name}</h4>
+    <img class="innie" class:pixelate={project.pixelateThumbnail} alt="Banner" src={project.thumbnail} />
+    <span>{project.description}</span>
+    {#if !inlineTags}
+        {@render tagList()}
+    {/if}
     {#if hasLinks}
-        <div class="link-container">
+        <div class="link-container" class:inline={inlineTags}>
+            {#if inlineTags}
+                {@render tagList()}
+            {/if}
             {#if project.hasPage}
                 <a class="outie pressable" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Description</a>
             {/if}
@@ -72,6 +84,18 @@
         gap: 5px;
     }
 
+    /* No page/demo: drop the tags into the link row and pin it to the bottom. */
+    .link-container.inline {
+        margin-top: auto;
+        align-items: center;
+    }
+
+    .link-container .tag-container {
+        flex: 1;
+        width: auto;
+        margin-top: 0;
+    }
+
     .link-container a {
         flex: 1;
         height: 24px;
@@ -82,7 +106,7 @@
 
     .link-container .icon {
         flex: 0 0 auto;
-        width: 32px;
+        width: 24px;
         /* Keep the github button at the right edge, even when it's the only one. */
         margin-left: auto;
     }
@@ -90,6 +114,7 @@
     .link-container .icon img {
         width: 16px;
         height: 16px;
+        object-fit: contain;
     }
 
     .tag-container {

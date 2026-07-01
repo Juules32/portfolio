@@ -11,7 +11,7 @@ import searchGlobeIcon from '$lib/assets/icons/16x16/search-globe.png';
 </svelte:head>
 
 <section>
-    <LoadingComponent fill>
+    <LoadingComponent loadTime={800} fill>
         <iframe class="innie" title="Demo" src={data.project.demoUrl}></iframe>
     </LoadingComponent>
 </section>
