@@ -4,6 +4,7 @@
     import { projects } from "$lib/project";
     import { tagGroups } from "$lib/tag";
     import { tagFilter, toggleTag } from "$lib/tagFilter.svelte";
+    import CopyrightComponent from "$components/CopyrightComponent.svelte";
 
     onDestroy(() => {
         tagFilter.active = null;
@@ -19,34 +20,40 @@
 </script>
 
 <section>
-    <nav class="tag-filter innie">
-        <button
-            class="filter-row"
-            class:selected={tagFilter.active === null}
-            onclick={() => (tagFilter.active = null)}
-        >
-            All
-        </button>
-
-        {#each tagGroups as group (group.name)}
-            <h4>{group.name}</h4>
-            {#each group.tags as tag (tag.name)}
-                <button
-                    class="filter-row"
-                    class:selected={tagFilter.active?.name === tag.name}
-                    onclick={() => toggleTag(tag)}
-                >
-                    <span class="swatch" style="background-color: {tag.color};"></span>
-                    {tag.name}
-                </button>
+    <div class="left-menu">
+        <nav class="tag-filter innie">
+            <button
+                class="filter-row"
+                class:selected={tagFilter.active === null}
+                onclick={() => (tagFilter.active = null)}
+            >
+                All
+            </button>
+    
+            {#each tagGroups as group (group.name)}
+                <h4>{group.name}</h4>
+                {#each group.tags as tag (tag.name)}
+                    <button
+                        class="filter-row"
+                        class:selected={tagFilter.active?.name === tag.name}
+                        onclick={() => toggleTag(tag)}
+                    >
+                        <span class="swatch" style="background-color: {tag.color};"></span>
+                        {tag.name}
+                    </button>
+                {/each}
             {/each}
-        {/each}
+    
+            <p class="result-count">
+                Showing {filtered.length} of {projects.length} projects
+            </p>
+        </nav>
 
-        <p class="result-count">
-            Showing {filtered.length} of {projects.length} projects
-        </p>
-    </nav>
-
+        <div class="left-copyright">
+            <CopyrightComponent />
+        </div>
+    </div>
+    
     <div class="main">
         <div class="content">
             <h1>Project Showcase</h1>
@@ -59,14 +66,16 @@
 
                 <span class="tag-message">
                     or by using the menu on the left
-                </span>
-
-                .
+                </span>.
             </p>
             <div class="project-container">
                 {#each filtered as project (project.id)}
                     <ShowcaseProjectComponent {project} />
                 {/each}
+            </div>
+
+            <div class="main-copyright">
+                <CopyrightComponent />
             </div>
         </div>
     </div>
@@ -79,15 +88,17 @@
         gap: 10px;
     }
 
-    .tag-filter {
+    .left-menu {
         position: sticky;
         top: 0;
-        align-self: flex-start;
+        width: 170px;
+    }
+    
+    .tag-filter {
         display: flex;
         flex-direction: column;
         padding: 5px;
         gap: 1px;
-        width: 170px;
     }
 
     .tag-filter h4 {
@@ -150,22 +161,13 @@
         flex-wrap: wrap;
     }
 
-    @container app-window (max-width: 600px) {
-        .tag-filter {
-            display: none;
-        }
-
-        .tag-message {
-            display: none;
-        }
-
-        .project-container {
-            justify-content: center;
-        }
+    .main-copyright {
+        display: none;
+        text-align: right;
     }
 
-    @container app-window (max-height: 560px) {
-        .tag-filter {
+    @container app-window (max-width: 600px) or (max-height: 560px) {
+        .left-menu {
             display: none;
         }
 
@@ -175,6 +177,10 @@
 
         .project-container {
             justify-content: center;
+        }
+
+        .main-copyright {
+            display: inline;
         }
     }
 </style>

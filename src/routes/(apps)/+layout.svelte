@@ -143,7 +143,7 @@
     }
 
     .window-content {
-        padding: 10px;
+        padding: 10px 10px 0;
         background-color: var(--color-bg-light);
         flex: 1;
         min-height: 0;
@@ -151,6 +151,15 @@
         /* Size query container: lets app content respond to the app window's own
            width/height (e.g. showcase's TagFilter) rather than the viewport. */
         container: app-window / size;
+    }
+
+    /* Weird bug where chrome drops a scroll container's block-end padding once content
+       overflows, so reserve the bottom gap with a spacer that scrolls with the
+       content instead of relying on padding-bottom. */
+    .window-content::after {
+        content: '';
+        display: block;
+        height: 10px;
     }
 
     .window-bar-buttons {
