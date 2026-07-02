@@ -1,7 +1,7 @@
 <script lang="ts">
     import FileComponent from '$components/FileComponent.svelte';
     import { setWallpaper, wallpaperState, type Wallpaper } from '$lib/wallpaper.svelte';
-    import cameraIcon from '$lib/assets/icons/48x48/camera.png';
+    import photoIcon from '$lib/assets/icons/48x48/photo.png';
 
     interface Props {
         wallpaper: Wallpaper;
@@ -11,7 +11,7 @@
 </script>
 
 <FileComponent
-    icon={cameraIcon}
+    icon={photoIcon}
     alt={wallpaper.label}
     label={`${wallpaper.label}.jpg`}
     active={wallpaperState.active === wallpaper.name}

@@ -35,6 +35,13 @@
     box-sizing: border-box;
 }
 
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -49,12 +56,20 @@ button {
 
 h1, h4, h4, h4 {
     font-weight: 700;
+    letter-spacing: 0.04em;
+    word-spacing: 0.1em;
 }
 
 h1 {
     font-size: 2em;
-    letter-spacing: 0.04em;
-    word-spacing: 0.1em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.3em;
 }
 
 .outie, .innie {

@@ -67,12 +67,6 @@
         position: relative;
     }
 
-    @media (max-width: 600px) {
-        footer {
-            display: none;
-        }
-    }
-
     #wallpaper {
         position: fixed;
         width: 100vw;

@@ -5,6 +5,7 @@
     import { taskbarApps } from '$lib/taskbar.svelte';
     import githubIcon from '$lib/assets/icons/github.svg';
     import windowsIcon from '$lib/assets/icons/16x16/windows.png';
+    import { initialTaskbarApps } from '$lib/app';
 
     let menuOpen = $state(false);
 
@@ -44,12 +45,18 @@
         <StartMenuComponent close={() => (menuOpen = false)} />
     {/if}
 
-    <div class="taskbar-apps">
+    <div class="taskbar-apps dynamic">
         {#each taskbarApps as app (app.id)}
             <TaskbarAppComponent {app} />
         {/each}
     </div>
 
+    <div class="taskbar-apps static">
+        {#each initialTaskbarApps as app (app.id)}
+            <TaskbarAppComponent {app} />
+        {/each}
+    </div>
+    
     <AudioPlayerComponent />
 
     <div class="taskbar-corner bordered">
@@ -100,6 +107,34 @@
         margin-left: 0.5rem;
     }
 
+
+    .taskbar-apps.static {
+        display: none;
+    }
+    
+    @media (max-width: 850px) {
+        .taskbar-apps.dynamic {
+            display: none;
+        }
+
+        .taskbar-apps.static {
+            display: flex;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .taskbar-apps {
+            display: none !important;
+        }
+    }
+
+    
+    @media (max-width: 300px) {
+        .taskbar {
+            display: none;
+        }
+    }
+    
     .taskbar-corner {
         height: 26px;
         margin-left: 6px;
