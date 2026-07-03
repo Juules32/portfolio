@@ -6,24 +6,57 @@
     import mailIcon from "$lib/assets/icons/mail.svg";
     import itchIcon from "$lib/assets/icons/itch-red.svg";
     import catGif from "$lib/assets/gifs/cat.gif";
+    import { onMount } from "svelte";
 
     const avatar = "https://github.com/Juules32.png";
 
     const contacts = [
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/benjamin-jensen-476701373/", icon: linkedinIcon},
         { label: "GitHub", href: "https://github.com/Juules32", icon: githubIcon},
-        { label: "LinkedIn", href: "https://www.linkedin.com/in/juules32", icon: linkedinIcon},
-        { label: "Email", href: "mailto:benjaminbyvej@gmail.com", icon: mailIcon},
         { label: "Itch.io", href: "https://juules32.itch.io", icon: itchIcon},
     ];
+
+    // Email assembled on mount to make web-scraping difficult
+    const emailUser = "BenjaminByvej";
+    const emailDomain = "gmail.com";
+
+    let email = $state("");
+    let mailHref = $state<string | undefined>(undefined);
+    let copied = $state(false);
+    let copyTimer: ReturnType<typeof setTimeout>;
+
+    const emailLabel = $derived(copied ? "Copied to clipboard!" : email || "Email");
+
+    onMount(() => {
+        email = `${emailUser}@${emailDomain}`;
+        mailHref = `mailto:${email.toLowerCase()}`;
+    });
+
+    async function copyEmail(event: Event) {
+        event.preventDefault();
+        try {
+            await navigator.clipboard.writeText(email);
+        } catch {
+            // Clipboard API unavailable (ignore)
+        }
+        copied = true;
+        clearTimeout(copyTimer);
+        copyTimer = setTimeout(() => (copied = false), 1000);
+    }
 </script>
 
 <section>
     <div class="left-menu">
         <nav class="contact-panel innie">
             <img class="avatar innie" src={avatar} alt="Juules32" />
-            <p class="handle">Juules32</p>
+            <h2 class="handle">Juules32</h2>
             <p class="contact-heading">Contact Methods</p>
             <div class="contacts">
+                <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- mailto is assembled client-side; copy is handled in JS -->
+                <a class="contact-row" href={mailHref} onclick={copyEmail}>
+                    <img class="contact-icon" src={mailIcon} alt="" />
+                    <span class="link">{emailLabel}</span>
+                </a>
                 {#each contacts as contact (contact.label)}
                     <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
                     <a class="contact-row" href={contact.href} target="_blank" rel="noopener noreferrer" aria-label={contact.label}>
@@ -93,7 +126,7 @@
     .left-menu {
         position: sticky;
         top: 0;
-        width: 170px;
+        width: 200px;
     }
 
     .contact-panel {
@@ -116,15 +149,14 @@
     }
 
     .avatar {
-        width: 150px;
-        height: 150px;
+        width: 170px;
+        height: 170px;
         object-fit: cover;
         image-rendering: auto;
         padding: 2px;
     }
 
     .handle {
-        font-weight: 700;
         margin: 4px 0 6px;
     }
 

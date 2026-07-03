@@ -102,12 +102,13 @@
         height: 78px;
         image-rendering: auto;
         pointer-events: none;
+        z-index: 100;
     }
 
     .left-menu {
         position: sticky;
         top: 0;
-        width: 170px;
+        width: 200px;
     }
     
     .tag-filter {
@@ -179,6 +180,10 @@
 
     .main-copyright {
         display: none;
+        text-align: right;
+    }
+
+    .left-copyright {
         text-align: right;
     }
 
