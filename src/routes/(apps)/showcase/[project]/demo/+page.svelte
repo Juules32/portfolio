@@ -19,9 +19,9 @@ import searchGlobeIcon from '$lib/assets/icons/16x16/search-globe.png';
 <style>
     /* Bleed past the window-content padding so the demo fills the whole window. */
     section {
-        width: calc(100% + 20px);
+        width: calc(100% + 20px * 2);
         height: calc(100% + 20px);
-        margin: -10px;
+        margin: -20px;
     }
 
     iframe {

@@ -93,7 +93,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 50px;
     }
 
     .loader-bars {
@@ -105,7 +105,8 @@
     }
 
     .loader-text {
-        font-size: 18px;
+        font-size: 28px;
+        font-family: 'PX Sans Nouveaux', monospace;
     }
 
     .loader-bar {

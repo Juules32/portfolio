@@ -1,6 +1,11 @@
 @import '@fontsource-variable/cascadia-code/wght.css';
 @import '@fontsource-variable/material-symbols-outlined/full.css';
 
+@font-face {
+    font-family: 'PX Sans Nouveaux';
+    src: url('/fonts/px_sans_nouveaux.woff2');
+}
+
 :root {
     --color-border-grey: #808080;
     --color-border-white: #ffffff;

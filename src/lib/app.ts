@@ -38,7 +38,7 @@ export const recycleBinApp: App = {
 export const aboutMeApp: App = {
     id: 'aboutMe',
     label: 'About Me',
-    endpoint: '/about-me',
+    endpoint: '/about',
     icon: userIcon,
     desktopIcon: userDesktopIcon
 };

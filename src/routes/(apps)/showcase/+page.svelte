@@ -85,7 +85,7 @@
     section {
         display: flex;
         align-items: flex-start;
-        gap: 10px;
+        gap: 20px;
     }
 
     .left-menu {
@@ -166,7 +166,7 @@
         text-align: right;
     }
 
-    @container app-window (max-width: 600px) or (max-height: 560px) {
+    @container app-window (max-width: 500px) or (max-height: 560px) {
         .left-menu {
             display: none;
         }

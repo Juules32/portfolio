@@ -143,7 +143,7 @@
     }
 
     .window-content {
-        padding: 10px 10px 0;
+        padding: 20px 20px 0;
         background-color: var(--color-bg-light);
         flex: 1;
         min-height: 0;
@@ -159,7 +159,7 @@
     .window-content::after {
         content: '';
         display: block;
-        height: 10px;
+        height: 20px;
     }
 
     .window-bar-buttons {
