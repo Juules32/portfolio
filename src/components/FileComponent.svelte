@@ -18,6 +18,7 @@
 <style>
     span {
         text-shadow: 0.5px 0.5px 1px var(--color-text-white);
+        line-height: 1.1;
     }
 
     button {

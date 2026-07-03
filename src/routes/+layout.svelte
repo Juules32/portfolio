@@ -74,6 +74,7 @@
         background-image: var(--wallpaper);
         background-size: cover;
         background-position: center;
+        background-color: var(--color-wallpaper);
         z-index: -2;
         image-rendering: auto;
     }

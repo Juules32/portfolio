@@ -38,6 +38,7 @@
     color: var(--color-text-black);
     border: none;
     box-sizing: border-box;
+    line-height: 1.34;
 }
 
 img {

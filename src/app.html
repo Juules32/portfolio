@@ -9,9 +9,12 @@
             // Mirrors src/lib/wallpaper.svelte.ts (STORAGE_KEY / DEFAULT_WALLPAPER).
             (function () {
                 try {
-                    var name = localStorage.getItem('wallpaper') || 'snowdrops';
-                    var url = '%sveltekit.assets%/wallpapers/' + name + '.jpg';
-                    document.documentElement.style.setProperty('--wallpaper', "url('" + url + "')");
+                    var name = localStorage.getItem('wallpaper');
+                    if (name === null) name = 'none';
+                    if (name !== 'none') {
+                        var url = '%sveltekit.assets%/wallpapers/' + name + '.jpg';
+                        document.documentElement.style.setProperty('--wallpaper', "url('" + url + "')");
+                    }
                 } catch (e) {}
             })();
         </script>

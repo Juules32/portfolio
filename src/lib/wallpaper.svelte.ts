@@ -16,12 +16,16 @@ export const wallpapers: Wallpaper[] = [
 ];
 
 export const STORAGE_KEY = 'wallpaper';
-export const DEFAULT_WALLPAPER = 'snowdrops';
+export const NO_WALLPAPER = 'none';
+export const DEFAULT_WALLPAPER = NO_WALLPAPER;
 
-// Reactive name of the currently applied wallpaper, for highlighting the
-// selected file. Initialized to match app.html's pre-paint logic.
-export const wallpaperState = $state<{ active: string }>({
-    active: browser ? (localStorage.getItem(STORAGE_KEY) ?? DEFAULT_WALLPAPER) : DEFAULT_WALLPAPER,
+function resolveActive(raw: string | null): string | null {
+    const effective = raw ?? DEFAULT_WALLPAPER;
+    return effective === NO_WALLPAPER ? null : effective;
+}
+
+export const wallpaperState = $state<{ active: string | null }>({
+    active: resolveActive(browser ? localStorage.getItem(STORAGE_KEY) : null),
 });
 
 export function wallpaperUrl(name: string): string {
@@ -29,6 +33,15 @@ export function wallpaperUrl(name: string): string {
 }
 
 export function setWallpaper(name: string) {
+    if (wallpaperState.active === name) {
+        wallpaperState.active = null;
+        if (browser) {
+            localStorage.setItem(STORAGE_KEY, NO_WALLPAPER);
+            document.documentElement.style.removeProperty('--wallpaper');
+        }
+        return;
+    }
+
     wallpaperState.active = name;
     if (browser) {
         const url = wallpaperUrl(name);

@@ -71,7 +71,7 @@
                     or by using the menu on the left
                 </span>.
             </p>
-            <div class="project-container">
+            <div class="projects-container">
                 {#each filtered as project (project.id)}
                     <ShowcaseProjectComponent {project} />
                 {/each}
@@ -172,9 +172,9 @@
         gap: 10px;
     }
 
-    .project-container {
+    .projects-container {
         display: flex;
-        gap: 10px;
+        gap: 20px;
         flex-wrap: wrap;
     }
 
@@ -196,7 +196,7 @@
             display: none;
         }
 
-        .project-container {
+        .projects-container {
             justify-content: center;
         }
 
