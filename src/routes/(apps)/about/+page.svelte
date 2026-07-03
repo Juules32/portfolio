@@ -112,6 +112,7 @@
         width: 24px;
         height: 25px;
         object-fit: contain;
+        pointer-events: none;
     }
 
     .avatar {

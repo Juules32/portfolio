@@ -1,11 +1,12 @@
 <script lang="ts">
     import CopyrightComponent from '$components/CopyrightComponent.svelte';
     import WallpaperFileComponent from '$components/WallpaperFileComponent.svelte';
-    import { wallpapers}  from '$lib/wallpaper.svelte';
+    import { wallpapers} from '$lib/wallpaper.svelte';
+    import dslrGif from '$lib/assets/gifs/dslr.gif';
 </script>
 
 <section>
-    <h2>Welcome to my photo album</h2>
+    <h2>Welcome to my photo album <img class="dslr-gif" alt="DSLR gif" src={dslrGif} /></h2>
 
     <p>
         Set your wallpaper by clicking the files below.
@@ -28,6 +29,22 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+    }
+
+    h2 {
+        position: relative;
+    }
+
+    .dslr-gif {
+        position: absolute;
+        top: -20px;
+        margin-left: 6px;
+    }
+
+    @media (max-width: 380px) {
+        .dslr-gif {
+            display: none;
+        }
     }
 
     .wallpaper-list {

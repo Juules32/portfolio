@@ -2,10 +2,11 @@
     import CopyrightComponent from '$components/CopyrightComponent.svelte';
     import MusicFileComponent from '$components/MusicFileComponent.svelte';
     import { trackGroups } from '$lib/music.svelte';
+    import pianoGif from '$lib/assets/gifs/piano.gif';
 </script>
 
 <section>
-    <h2>Welcome to my music library</h2>
+    <h2>Welcome to my music library <img class="piano-gif" alt="piano gif" src={pianoGif} /></h2>
 
     <p>
         Play tracks by clicking the files below, or by using the music player in the bottom right of the taskbar.
@@ -32,6 +33,22 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+    }
+
+    h2 {
+        position: relative;
+    }
+
+    .piano-gif {
+        position: absolute;
+        top: 0px;
+        margin-left: 12px;
+    }
+    
+    @media (max-width: 380px) {
+        .piano-gif {
+            display: none;
+        }
     }
 
     h4 {

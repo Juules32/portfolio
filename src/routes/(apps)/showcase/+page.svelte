@@ -5,6 +5,7 @@
     import { tagGroups } from "$lib/tag";
     import { tagFilter, toggleTag } from "$lib/tagFilter.svelte";
     import CopyrightComponent from "$components/CopyrightComponent.svelte";
+    import mewGif from "$lib/assets/gifs/mew.gif";
 
     onDestroy(() => {
         tagFilter.active = null;
@@ -20,6 +21,8 @@
 </script>
 
 <section>
+    <img class="mew-gif" src={mewGif} alt="" aria-hidden="true" />
+
     <div class="left-menu">
         <nav class="tag-filter innie">
             <button
@@ -86,6 +89,19 @@
         display: flex;
         align-items: flex-start;
         gap: 20px;
+    }
+
+    /* Anchored to the app window (.window is position: relative), so it stays
+       pinned to the window's bottom-left corner and doesn't scroll with the
+       content — the scroll container clips it to the window area. */
+    .mew-gif {
+        position: absolute;
+        left: 8px;
+        bottom: -7px;
+        width:80px;
+        height: 78px;
+        image-rendering: auto;
+        pointer-events: none;
     }
 
     .left-menu {

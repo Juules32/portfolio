@@ -5,6 +5,8 @@
     import { taskbarApps } from '$lib/taskbar.svelte';
     import githubIcon from '$lib/assets/icons/github.svg';
     import windowsIcon from '$lib/assets/icons/16x16/windows.png';
+    import hamstersGif from '$lib/assets/gifs/hamsters.gif';
+    import { music } from '$lib/music.svelte';
 
     let menuOpen = $state(false);
 
@@ -27,7 +29,10 @@
 </script>
 
 <nav class="taskbar outie">
-
+    {#if music.playing}
+        <img class="hamsters-gif" src={hamstersGif} alt="" aria-hidden="true" />
+    {/if}
+    
     <div class="start">
         <button
             class="start-button outie pressable"
@@ -79,6 +84,16 @@
         display: flex;
         align-items: center;
         margin-left: 5px;
+    }
+
+    .hamsters-gif {
+        position: absolute;
+        right: 86px;
+        bottom: 38px;
+        width:144px;
+        height: 48px;
+        image-rendering: auto;
+        pointer-events: none;
     }
 
     .start-button {

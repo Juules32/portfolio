@@ -73,7 +73,7 @@ const someChordsTrack: Track = { name: 'some-chords', label: 'Some Chords', url:
 const otherUntitled01Track: Track = { name: 'other-untitled-01', label: 'Untitled 01', url: otherUntitled01 };
 
 // Other Covers
-const gameCornerTrack: Track = { name: 'game-corner', label: 'Game Corner', url: gameCorner };
+const gameCornerTrack: Track = { name: 'game-corner', label: 'HGSS Game Corner', url: gameCorner };
 
 const defaultTrack: Track = otherForgottenRuinTrack;
 
