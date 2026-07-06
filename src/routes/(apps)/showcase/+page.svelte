@@ -176,6 +176,7 @@
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
+        margin-top: 6px;
     }
 
     .main-copyright {
