@@ -26,19 +26,19 @@ export const skillSections: SkillSection[] = [
     {
         title: "Web dev",
         groups: [
-            { items: ["Svelte", "Vue", "Bootstrap", "Tailwind", "React", "htmx", "Redis", "WebAssembly", "FastAPI", "Dioxus", "Nginx", "Jinja"] },
+            { items: ["Svelte", "Vue", "Bootstrap", "Tailwind", "React", "Htmx", "Redis", "WebAssembly", "FastAPI", "Dioxus", "Nginx", "Jinja"] },
         ],
     },
     {
         title: "Game dev/Graphics",
         groups: [
-            { items: ["OpenGL", "SDL", "Godot", "Pygame", "raylib", "macroquad"] },
+            { items: ["OpenGL", "SDL", "Godot", "Pygame", "Twine", "Raylib", "Macroquad"] },
         ],
     },
     {
         title: "Databases",
         groups: [
-            { items: ["SQLite", "MySQL", "Postgres", "psycopg2"] },
+            { items: ["SQLite", "MySQL", "Postgres", "Psycopg2"] },
         ],
     },
     {
@@ -57,7 +57,7 @@ export const skillSections: SkillSection[] = [
         title: "Other Skills",
         groups: [
             {
-                subtitle: "Music composition, transcription, recording, mixing, mastering",
+                subtitle: "Music composition, transcription, recording, mixing and mastering",
                 items: ["Reaper", "MuseScore", "Audacity"],
             },
             {

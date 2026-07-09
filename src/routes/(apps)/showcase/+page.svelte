@@ -68,7 +68,7 @@
                 Filter projects by clicking their multicolored tags 
 
                 <span class="tag-message">
-                    or by using the menu on the left
+                    or with the menu on the left
                 </span>.
             </p>
             <div class="projects-container">

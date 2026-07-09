@@ -9,9 +9,9 @@
     <h2>Welcome to my photo album <img class="dslr-gif" alt="DSLR gif" src={dslrGif} /></h2>
 
     <p>
-        Set your wallpaper by clicking the files below.
+        Set your wallpaper by clicking the files below. Click again to remove a wallpaper.
     </p>
-    
+
     <div class="wallpaper-list">
         {#each wallpapers as wallpaper (wallpaper)}
                 <WallpaperFileComponent {wallpaper} />
@@ -21,7 +21,7 @@
     <div class="copyright">
         <CopyrightComponent extraText />
     </div>
-    
+
 </section>
 
 <style>
