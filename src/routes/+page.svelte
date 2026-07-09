@@ -7,10 +7,7 @@
     onMount(() => {
         if (!sessionStorage.getItem('desktopVisited')) {
             sessionStorage.setItem('desktopVisited', 'true');
-
-            setTimeout(() => {
-                goto(resolve(aboutMeApp.endpoint ?? '/'));
-            }, 500);
+            goto(resolve(aboutMeApp.endpoint ?? '/'));
         }
     });
 </script>
