@@ -116,7 +116,7 @@
         .window.windowed .window-content {
             flex: none;
             aspect-ratio: 1.774;
-            width: min(100vw - 200px, (100vh - 140px) * 16 / 9);
+            width: min(100vw - 200px, (100dvh - 140px) * 16 / 9);
         }
     }
 

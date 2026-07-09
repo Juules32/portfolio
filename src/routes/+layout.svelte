@@ -57,7 +57,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100vh;
+        height: 100dvh;
     }
 
     main {
@@ -70,7 +70,7 @@
     #wallpaper {
         position: fixed;
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         background-image: var(--wallpaper);
         background-size: cover;
         background-position: center;

@@ -27,7 +27,7 @@
 
     .safe-screen {
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         background-color: black;
         color: var(--color-text-shutdown);
         display: flex;
