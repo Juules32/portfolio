@@ -1,5 +1,6 @@
-import { aiTag, artTag, cliTag, cppTag, dataParsingTag, fastAPITag, fsTag, fullstackTag, gameJamTag, gameTag, godotTag, javaTag, machineLearningTag, multiplayerTag, openGLTag, pythonTag, rustTag, shadersTag, svelteTag, toolingTag, vueTag, wasmTag, type Tag } from '$lib/tag'
+import { aiTag, artTag, cliTag, cppTag, dataParsingTag, fastAPITag, fsTag, fullstackTag, gameJamTag, gameTag, godotTag, javaTag, machineLearningTag, multiplayerTag, openGLTag, pythonTag, rustTag, shadersTag, svelteTag, toolingTag, twineTag, vueTag, wasmTag, type Tag } from '$lib/tag'
 import asteroidEscortThumbnail from '$lib/assets/thumbnails/asteroid-escort.png'
+import nightWardThumbnail from '$lib/assets/thumbnails/night-ward.png'
 import computeShaderGameOfLifeThumbnail from '$lib/assets/thumbnails/compute-shader-game-of-life.png'
 import crabsweeperThumbnail from '$lib/assets/thumbnails/crabsweeper.png'
 import fusionForgeThumbnail from '$lib/assets/thumbnails/fusion-forge.png'
@@ -38,6 +39,17 @@ const asteroidEscortProject: Project = {
     demoUrl: 'https://asteroid-escort.juules32.com',
     itchUrl: 'https://albidalbi.itch.io/asteroid-escort',
     githubUrl: 'https://github.com/HalfdanBrage/asteroid-escort',
+};
+
+const nightWardProject: Project = {
+    id: 'night-ward',
+    name: 'NIGHT WARD',
+    thumbnail: nightWardThumbnail,
+    description: 'Twine game where you play as a hospital patient. Explore the ward\'s purple-lit hallways at night for signs of what brought you here, and decide for yourself which of them to believe.',
+    tags: [gameTag, twineTag],
+    pixelateThumbnail: false,
+    itchUrl: 'https://juules32.itch.io/night-ward',
+    githubUrl: 'https://github.com/Juules32/night-ward',
 };
 
 const computeShaderGameOfLifeProject: Project = {
@@ -173,6 +185,7 @@ export const projects: Project[] = [
     sisyphus32Project,
     asteroidEscortProject,
     pokelinkProject,
+    nightWardProject,
     crabsweeperProject,
     impressionAnalysisProject,
     computeShaderGameOfLifeProject,

@@ -19,6 +19,11 @@ export const multiplayerTag: Tag = {
     color: '#e84393',
 };
 
+export const twineTag: Tag = {
+    name: 'Twine',
+    color: '#c19156',
+};
+
 export const svelteTag: Tag = {
     name: "Svelte",
     color: "#ff3e00"
@@ -127,7 +132,7 @@ export const tagGroups: TagGroup[] = [
     },
     {
         name: "Frameworks & Web",
-        tags: [svelteTag, vueTag, fastAPITag, wasmTag, fullstackTag],
+        tags: [svelteTag, vueTag, fastAPITag, wasmTag, fullstackTag, twineTag],
     },
     {
         name: "Engines & Graphics",
