@@ -32,7 +32,7 @@
     {#if music.playing}
         <img class="hamsters-gif" src={hamstersGif} alt="" aria-hidden="true" />
     {/if}
-    
+
     <div class="start">
         <button
             class="start-button outie pressable"
@@ -79,7 +79,7 @@
         background: var(--color-bg-grey);
         border: 2px solid var(--color-border-grey);
     }
-        
+
     .start {
         display: flex;
         align-items: center;
@@ -92,7 +92,6 @@
         bottom: 38px;
         width:144px;
         height: 48px;
-        image-rendering: auto;
         pointer-events: none;
     }
 
@@ -126,7 +125,7 @@
             display: none;
         }
     }
-    
+
     .taskbar-corner {
         height: 26px;
         margin-left: 6px;

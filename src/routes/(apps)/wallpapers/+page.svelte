@@ -9,7 +9,7 @@
     <h2>Welcome to my photo album <img class="dslr-gif" alt="DSLR gif" src={dslrGif} /></h2>
 
     <p>
-        Set your wallpaper by clicking the files below. Click again to remove a wallpaper.
+        Set your wallpaper by clicking the files below. Click again to remove it.
     </p>
 
     <div class="wallpaper-list">

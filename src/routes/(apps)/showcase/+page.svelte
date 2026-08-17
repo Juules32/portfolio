@@ -32,7 +32,7 @@
             >
                 All
             </button>
-    
+
             {#each tagGroups as group (group.name)}
                 <h4>{group.name}</h4>
                 {#each group.tags as tag (tag.name)}
@@ -46,7 +46,7 @@
                     </button>
                 {/each}
             {/each}
-    
+
             <p class="result-count">
                 Showing {filtered.length} of {projects.length} projects
             </p>
@@ -56,16 +56,16 @@
             <CopyrightComponent />
         </div>
     </div>
-    
+
     <div class="main">
         <div class="content">
             <h1>Project Showcase</h1>
             <p>
-                Welcome to my showcase where major projects are listed. 
+                Welcome to my showcase where major projects are listed.
                 Projects are either work-related, study-related, or simply hobby projects in various stages of refinement.
             </p>
             <p>
-                Filter projects by clicking their multicolored tags 
+                Filter projects by clicking their multicolored tags
 
                 <span class="tag-message">
                     or with the menu on the left
@@ -100,7 +100,6 @@
         bottom: -7px;
         width:80px;
         height: 78px;
-        image-rendering: auto;
         pointer-events: none;
         z-index: 100;
     }
@@ -110,7 +109,7 @@
         top: 0;
         width: 200px;
     }
-    
+
     .tag-filter {
         display: flex;
         flex-direction: column;
