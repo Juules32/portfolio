@@ -13,8 +13,16 @@ import eternaCity from '$lib/assets/sound/piano-covers/eterna-city.mp3';
 import eternaForest from '$lib/assets/sound/piano-covers/eterna-forest.mp3';
 import herschValentine from '$lib/assets/sound/piano-covers/hersch-valentine.mp3';
 import jumpUpSuperstar from '$lib/assets/sound/piano-covers/jump-up-superstar.mp3';
+import miphasTheme from '$lib/assets/sound/piano-covers/miphas-theme.mp3';
+import nikoWorldMachine from '$lib/assets/sound/piano-covers/niko-world-machine.mp3';
 import petersonGiants from '$lib/assets/sound/piano-covers/peterson-giants.mp3';
+import pumpkinWaltz from '$lib/assets/sound/piano-covers/pumpkin-waltz.mp3';
+import ravelAdagioAssai from '$lib/assets/sound/piano-covers/ravel-adagio-assai.mp3';
+import sakamotoAndata from '$lib/assets/sound/piano-covers/sakamoto-andata.mp3';
+import sakamotoDream from '$lib/assets/sound/piano-covers/sakamoto-dream.mp3';
 import sakamotoMecanique from '$lib/assets/sound/piano-covers/sakamoto-mecanique.mp3';
+import sakamotoSarabande from '$lib/assets/sound/piano-covers/sakamoto-sarabande.mp3';
+import zeldasLullaby from '$lib/assets/sound/piano-covers/zeldas-lullaby.mp3';
 
 // Other Compositions
 import harp from '$lib/assets/sound/other-compositions/harp.mp3';
@@ -57,8 +65,16 @@ const eternaCityTrack: Track = { name: 'eterna-city', label: 'Eterna City', url:
 const eternaForestTrack: Track = { name: 'eterna-forest', label: 'Eterna Forest', url: eternaForest };
 const herschValentineTrack: Track = { name: 'hersch-valentine', label: 'Hersch Valentine', url: herschValentine };
 const jumpUpSuperstarTrack: Track = { name: 'jump-up-superstar', label: 'Jump up Superstar', url: jumpUpSuperstar };
+const miphasThemeTrack: Track = { name: 'miphas-theme', label: "Mipha's Theme", url: miphasTheme };
+const nikoWorldMachineTrack: Track = { name: 'niko-world-machine', label: 'Niko World Machine', url: nikoWorldMachine };
 const petersonGiantsTrack: Track = { name: 'peterson-giants', label: 'Peterson Giants', url: petersonGiants };
+const pumpkinWaltzTrack: Track = { name: 'pumpkin-waltz', label: 'Pumpkin Waltz', url: pumpkinWaltz };
+const ravelAdagioAssaiTrack: Track = { name: 'ravel-adagio-assai', label: 'Ravel Adagio Assai', url: ravelAdagioAssai };
+const sakamotoAndataTrack: Track = { name: 'sakamoto-andata', label: 'Sakamoto Andata', url: sakamotoAndata };
+const sakamotoDreamTrack: Track = { name: 'sakamoto-dream', label: 'Sakamoto Dream', url: sakamotoDream };
 const sakamotoMecaniqueTrack: Track = { name: 'sakamoto-mecanique', label: 'Sakamoto Mecanique', url: sakamotoMecanique };
+const sakamotoSarabandeTrack: Track = { name: 'sakamoto-sarabande', label: 'Sakamoto Sarabande', url: sakamotoSarabande };
+const zeldasLullabyTrack: Track = { name: 'zeldas-lullaby', label: "Zelda's Lullaby", url: zeldasLullaby };
 
 // Other Compositions
 const otherBarTrack: Track = { name: 'other-bar', label: 'Bar', url: otherBar };
@@ -93,8 +109,16 @@ const pianoCovers: Track[] = [
     eternaForestTrack,
     herschValentineTrack,
     jumpUpSuperstarTrack,
+    miphasThemeTrack,
+    nikoWorldMachineTrack,
     petersonGiantsTrack,
+    pumpkinWaltzTrack,
+    ravelAdagioAssaiTrack,
+    sakamotoAndataTrack,
+    sakamotoDreamTrack,
     sakamotoMecaniqueTrack,
+    sakamotoSarabandeTrack,
+    zeldasLullabyTrack,
 ];
 
 const otherCompositions: Track[] = [
