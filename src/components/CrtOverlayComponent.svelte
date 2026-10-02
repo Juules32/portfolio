@@ -42,9 +42,9 @@
            shutdown screen and doesn't alter fixed-position descendants. */
         -webkit-backdrop-filter: blur(0.1px) contrast(1.05) saturate(1.2) brightness(1.03);
         backdrop-filter: blur(0.1px) contrast(1.05) saturate(1.2) brightness(1.03);
-        border-radius: 10px;
         /* Fills the area outside the rounded corners with black. */
-        box-shadow: 0 0 0 20px #000;
+        /*border-radius: 10px;*/
+        /*box-shadow: 0 0 0 20px #000;*/
         background:
             /* vignette */
             radial-gradient(ellipse at center, transparent 65%, rgba(0, 0, 0, 0.15) 100%),

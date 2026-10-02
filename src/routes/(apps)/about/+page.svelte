@@ -126,7 +126,7 @@
     .left-menu {
         position: sticky;
         top: 0;
-        width: 200px;
+        width: 208px;
     }
 
     .contact-panel {
@@ -180,6 +180,12 @@
         width: 100%;
         padding: 5px 4px;
         cursor: pointer;
+        font-size: 13px;
+    }
+
+    /* The global `*` font-size would otherwise override inheritance. */
+    .contact-row span {
+        font-size: inherit;
     }
 
     .contact-row + .contact-row {

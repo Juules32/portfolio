@@ -59,11 +59,6 @@ export const godotTag: Tag = {
     color: "#478cbf"
 };
 
-export const machineLearningTag: Tag = {
-    name: "Machine Learning",
-    color: "#f39c12"
-};
-
 export const aiTag: Tag = {
     name: "AI",
     color: "#9b59b6"
@@ -104,13 +99,8 @@ export const toolingTag: Tag = {
     color: "#7f8c8d"
 };
 
-export const dataParsingTag: Tag = {
-    name: "Data Parsing",
-    color: "#27ae60"
-};
-
-export const cliTag: Tag = {
-    name: "CLI",
+export const inDevelopmentTag: Tag = {
+    name: "In Development",
     color: "#2d2d2d"
 };
 
@@ -140,7 +130,7 @@ export const tagGroups: TagGroup[] = [
     },
     {
         name: "Concepts",
-        tags: [gameTag, multiplayerTag, gameJamTag, aiTag, machineLearningTag, toolingTag, cliTag, dataParsingTag, artTag],
+        tags: [inDevelopmentTag, gameTag, multiplayerTag, gameJamTag, aiTag, toolingTag, artTag],
     },
 ];
 

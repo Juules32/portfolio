@@ -11,7 +11,7 @@
     <p>
         Play tracks by clicking the files below, or by using the music player in the bottom right of the taskbar.
     </p>
-    
+
     {#each trackGroups as group (group.name)}
         <div>
             <h4>{group.name}</h4>
@@ -41,11 +41,11 @@
 
     .piano-gif {
         position: absolute;
-        top: 0px;
+        top: 5px;
         margin-left: 12px;
     }
-    
-    @media (max-width: 380px) {
+
+    @media (width <= 440px) {
         .piano-gif {
             display: none;
         }

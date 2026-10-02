@@ -1,4 +1,6 @@
 <script lang="ts">
+    import hamstersGif from '$lib/assets/gifs/hamsters.gif';
+
     import { music, play, pause, prevTrack, nextTrack, toggleRepeat, toggleShuffle } from '$lib/music.svelte';
 
     let audio: HTMLAudioElement;
@@ -29,6 +31,9 @@
     <button class="outie pressable" type="button" aria-label="Play" onclick={playOrPause}><span class="material-symbols">{music.playing ? 'pause' : 'play_arrow'}</span></button>
     <button class="outie pressable" type="button" aria-label="Next track" onclick={nextTrack}><span class="material-symbols">skip_next</span></button>
     <button class="pressable" class:innie={music.repeat} class:outie={!music.repeat} type="button" aria-label="Repeat" aria-pressed={music.repeat} onclick={toggleRepeat}><span class="material-symbols">repeat</span></button>
+    {#if music.playing}
+        <img class="hamsters-gif" src={hamstersGif} alt="" aria-hidden="true" />
+    {/if}
 </div>
 
 <style>
@@ -37,6 +42,7 @@
         height: 26px;
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     .audio-player button {
@@ -46,6 +52,17 @@
         align-items: center;
         justify-content: center;
         padding: 0 2px;
+    }
+
+
+    .hamsters-gif {
+        position: absolute;
+        bottom: calc(100% + 7px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 144px;
+        height: 48px;
+        pointer-events: none;
     }
 
     .material-symbols {

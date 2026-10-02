@@ -41,7 +41,7 @@
         margin-left: 6px;
     }
 
-    @media (max-width: 380px) {
+    @media (width <= 440px) {
         .dslr-gif {
             display: none;
         }

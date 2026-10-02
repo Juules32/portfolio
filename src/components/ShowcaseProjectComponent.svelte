@@ -73,7 +73,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 300px;
+        height: 313px;
         padding: 5px;
         background-color: var(--color-bg-grey);
         gap: 5px;
@@ -87,7 +87,8 @@
     /* No page/demo: drop the tags into the link row and pin it to the bottom. */
     .link-container.inline {
         margin-top: auto;
-        align-items: center;
+        /* Keep buttons on the bottom line when the tags wrap. */
+        align-items: flex-end;
     }
 
     .link-container .tag-container {
@@ -125,7 +126,7 @@
     }
 
     section * {
-        width: 260px;
+        width: 286px;
     }
 
     h4 {
@@ -136,7 +137,7 @@
     }
 
     img {
-        height: 130px;
+        height: 143px;
         object-fit: cover;
     }
 

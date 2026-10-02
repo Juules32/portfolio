@@ -104,7 +104,7 @@
         border-right: 2px solid var(--color-border-black);
     }
 
-    @media (min-width: 601px) {
+    @media (width >= 700px) and (height >= 500px) {
         .window.windowed {
             position: absolute;
             inset: 0;

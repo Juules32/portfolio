@@ -17,7 +17,6 @@
 
 <style>
     span {
-        text-shadow: 0.5px 0.5px 1px var(--color-text-white);
         line-height: 1.1;
     }
 
@@ -25,8 +24,8 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        width: 90px;
-        height: 90px;
+        width: 115px;
+        height: 100px;
         gap: 4px;
         padding: 6px;
         cursor: pointer;
@@ -46,7 +45,6 @@
     button:active span,
     button.active span {
         color: var(--color-text-white);
-        text-shadow: 0.5px 0.5px 1px var(--color-text-black);
     }
     
 </style>

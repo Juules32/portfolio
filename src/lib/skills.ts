@@ -14,19 +14,19 @@ export const skillSections: SkillSection[] = [
     {
         title: "Preferred languages",
         groups: [
-            { items: ["Rust", "Python", "GDScript"] },
+            { items: ["Rust", "Python", "C#", "GDScript"] },
         ],
     },
     {
         title: "Other known languages",
         groups: [
-            { items: ["C", "C++", "C#", "TypeScript", "Java", "Golang", "F#", "GLSL", "Bash"] },
+            { items: ["C", "C++", "TypeScript", "Java", "Golang", "F#", "GLSL", "Bash"] },
         ],
     },
     {
         title: "Web dev",
         groups: [
-            { items: ["Svelte", "Vue", "Bootstrap", "Tailwind", "React", "Htmx", "Redis", "WebAssembly", "FastAPI", "Dioxus", "Nginx", "Jinja"] },
+            { items: ["Svelte", "Vue", "Bootstrap", "Tailwind", "React", "Htmx", "WebAssembly", "FastAPI", "Dioxus", "Nginx", "Jinja"] },
         ],
     },
     {
@@ -38,7 +38,7 @@ export const skillSections: SkillSection[] = [
     {
         title: "Databases",
         groups: [
-            { items: ["SQLite", "MySQL", "Postgres", "Psycopg2"] },
+            { items: ["SQLite", "MySQL", "Postgres", "Redis", "Psycopg2"] },
         ],
     },
     {

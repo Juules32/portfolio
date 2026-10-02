@@ -31,8 +31,8 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        width: 80px;
-        height: 70px;
+        width: 96px;
+        height: 86px;
         gap: 4px;
         padding: 6px;
     }
@@ -48,7 +48,7 @@
     }
 
     .desktop-app img {
-        width: 32px;
+        width: 48px;
     }
 
     .desktop-app span {

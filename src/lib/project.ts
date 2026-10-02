@@ -1,4 +1,4 @@
-import { aiTag, artTag, cliTag, cppTag, dataParsingTag, fastAPITag, fsTag, fullstackTag, gameJamTag, gameTag, godotTag, javaTag, machineLearningTag, multiplayerTag, openGLTag, pythonTag, rustTag, shadersTag, svelteTag, toolingTag, twineTag, vueTag, wasmTag, type Tag } from '$lib/tag'
+import { aiTag, artTag, cppTag, fastAPITag, fsTag, fullstackTag, gameJamTag, gameTag, godotTag, inDevelopmentTag, javaTag, multiplayerTag, openGLTag, pythonTag, rustTag, shadersTag, svelteTag, toolingTag, twineTag, vueTag, wasmTag, type Tag } from '$lib/tag'
 import asteroidEscortThumbnail from '$lib/assets/thumbnails/asteroid-escort.png'
 import nightWardThumbnail from '$lib/assets/thumbnails/night-ward.png'
 import computeShaderGameOfLifeThumbnail from '$lib/assets/thumbnails/compute-shader-game-of-life.png'
@@ -33,8 +33,8 @@ const asteroidEscortProject: Project = {
     id: 'asteroid-escort',
     name: 'Asteroid Escort',
     thumbnail: asteroidEscortThumbnail,
-    description: '2D physics-based space mission with base-building mechanics. Escort your base through an asteroid belt to a faraway wormhole while protecting it from aliens of different types.',
-    tags: [gameTag, multiplayerTag, shadersTag, godotTag],
+    description: '2D physics-based space mission with base-building mechanics.',
+    tags: [gameTag, shadersTag, godotTag],
     pixelateThumbnail: true,
     demoUrl: 'https://asteroid-escort.juules32.com',
     itchUrl: 'https://albidalbi.itch.io/asteroid-escort',
@@ -45,7 +45,7 @@ const nightWardProject: Project = {
     id: 'night-ward',
     name: 'NIGHT WARD',
     thumbnail: nightWardThumbnail,
-    description: 'Twine game where you play as a hospital patient. Explore the ward\'s purple-lit hallways at night for signs of what brought you here, and decide for yourself which of them to believe.',
+    description: 'Twine game where you play as a hospital patient. Explore the ward\'s purple-lit hallways at night to come to terms with your predicament.',
     tags: [gameTag, twineTag],
     pixelateThumbnail: false,
     itchUrl: 'https://juules32.itch.io/night-ward',
@@ -75,10 +75,10 @@ const crabsweeperProject: Project = {
 
 const fusionForgeProject: Project = {
     id: 'fusion-forge',
-    name: 'Fusion Forge (In development)',
+    name: 'Fusion Forge',
     thumbnail: fusionForgeThumbnail,
     description: 'Deck builder where cards and their effects are combined additively, with an emphasis on emergent gameplay.',
-    tags: [gameTag, shadersTag, artTag, godotTag],
+    tags: [gameTag, shadersTag, artTag, godotTag, inDevelopmentTag],
     pixelateThumbnail: true,
 };
 
@@ -86,26 +86,26 @@ const impressionAnalysisProject: Project = {
     id: 'impression-analysis',
     name: 'Ear Impression Analysis Service',
     thumbnail: impressionAnalysisThumbnail,
-    description: 'Automated quality inspection tool. Includes machine learning model trained with labeled data, and a frontend intended for ear specialists. Developed in scrum team for 3Shape Audio.',
-    tags: [aiTag, machineLearningTag, toolingTag, fullstackTag, vueTag, fastAPITag, pythonTag],
+    description: 'Automated quality inspection tool built on supervised model, and a frontend intended for ear specialists.',
+    tags: [aiTag, toolingTag, fullstackTag, vueTag, fastAPITag, pythonTag],
 };
 
 const juulesPlusPlusProject: Project = {
     id: 'juules-plus-plus',
     name: 'Juules Plus Plus',
     thumbnail: juulesPlusPlusThumbnail,
-    description: 'UCI compliant Chess engine written in C++ using bitboards. Uses a tree-based search function with many heuristics to optimize performance.',
-    tags: [aiTag, toolingTag, cliTag, cppTag, wasmTag],
+    description: 'UCI compliant Chess engine written in C++ using bitboards.',
+    tags: [aiTag, toolingTag, cppTag, wasmTag],
     demoUrl: 'https://juules-plus-plus.juules32.com',
     githubUrl: 'https://github.com/Juules32/juules-plus-plus',
 };
 
 const liminalExplorersProject: Project = {
     id: 'liminal-explorers',
-    name: 'Liminal Explorers (In Development)',
+    name: 'Liminal Explorers',
     thumbnail: liminalExplorersThumbnail,
     description: 'Online co-op game in 3D with low-res art style. Utilizes ray-traced audio for extra immersion.',
-    tags: [gameTag, multiplayerTag, godotTag],
+    tags: [gameTag, multiplayerTag, godotTag, inDevelopmentTag],
     pixelateThumbnail: true,
     githubUrl: 'https://github.com/Juules32/liminal-explorers',
 };
@@ -143,7 +143,7 @@ const potatoProteccProject: Project = {
     id: 'potato-protecc',
     name: 'Potato Protecc',
     thumbnail: potatoProteccThumbnail,
-    description: 'A not-so-cozy farming game where you have to protect precious potato plants from rodents and plague. Developed in three-person team during Nordic Game Jam 2025.',
+    description: 'A not-so-cozy farming game developed in three-person team for Nordic Game Jam 2025.',
     tags: [gameTag, gameJamTag, artTag, godotTag],
     demoUrl: 'https://potato-protecc.juules32.com/',
     itchUrl: 'https://juules32.itch.io/potato-protecc',
@@ -153,9 +153,9 @@ const proceduralDialogueSystemProject: Project = {
     id: 'procedural-dialogue-system',
     name: 'Procedural Dialogue System',
     thumbnail: proceduralDialogueSystemThumbnail,
-    description: 'Dialogue system that parses dialogue files to enable branching dialogue trees, manipulating game state, triggering functions, custom avatars, expressions, and special effects.',
+    description: 'Parses dialogue files to enable branching dialogue trees, manipulating game state, custom avatars, etc.',
     pixelateThumbnail: true,
-    tags: [toolingTag, dataParsingTag, artTag, godotTag],
+    tags: [toolingTag, artTag, godotTag],
     demoUrl: 'https://dialogue.juules32.com',
 };
 
@@ -164,7 +164,7 @@ const scrabblerProject: Project = {
     name: 'Scrabbler',
     thumbnail: scrabblerThumbnail,
     description: 'Stateless scrabble engine implemented in F#. Can play against a human or another ai following the same protocol.',
-    tags: [dataParsingTag, toolingTag, cliTag, fsTag],
+    tags: [toolingTag, fsTag],
     pixelateThumbnail: true,
     githubUrl: 'https://github.com/Juules32/scrabbler',
 };
@@ -173,8 +173,8 @@ const sisyphus32Project: Project = {
     id: 'sisyphus32',
     name: 'Sisyphus32',
     thumbnail: sisyphus32Thumbnail,
-    description: 'Grandmaster-level chess engine with dozens of advanced features. Developed for my bachelor project at the IT University of Copenhagen.',
-    tags: [aiTag, toolingTag, cliTag, rustTag, wasmTag],
+    description: 'Grandmaster-level chess engine with dozens of advanced features. Developed for my bachelor project.',
+    tags: [aiTag, toolingTag, rustTag, wasmTag],
     demoUrl: 'https://sisyphus32.juules32.com',
     githubUrl: 'https://github.com/Juules32/sisyphus32',
     cratesUrl: 'https://crates.io/crates/sisyphus32'

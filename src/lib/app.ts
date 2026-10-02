@@ -2,16 +2,16 @@ import type { Pathname } from '$app/types';
 import userIcon from '$lib/assets/icons/16x16/user.png';
 import errorIcon from '$lib/assets/icons/16x16/error.png';
 import openDirectoryIcon from '$lib/assets/icons/16x16/open-directory.png';
-import openDirectoryDesktopIcon from '$lib/assets/icons/32x32/open-directory.png';
-import userDesktopIcon from '$lib/assets/icons/32x32/user.png';
-import recycleBinDesktopIcon from '$lib/assets/icons/32x32/recycle-bin.png';
-import crabsweeperDesktopIcon from '$lib/assets/icons/32x32/crabsweeper.png';
-import cdDesktopIcon from '$lib/assets/icons/32x32/cd.png';
+import openDirectoryDesktopIcon from '$lib/assets/icons/48x48/open-directory.png';
+import magnifyingGlassDesktopIcon from '$lib/assets/icons/48x48/magnifying-glass.png';
+import recycleBinDesktopIcon from '$lib/assets/icons/48x48/recycle-bin.png';
+import crabsweeperDesktopIcon from '$lib/assets/icons/48x48/crabsweeper.png';
+import cdDesktopIcon from '$lib/assets/icons/48x48/cd.png';
 import cdIcon from '$lib/assets/icons/16x16/cd.png';
-import helpBookDesktopIcon from '$lib/assets/icons/32x32/help-book.png';
+import helpBookDesktopIcon from '$lib/assets/icons/48x48/help-book.png';
 import helpBookIcon from '$lib/assets/icons/16x16/help-book.png';
 import crabsweeperIcon from '$lib/assets/icons/16x16/crabsweeper.png';
-import photoDesktopIcon from '$lib/assets/icons/32x32/photo.png';
+import photoDesktopIcon from '$lib/assets/icons/48x48/photo.png';
 import photoIcon from '$lib/assets/icons/16x16/photo.png';
 
 export interface App {
@@ -40,7 +40,7 @@ export const aboutMeApp: App = {
     label: 'About Me',
     endpoint: '/about',
     icon: userIcon,
-    desktopIcon: userDesktopIcon
+    desktopIcon: magnifyingGlassDesktopIcon
 };
 
 export const showcaseApp: App = {
