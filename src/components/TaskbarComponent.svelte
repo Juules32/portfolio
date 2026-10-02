@@ -118,7 +118,7 @@
         }
     }
 
-    @media (max-width <= 338px) {
+    @media (width <= 338px) {
         .taskbar {
             display: none;
         }
