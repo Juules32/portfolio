@@ -187,7 +187,7 @@
         text-align: right;
     }
 
-    @container app-window (max-width: 500px) or (max-height: 560px) {
+    @container app-window (max-width: 520px) or (max-height: 700px) {
         .left-menu {
             display: none;
         }

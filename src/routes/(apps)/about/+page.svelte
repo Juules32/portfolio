@@ -6,9 +6,8 @@
     import mailIcon from "$lib/assets/icons/mail.svg";
     import itchIcon from "$lib/assets/icons/itch-red.svg";
     import catGif from "$lib/assets/gifs/cat.gif";
+    import avatar from "$lib/assets/avatar.png";
     import { onMount } from "svelte";
-
-    const avatar = "https://github.com/Juules32.png";
 
     const contacts = [
         { label: "LinkedIn", href: "https://www.linkedin.com/in/benjamin-jensen-476701373/", icon: linkedinIcon},
@@ -256,7 +255,7 @@
         display: none;
     }
 
-    @container app-window (max-width: 500px) or (max-height: 300px) {
+    @container app-window (width <= 500px) or (height <= 320px) {
         /* Stack the layout and move the contact box below the content. */
         section {
             flex-direction: column;

@@ -52,7 +52,7 @@
             repeating-linear-gradient(
                 to bottom,
                 transparent 0 calc(var(--crt-px) * 2),
-                rgba(0, 0, 0, 0.14) calc(var(--crt-px) * 2) calc(var(--crt-px) * 3)
+                rgba(0, 0, 0, 0.04) calc(var(--crt-px) * 2) calc(var(--crt-px) * 3)
             ),
             /* RGB aperture grille */
             repeating-linear-gradient(

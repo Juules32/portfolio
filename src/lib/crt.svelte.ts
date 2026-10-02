@@ -2,7 +2,7 @@ import { browser } from '$app/environment';
 
 // Explicit user choice ('on' | 'off'), persisted across visits.
 export const STORAGE_KEY = 'crt';
-// Auto-detected default, cached per session so the probe runs at most once.
+// Auto-detected default, cached per session so detection runs at most once.
 const SESSION_KEY = 'crt-auto';
 
 function readUserChoice(): boolean | null {
@@ -75,51 +75,11 @@ function passesStaticChecks(): boolean {
     return !hasSoftwareRenderer();
 }
 
-// Samples frame intervals with the effect on. A device that can't hold ~40fps
-// (or a browser in energy-saver mode) gets the effect turned back off.
-// Resolves null if the tab was hidden, since background tabs are throttled.
-function probeFrameRate(durationMs = 1500): Promise<boolean | null> {
-    return new Promise((resolve) => {
-        let frames = 0;
-        let start = 0;
-        const step = (t: number) => {
-            if (document.visibilityState !== 'visible') return resolve(null);
-            if (!start) start = t;
-            else frames++;
-            if (t - start < durationMs) requestAnimationFrame(step);
-            else resolve((frames * 1000) / (t - start) >= 40);
-        };
-        requestAnimationFrame(step);
-    });
-}
-
-function afterLoadAndIdle(): Promise<void> {
-    return new Promise((resolve) => {
-        const idle = () =>
-            'requestIdleCallback' in window
-                ? requestIdleCallback(() => resolve(), { timeout: 2000 })
-                : setTimeout(resolve, 500);
-        if (document.readyState === 'complete') idle();
-        else addEventListener('load', idle, { once: true });
-    });
-}
-
-export async function detectCrtDefault() {
+export function detectCrtDefault() {
     if (crt.decided) return;
 
-    if (!passesStaticChecks()) {
-        crt.decided = true;
-        writeSessionDefault(false);
-        return;
-    }
-
-    crt.enabled = true;
-    await afterLoadAndIdle();
-    if (crt.decided) return; // user toggled in the meantime
-
-    const fast = await probeFrameRate();
-    if (crt.decided || fast === null) return;
-    crt.enabled = fast;
+    const capable = passesStaticChecks();
+    crt.enabled = capable;
     crt.decided = true;
-    writeSessionDefault(fast);
+    writeSessionDefault(capable);
 }
