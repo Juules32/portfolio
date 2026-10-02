@@ -28,19 +28,26 @@
 
 <style>
     /* Everything is static and lives on a single layer: it's rasterized once
-       and then only composited, so an idle page costs nothing extra per frame.
-       No mix-blend-mode, filters or animations on purpose. */
+       and then only composited. No mix-blend-mode, SVG filters or animations
+       on purpose. */
     .crt {
         position: fixed;
         inset: 0;
         z-index: 10000;
         pointer-events: none;
+        /* Phosphor softness and colour grading for everything underneath.
+           Only re-runs when content below changes (idle pages cost nothing),
+           and the blur radius is kept tiny so it's a ~3-tap kernel. Applied to
+           the backdrop rather than as a filter on #layout, so it covers the
+           shutdown screen and doesn't alter fixed-position descendants. */
+        -webkit-backdrop-filter: blur(0.2px) contrast(1.05) saturate(1.2) brightness(1.03);
+        backdrop-filter: blur(0.2px) contrast(1.05) saturate(1.2) brightness(1.03);
         border-radius: 10px;
         /* Fills the area outside the rounded corners with black. */
         box-shadow: 0 0 0 20px #000;
         background:
             /* vignette */
-            radial-gradient(ellipse at center, transparent 65%, rgba(0, 0, 0, 0.3) 100%),
+            radial-gradient(ellipse at center, transparent 65%, rgba(0, 0, 0, 0.15) 100%),
             /* scanlines */
             repeating-linear-gradient(
                 to bottom,

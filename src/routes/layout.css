@@ -78,20 +78,10 @@ h3 {
     font-size: 1.3em;
 }
 
-/* CRT effect (see CrtOverlayComponent). Both are static: text shadows are
-   painted once with the glyphs, and the colour-matrix filter is a cheap GPU
-   pass. No blur, which would get expensive on a full-screen layer. */
 :root.crt body {
-    /* Chromatic aberration: faint red/cyan fringes one device pixel apart. */
     text-shadow:
         var(--crt-px, 1px) 0 rgba(255, 0, 0, 0.25),
         calc(var(--crt-px, 1px) * -1) 0 rgba(0, 255, 255, 0.25);
-}
-
-:root.crt #layout {
-    /* #layout spans the full viewport, so the containing block this creates
-       for fixed descendants (wallpaper, start menu backdrop) is unchanged. */
-    filter: contrast(1.05) saturate(1.1) brightness(1.03);
 }
 
 .outie, .innie {
