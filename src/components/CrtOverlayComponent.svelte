@@ -3,23 +3,27 @@
 
     // One "phosphor pixel" snapped to whole device pixels, so scanlines stay
     // crisp instead of moiréing at fractional scaling (e.g. Windows 125%).
-    let px = $state(1);
-
     function updatePx() {
         const dpr = window.devicePixelRatio || 1;
-        px = Math.max(1, Math.round(dpr)) / dpr;
+        const px = Math.max(1, Math.round(dpr)) / dpr;
+        document.documentElement.style.setProperty('--crt-px', `${px}px`);
     }
 
     $effect(() => {
         updatePx();
         detectCrtDefault();
     });
+
+    // The text fringing and colour grading in layout.css hang off this class.
+    $effect(() => {
+        document.documentElement.classList.toggle('crt', crt.enabled);
+    });
 </script>
 
 <svelte:window onresize={updatePx} />
 
 {#if crt.enabled}
-    <div class="crt" style:--crt-px="{px}px" aria-hidden="true"></div>
+    <div class="crt" aria-hidden="true"></div>
 {/if}
 
 <style>
