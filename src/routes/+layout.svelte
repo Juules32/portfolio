@@ -79,6 +79,5 @@
         background-position: center;
         background-color: var(--color-wallpaper);
         z-index: -2;
-        image-rendering: auto;
     }
 </style>

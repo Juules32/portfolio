@@ -152,7 +152,6 @@
         width: 170px;
         height: 170px;
         object-fit: cover;
-        image-rendering: auto;
         padding: 2px;
     }
 

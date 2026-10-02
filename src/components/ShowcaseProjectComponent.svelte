@@ -137,7 +137,6 @@
 
     img {
         height: 130px;
-        image-rendering: auto;
         object-fit: cover;
     }
 

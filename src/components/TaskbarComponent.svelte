@@ -101,7 +101,7 @@
 
     .hamsters-gif {
         position: absolute;
-        right: 86px;
+        right: 105px;
         bottom: 38px;
         width:144px;
         height: 48px;
