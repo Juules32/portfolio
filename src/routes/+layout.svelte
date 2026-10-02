@@ -1,6 +1,7 @@
 <script lang="ts">
     import TaskbarComponent from '$components/TaskbarComponent.svelte';
     import ShutDownComponent from '$components/ShutDownComponent.svelte';
+    import CrtOverlayComponent from '$components/CrtOverlayComponent.svelte';
     import './layout.css';
     import { endpointToApp, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { desktopApps } from '$lib/app';
@@ -38,6 +39,8 @@
 </div>
 
 <ShutDownComponent />
+
+<CrtOverlayComponent />
 
 <style>
     .desktop-apps {

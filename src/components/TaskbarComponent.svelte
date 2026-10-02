@@ -7,6 +7,7 @@
     import windowsIcon from '$lib/assets/icons/16x16/windows.png';
     import hamstersGif from '$lib/assets/gifs/hamsters.gif';
     import { music } from '$lib/music.svelte';
+    import { crt, toggleCrt } from '$lib/crt.svelte';
 
     let menuOpen = $state(false);
 
@@ -58,6 +59,18 @@
     <AudioPlayerComponent />
 
     <div class="taskbar-corner bordered">
+        <button
+            class="crt-toggle"
+            class:off={!crt.enabled}
+            type="button"
+            aria-label="CRT effect"
+            aria-pressed={crt.enabled}
+            title="CRT effect: {crt.enabled ? 'on' : 'off'}"
+            onclick={toggleCrt}
+        >
+            <span class="material-symbols">tv</span>
+        </button>
+
         <a href="https://github.com/Juules32">
             <img class="github" src={githubIcon} alt="GitHub" />
         </a>
@@ -140,5 +153,29 @@
     .github {
         display: flex;
         height: 16px;
+    }
+
+    .crt-toggle {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .crt-toggle.off {
+        opacity: 0.4;
+    }
+
+    .material-symbols {
+        font-family: 'Material Symbols Outlined Variable', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: 'liga';
+        font-variation-settings: 'FILL' 1;
     }
 </style>
