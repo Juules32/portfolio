@@ -6,7 +6,7 @@
 </script>
 
 <section>
-    <h2>Welcome to my photo album <img class="dslr-gif" alt="DSLR gif" src={dslrGif} /></h2>
+    <h1>Welcome to my photo album <img class="dslr-gif" alt="DSLR gif" src={dslrGif} /></h1>
 
     <p>
         Set your wallpaper by clicking the files below. Click again to remove it.
@@ -31,13 +31,13 @@
         gap: 16px;
     }
 
-    h2 {
+    h1 {
         position: relative;
     }
 
     .dslr-gif {
         position: absolute;
-        top: -20px;
+        top: -11px;
         margin-left: 6px;
     }
 

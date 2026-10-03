@@ -34,10 +34,10 @@
             </button>
 
             {#each tagGroups as group (group.name)}
-                <h4>{group.name}</h4>
+                <h4 class="r8">{group.name}</h4>
                 {#each group.tags as tag (tag.name)}
                     <button
-                        class="filter-row"
+                        class="filter-row r10"
                         class:selected={tagFilter.active?.name === tag.name}
                         onclick={() => toggleTag(tag)}
                     >
@@ -47,7 +47,7 @@
                 {/each}
             {/each}
 
-            <p class="result-count">
+            <p class="result-count r10">
                 Showing {filtered.length} of {projects.length} projects
             </p>
         </nav>
@@ -122,7 +122,6 @@
         padding: 0 4px;
         color: var(--color-bg-dark);
         text-transform: uppercase;
-        font-size: 12px;
         letter-spacing: 0.5px;
     }
 

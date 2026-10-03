@@ -41,10 +41,10 @@
                 {@render tagList()}
             {/if}
             {#if project.hasPage}
-                <a class="outie pressable" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Description</a>
+                <a class="outie pressable r10" href={resolve('/(apps)/showcase/[project]', { project: project.id })}>Description</a>
             {/if}
             {#if project.demoUrl}
-                <a class="outie pressable" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
+                <a class="outie pressable r10" href={resolve('/(apps)/showcase/[project]/demo', { project: project.id })}>Demo</a>
             {/if}
             {#if project.itchUrl}
                 <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
@@ -132,7 +132,6 @@
     h4 {
         background-color: var(--color-blue);
         color: var(--color-text-white);
-        text-shadow: 1px 1px 0px black;
         padding: 4px;
     }
 

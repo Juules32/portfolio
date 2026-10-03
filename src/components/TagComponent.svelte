@@ -21,7 +21,7 @@
 </script>
 
 <button
-    class="tag pressable"
+    class="tag pressable r10"
     class:innie={selected}
     class:outie={!selected}
     style="background-color: {tag ? tag.color : 'var(--color-bg-dark)'};"

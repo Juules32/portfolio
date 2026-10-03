@@ -1,8 +1,8 @@
 import type { Pathname } from '$app/types';
-import userIcon from '$lib/assets/icons/16x16/user.png';
 import errorIcon from '$lib/assets/icons/16x16/error.png';
 import openDirectoryIcon from '$lib/assets/icons/16x16/open-directory.png';
 import openDirectoryDesktopIcon from '$lib/assets/icons/48x48/open-directory.png';
+import magnifyingGlassIcon from '$lib/assets/icons/16x16/magnifying-glass.png';
 import magnifyingGlassDesktopIcon from '$lib/assets/icons/48x48/magnifying-glass.png';
 import recycleBinDesktopIcon from '$lib/assets/icons/48x48/recycle-bin.png';
 import crabsweeperDesktopIcon from '$lib/assets/icons/48x48/crabsweeper.png';
@@ -39,7 +39,7 @@ export const aboutMeApp: App = {
     id: 'aboutMe',
     label: 'About Me',
     endpoint: '/about',
-    icon: userIcon,
+    icon: magnifyingGlassIcon,
     desktopIcon: magnifyingGlassDesktopIcon
 };
 

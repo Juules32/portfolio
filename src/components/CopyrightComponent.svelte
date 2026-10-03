@@ -9,7 +9,7 @@
     let { extraText = false }: Props = $props();
 </script>
 
-<p class="copyright-notice">© {year} Juules32{extraText ? '. All rights reserved.' : ''}</p>
+<p class="copyright-notice r10">© {year} Juules32{extraText ? '. All rights reserved.' : ''}</p>
 
 <style>
     .copyright-notice {

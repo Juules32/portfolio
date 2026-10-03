@@ -36,7 +36,7 @@
             onclick={() => (menuOpen = !menuOpen)}
         >
             <img src={windowsIcon} alt="" />
-            <b>Start</b>
+            <b class="r10">Start</b>
         </button>
     </div>
 
@@ -108,8 +108,8 @@
     .taskbar-apps {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        margin-left: 0.5rem;
+        gap: 5px;
+        margin-left: 5px;
     }
 
     @media (width <= 974px) {

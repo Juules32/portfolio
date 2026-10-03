@@ -52,13 +52,13 @@
             <p class="contact-heading">Contact Methods</p>
             <div class="contacts">
                 <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- mailto is assembled client-side; copy is handled in JS -->
-                <a class="contact-row" href={mailHref} onclick={copyEmail}>
+                <a class="contact-row r10" href={mailHref} onclick={copyEmail}>
                     <img class="contact-icon" src={mailIcon} alt="" />
                     <span class="link">{emailLabel}</span>
                 </a>
                 {#each contacts as contact (contact.label)}
                     <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- external URL; resolve() is only for internal app routes -->
-                    <a class="contact-row" href={contact.href} target="_blank" rel="noopener noreferrer" aria-label={contact.label}>
+                    <a class="contact-row r10" href={contact.href} target="_blank" rel="noopener noreferrer" aria-label={contact.label}>
                         <img class="contact-icon" src={contact.icon} alt="" />
                         {contact.label}
                     </a>
@@ -73,7 +73,7 @@
             <h1>About Me</h1>
             <p>
                 Hello, and welcome to my portfolio page, dressed up as a Windows 95/98 desktop. My name is
-                Benjamin, though I go by <b>Juules32</b> online.
+                Benjamin, though I go by Juules32 online.
             </p>
             <p>
                 Here for the r&eacute;sum&eacute; bits? The
@@ -97,14 +97,14 @@
             <div class="section-container">
                 {#each skillSections as section (section.title)}
                     <div class="skill-section outie">
-                        <h3>{section.title}</h3>
+                        <h4>{section.title}</h4>
                         {#each section.groups as group, i (group.subtitle ?? i)}
                             {#if group.subtitle}
-                                <h4>{group.subtitle}</h4>
+                                <p class="r10">{group.subtitle}</p>
                             {/if}
                             <ul>
                                 {#each group.items as item (item)}
-                                    <li>{item}</li>
+                                    <li class="r10">{item}</li>
                                 {/each}
                             </ul>
                         {/each}
@@ -125,7 +125,7 @@
     .left-menu {
         position: sticky;
         top: 0;
-        width: 208px;
+        width: 214px;
     }
 
     .contact-panel {
@@ -179,11 +179,11 @@
         width: 100%;
         padding: 5px 4px;
         cursor: pointer;
-        font-size: 13px;
     }
 
     /* The global `*` font-size would otherwise override inheritance. */
     .contact-row span {
+        font-family: inherit;
         font-size: inherit;
     }
 

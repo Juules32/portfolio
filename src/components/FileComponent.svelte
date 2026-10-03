@@ -17,7 +17,8 @@
 
 <style>
     span {
-        line-height: 1.1;
+        font-family: 'R95 Sans 10';
+        font-size: 16px;
     }
 
     button {

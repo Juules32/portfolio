@@ -63,7 +63,7 @@
     {@render children()}
     {#if loading}
         <div class="loader">
-            <span class="loader-text">{text}</span>
+            <span class="r8x3">{text}</span>
             <div class="loader-bars innie" style="--bar-width: {BAR_WIDTH}px; --bar-gap: {BAR_GAP}px;">
                 {#each Array(barCount), i (i)}
                     <div class="loader-bar {i >= visibleBars ? 'hidden' : ''}"></div>
@@ -102,11 +102,6 @@
         background-color: var(--color-bg-dark);
         padding: 2px;
         width: fit-content;
-    }
-
-    .loader-text {
-        font-size: 28px;
-        font-family: 'PX Sans Nouveaux', monospace;
     }
 
     .loader-bar {

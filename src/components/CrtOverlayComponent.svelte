@@ -40,8 +40,8 @@
            and the blur radius is kept tiny so it's a ~3-tap kernel. Applied to
            the backdrop rather than as a filter on #layout, so it covers the
            shutdown screen and doesn't alter fixed-position descendants. */
-        -webkit-backdrop-filter: blur(0.1px) contrast(1.05) saturate(1.3) brightness(1);
-        backdrop-filter: blur(0.1px) contrast(1.05) saturate(1.3) brightness(1);
+        -webkit-backdrop-filter: blur(0.1px) contrast(1.05) saturate(1.3) brightness(1.05);
+        backdrop-filter: blur(0.1px) contrast(1.05) saturate(1.3) brightness(1.05);
         /* Fills the area outside the rounded corners with black. */
         /*border-radius: 10px;*/
         /*box-shadow: 0 0 0 20px #000;*/

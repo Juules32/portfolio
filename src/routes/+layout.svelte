@@ -6,13 +6,13 @@
     import { endpointToApp, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { desktopApps } from '$lib/app';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
-    import computerIcon from '$lib/assets/icons/16x16/computer.png';
+    import userIcon from '$lib/assets/icons/16x16/user.png';
 
     let { children } = $props();
 
     let label = $derived(endpointToLabel(getEndpoint()));
 
-    let favicon = $derived(endpointToApp(getEndpoint())?.icon ?? computerIcon);
+    let favicon = $derived(endpointToApp(getEndpoint())?.icon ?? userIcon);
 </script>
 
 <svelte:head>

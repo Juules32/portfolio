@@ -11,8 +11,8 @@
     <div class="shutdown">
         <LoadingComponent text="Shutting down..." loadTime={2500}>
             <button class="safe-screen" type="button" onclick={reboot}>
-                <p>It's now safe to turn off<br>your computer.</p>
-                <p class="hint">(Click anywhere to restart)</p>
+                <p class="r8x3">It's now safe to turn off<br>your computer.</p>
+                <p class="hint r8x2">(Click anywhere to restart)</p>
             </button>
         </LoadingComponent>
     </div>
@@ -42,13 +42,10 @@
 
     .safe-screen p {
         color: var(--color-text-shutdown);
-        font-family: 'PX Sans Nouveaux', monospace;
-        font-size: 28px;
         line-height: 1.6;
     }
 
     .safe-screen .hint {
-        font-size: 14px;
         opacity: 0.5;
     }
 </style>

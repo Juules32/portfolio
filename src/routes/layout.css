@@ -1,9 +1,33 @@
-@import '@fontsource-variable/cascadia-code/wght.css';
 @import '@fontsource-variable/material-symbols-outlined/full.css';
 
 @font-face {
-    font-family: 'PX Sans Nouveaux';
-    src: url('/fonts/px_sans_nouveaux.woff2');
+    font-family: "R95 Sans 8";
+    src: url("/fonts/8pt/R95-sans-serif-vga-8pt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "R95 Sans 10";
+    src: url("/fonts/10pt/R95-sans-serif-vga-10pt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "R95 Sans 12";
+    src: url("/fonts/12pt/R95-sans-serif-vga-12pt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "R95 Sans 14";
+    src: url("/fonts/14pt/R95-sans-serif-vga-14pt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "R95 Sans 18";
+    src: url("/fonts/18pt/R95-sans-serif-vga-18pt.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "R95 Sans 24";
+    src: url("/fonts/24pt/R95-sans-serif-vga-24pt.woff2") format("woff2");
 }
 
 :root {
@@ -30,15 +54,14 @@
     /*-rendering:optimizeLegibility;*/
     /*-moz-osx-font-smoothing:grayscale;*/
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-synthesis: none; /* stop the browser faking bold/italic */
+    font-family: 'R95 Sans 12', sans-serif;
+    font-size: 20px;
     /*font-family: 'Cascadia Code Variable', sans-serif;*/
    	/*image-rendering: pixelated; Not needed due to implicit crt blur */
-    font-weight: 350;
-    font-size: 15px;
     color: var(--color-text-black);
     border: none;
     box-sizing: border-box;
-    line-height: 1.34;
 }
 
 img {
@@ -52,10 +75,6 @@ a {
     text-decoration: none;
 }
 
-b {
-    font-weight: 700;
-}
-
 button {
     background-color: transparent;
     /* The UA stylesheet sets text-shadow: none on buttons; inherit so the CRT
@@ -63,22 +82,34 @@ button {
     text-shadow: inherit;
 }
 
-h1, h2, h3, h4 {
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    word-spacing: 0.07em;
+.r8 {
+    font-family: "R95 Sans 8";
+    font-size: 13px;
 }
 
-h1 {
-    font-size: 2em;
+h3, .r8x2 {
+    font-family: "R95 Sans 8";
+    font-size: 26px;
 }
 
-h2 {
-    font-size: 1.6em;
+h1, .r8x3 {
+    font-family: "R95 Sans 8";
+    font-size: 39px;
 }
 
-h3 {
-    font-size: 1.3em;
+h2, .r10x2 {
+    font-family: "R95 Sans 10";
+    font-size: 32px;
+}
+
+.r10 {
+    font-family: "R95 Sans 10";
+    font-size: 16px;
+}
+
+b, strong, h4, h1, h2, .bold {
+    text-shadow: 1px 0 currentColor;
+    letter-spacing: 1px;
 }
 
 :root.crt body {

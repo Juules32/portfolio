@@ -26,13 +26,13 @@
     {#if icon}
         <img alt="icon" src={icon} />
     {/if}
-    <span>{label}</span>
+    <span class="r10">{label}</span>
 </a>
 
 <style>
     a {
-        padding-left: 0.6rem;
-        padding-right: 0.6rem;
+        padding-left: 6px;
+        padding-right: 6px;
         text-align: center;
         height: 26px;
         display: flex;
@@ -40,7 +40,7 @@
     }
 
     img {
-        margin-right: 0.3rem;
+        margin-right: 4px;
         height: 16px;
     }
 

@@ -54,6 +54,8 @@
     .desktop-app span {
         text-align: center;
         color: var(--color-text-white);
+        font-family: 'R95 Sans 8';
+        font-size: 18px;
         text-shadow: 1px 1px 0px black;
     }
 </style>

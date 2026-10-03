@@ -2,9 +2,9 @@
     import { resolve } from '$app/paths';
     import { startMenuApps } from '$lib/app';
     import { setShutdown } from '$lib/shutdown.svelte';
-    import shutdownIcon from '$lib/assets/icons/32x32/shutdown.png';
+    import shutdownIcon from '$lib/assets/icons/48x48/shutdown.png';
 
-    
+
     interface Props {
         close: () => void;
     }
@@ -23,7 +23,7 @@
 
 <div class="start-menu outie">
     <div class="thumbnail">
-        <span>Portfolio<b>98</b></span>
+        <span class="bold">Portfolio<b>98</b></span>
     </div>
 
     <div class="items">
@@ -69,7 +69,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        width: 34px;
+        width: 54px;
         padding: 8px 0;
         background: linear-gradient(to top, #000080, #1084d0);
     }
@@ -79,8 +79,8 @@
         transform: rotate(180deg);
         white-space: nowrap;
         color: var(--color-text-white);
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 39px;
+        font-family: "R95 Sans 12";
         letter-spacing: 4px;
     }
 
@@ -101,14 +101,14 @@
         gap: 10px;
         width: 100%;
         padding: 8px 10px;
-        font-size: 14px;
+        font-size: 13px;
         color: var(--color-text-black);
         cursor: pointer;
     }
 
     .item img {
-        width: 32px;
-        height: 32px;
+        width: 48px;
+        height: 48px;
     }
 
     .item:hover {

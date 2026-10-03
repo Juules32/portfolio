@@ -6,7 +6,7 @@
 </script>
 
 <section>
-    <h2>Welcome to my music library <img class="piano-gif" alt="piano gif" src={pianoGif} /></h2>
+    <h1>Welcome to my music library <img class="piano-gif" alt="piano gif" src={pianoGif} /></h1>
 
     <p>
         Play tracks by clicking the files below, or by using the music player in the bottom right of the taskbar.
@@ -35,13 +35,13 @@
         gap: 16px;
     }
 
-    h2 {
+    h1 {
         position: relative;
     }
 
     .piano-gif {
         position: absolute;
-        top: 5px;
+        top: 12px;
         margin-left: 12px;
     }
 
