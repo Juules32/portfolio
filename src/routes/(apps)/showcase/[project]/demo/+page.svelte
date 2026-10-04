@@ -1,14 +1,9 @@
 <script lang="ts">
     import LoadingComponent from '$components/LoadingComponent.svelte';
-import searchGlobeIcon from '$lib/assets/icons/16x16/search-globe.png';
     import type { PageProps } from './$types';
 
     let { data }: PageProps = $props();
 </script>
-
-<svelte:head>
-    <link rel="icon" href={searchGlobeIcon} />
-</svelte:head>
 
 <section>
     <LoadingComponent loadTime={800} fill>

@@ -208,11 +208,6 @@
         gap: 10px;
     }
 
-    .link {
-        color: var(--color-blue);
-        text-decoration: underline;
-    }
-
     .section-container {
         columns: 280px;
         column-gap: 16px;

@@ -7,7 +7,6 @@ import cdIcon from '$lib/assets/icons/16x16/cd.png';
 import helpBookIcon from '$lib/assets/icons/16x16/help-book.png';
 import crabsweeperIcon from '$lib/assets/icons/16x16/crabsweeper.png';
 import photoIcon from '$lib/assets/icons/16x16/photo.png';
-import toolsIcon from '$lib/assets/icons/16x16/tools.png';
 
 import openDirectoryDesktopIcon from '$lib/assets/icons/48x48/open-directory.png';
 import magnifyingGlassDesktopIcon from '$lib/assets/icons/48x48/magnifying-glass.png';
@@ -16,15 +15,12 @@ import crabsweeperDesktopIcon from '$lib/assets/icons/48x48/crabsweeper.png';
 import cdDesktopIcon from '$lib/assets/icons/48x48/cd.png';
 import helpBookDesktopIcon from '$lib/assets/icons/48x48/help-book.png';
 import photoDesktopIcon from '$lib/assets/icons/48x48/photo.png';
-import toolsDesktopIcon from '$lib/assets/icons/48x48/tools.png';
 
 import openDirectoryStartMenuIcon from '$lib/assets/icons/32x32/open-directory.png';
 import magnifyingGlassStartMenuIcon from '$lib/assets/icons/32x32/magnifying-glass.png';
 import cdStartMenuIcon from '$lib/assets/icons/32x32/cd.png';
 import helpBookStartMenuIcon from '$lib/assets/icons/32x32/help-book.png';
 import photoStartMenuIcon from '$lib/assets/icons/32x32/photo.png';
-import toolsStartMenuIcon from '$lib/assets/icons/32x32/tools.png';
-
 
 export interface App {
     id: string;

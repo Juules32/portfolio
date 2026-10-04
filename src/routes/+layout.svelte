@@ -6,18 +6,28 @@
     import { endpointToApp, endpointToLabel, getEndpoint } from '$lib/utils/endpoint';
     import { desktopApps } from '$lib/app';
     import DesktopAppComponent from '$components/DesktopAppComponent.svelte';
+    import { page } from '$app/state';
     import userIcon from '$lib/assets/icons/16x16/user.png';
+    import errorIcon from '$lib/assets/icons/16x16/error.png';
+    import searchGlobeIcon from '$lib/assets/icons/16x16/search-globe.png';
 
     let { children } = $props();
 
     let label = $derived(endpointToLabel(getEndpoint()));
 
-    let favicon = $derived(endpointToApp(getEndpoint())?.icon ?? userIcon);
+    let favicon = $derived.by(() => {
+        if (page.error) return errorIcon;
+        if (/^\/showcase\/[^/]+\/demo\/?$/.test(getEndpoint())) return searchGlobeIcon;
+        return endpointToApp(getEndpoint())?.icon ?? userIcon;
+    });
 </script>
 
 <svelte:head>
     <title>{label ? label : 'Juules32'}</title>
-    <link rel="icon" href={favicon} />
+    <!-- Recreate the link on change; Chrome doesn't reliably pick up favicon updates otherwise. -->
+    {#key favicon}
+        <link rel="icon" href={favicon} />
+    {/key}
 </svelte:head>
 
 <div id="layout">
