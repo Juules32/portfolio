@@ -112,7 +112,7 @@
         margin-left: 5px;
     }
 
-    @media (width <= 974px) {
+    @media (width <= 890px) {
         .taskbar-apps.dynamic {
             display: none;
         }

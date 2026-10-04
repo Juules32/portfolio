@@ -41,7 +41,7 @@
         margin-left: 6px;
     }
 
-    @media (width <= 440px) {
+    @container app-window (width <= 480px) {
         .dslr-gif {
             display: none;
         }

@@ -45,7 +45,7 @@
         margin-left: 12px;
     }
 
-    @media (width <= 440px) {
+    @container app-window (width <= 480px) {
         .piano-gif {
             display: none;
         }
