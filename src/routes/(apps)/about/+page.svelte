@@ -6,6 +6,7 @@
     import mailIcon from "$lib/assets/icons/mail.svg";
     import itchIcon from "$lib/assets/icons/itch-red.svg";
     import catGif from "$lib/assets/gifs/cat.gif";
+    import smileyGif from "$lib/assets/gifs/smiley.gif";
     import avatar from "$lib/assets/avatar.png";
     import { onMount } from "svelte";
 
@@ -72,26 +73,19 @@
         <div class="content">
             <h1>About Me</h1>
             <p>
-                Hello, and welcome to my portfolio page, dressed up as a Windows 95/98 desktop. My name is
-                Benjamin, though I go by Juules32 online.
-            </p>
-            <p>
-                Here for the r&eacute;sum&eacute; bits? The
-                languages, tools, and other skills I use are laid out
-                right below, and my favourite projects are on display over in the
-                <a class="link" href={resolve('/(apps)/showcase')}>Showcase</a>.
-            </p>
-            <p>
-                Otherwise, feel free to poke around this virtual OS! It's packed
-                with semi-hidden features, and nearly every button, icon, and
-                file is just begging to be clicked. You can't break
-                anything. (Probably.)
+                Hiya! I'm Ben, but I go by Juules32 online. I'm a software developer with a MSc in Games Technology. Welcome to my portfolio website! <img src={smileyGif} alt="" />
             </p>
             <p class="contact-message">
                 For education and professional experience, contact me using the panel on the left.
             </p>
             <p class="contact-message-bottom">
                 For education and professional experience, contact me using the panel at the bottom.
+            </p>
+            <p>
+                If you're here for the r&eacute;sum&eacute; bits, the
+                languages, tools, and other skills I use are laid out
+                right below, and my favourite projects are on display over in the
+                <a class="link" href={resolve('/(apps)/showcase')}>Showcase</a>.
             </p>
 
             <div class="section-container">

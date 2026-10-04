@@ -2,7 +2,7 @@
     import { resolve } from '$app/paths';
     import { startMenuApps } from '$lib/app';
     import { setShutdown } from '$lib/shutdown.svelte';
-    import shutdownIcon from '$lib/assets/icons/48x48/shutdown.png';
+    import shutdownIcon from '$lib/assets/icons/32x32/shutdown.png';
 
 
     interface Props {
@@ -30,8 +30,8 @@
         {#each startMenuApps as app (app.id)}
             {#if app.endpoint}
                 <a class="item" href={resolve(app.endpoint)} onclick={close}>
-                    {#if app.desktopIcon}
-                        <img src={app.desktopIcon} alt="" />
+                    {#if app.startMenuIcon}
+                        <img src={app.startMenuIcon} alt="" />
                     {/if}
                     <span>{app.label}</span>
                 </a>
@@ -69,7 +69,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        width: 54px;
+        width: 40px;
         padding: 8px 0;
         background: linear-gradient(to top, #000080, #1084d0);
     }
@@ -79,13 +79,14 @@
         transform: rotate(180deg);
         white-space: nowrap;
         color: var(--color-text-white);
-        font-size: 39px;
-        font-family: "R95 Sans 12";
+        font-size: 23px;
+        font-family: "R95 Sans 14";
         letter-spacing: 4px;
     }
 
     .thumbnail b {
         color: var(--color-bg-grey);
+        font-size: inherit;
     }
 
     .items {
@@ -104,11 +105,6 @@
         font-size: 13px;
         color: var(--color-text-black);
         cursor: pointer;
-    }
-
-    .item img {
-        width: 48px;
-        height: 48px;
     }
 
     .item:hover {

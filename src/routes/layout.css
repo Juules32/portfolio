@@ -54,6 +54,7 @@
     /*-rendering:optimizeLegibility;*/
     /*-moz-osx-font-smoothing:grayscale;*/
     padding: 0;
+    -webkit-font-smoothing: none;
     font-synthesis: none; /* stop the browser faking bold/italic */
     font-family: 'R95 Sans 12', sans-serif;
     font-size: 20px;

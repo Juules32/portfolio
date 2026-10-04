@@ -26,7 +26,7 @@
     <div class="left-menu">
         <nav class="tag-filter innie">
             <button
-                class="filter-row"
+                class="filter-row r10"
                 class:selected={tagFilter.active === null}
                 onclick={() => (tagFilter.active = null)}
             >
@@ -61,7 +61,7 @@
         <div class="content">
             <h1>Project Showcase</h1>
             <p>
-                Welcome to my showcase where major projects are listed.
+                Welcome to my showcase where I list my favorite projects.
                 Projects are either work-related, study-related, or simply hobby projects in various stages of refinement.
             </p>
             <p>
