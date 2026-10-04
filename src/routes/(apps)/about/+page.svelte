@@ -79,7 +79,7 @@
                 For education and professional experience, contact me using the panel on the left.
             </p>
             <p class="contact-message-bottom">
-                For education and professional experience, contact me using the panel at the bottom.
+                For education and professional experience, contact me using the panel at the bottom of this page.
             </p>
             <p>
                 If you're here for the r&eacute;sum&eacute; bits, the
